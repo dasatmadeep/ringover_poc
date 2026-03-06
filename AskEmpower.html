@@ -161,7 +161,18 @@
   .ind-q { font-size: 11px; background: var(--bg-light); padding: 7px 10px; border-radius: 7px; color: var(--text-intermediate); font-style: italic; border-left: 2px solid var(--accent); }
   .ind-q::before { content: '💬 '; }
 
-  /* COMPETITIVE */
+  /* COMPETITIVE — horizontal slider */
+  .comp-slider-wrap { position: relative; display: flex; align-items: stretch; gap: 0; margin: 0 -4px; }
+  .comp-arrow { flex-shrink: 0; width: 44px; min-width: 44px; height: 44px; align-self: center; border-radius: 50%; border: 1px solid var(--border-regular); background: var(--white); color: var(--text-primary); font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s, box-shadow .2s, border-color .2s; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .comp-arrow:hover { background: var(--bg-light); border-color: var(--border-accentued); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .comp-arrow:active { transform: scale(0.98); }
+  .comp-arrow:disabled { opacity: 0.35; cursor: not-allowed; pointer-events: none; }
+  .comp-arrow:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .comp-slider { display: flex; gap: 14px; overflow-x: auto; scroll-behavior: smooth; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 6px 4px 14px; margin: 0 4px; scrollbar-width: thin; scrollbar-color: var(--border-accentued) transparent; }
+  .comp-slider::-webkit-scrollbar { height: 8px; }
+  .comp-slider::-webkit-scrollbar-track { background: transparent; }
+  .comp-slider::-webkit-scrollbar-thumb { background: var(--border-accentued); border-radius: 4px; }
+  .comp-slider .comp-card { scroll-snap-align: start; flex: 0 0 auto; }
   .comp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
   .comp-grid-four { grid-template-columns: repeat(2, 1fr); }
   .comp-card { border-radius: 14px; padding: 22px; border: 1px solid; }
@@ -189,6 +200,28 @@
   .comp-card.win .comp-pitch-line { background: rgba(24,163,38,0.1); color: #12781C; }
   .comp-card.mid .comp-pitch-line { background: rgba(78,110,193,0.1); color: var(--accent); }
   .comp-card.fight .comp-pitch-line { background: rgba(255,135,38,0.1); color: #9A4C22; }
+  .comp-card.benchmark { background: rgba(78,110,193,0.06); border-color: rgba(78,110,193,0.25); }
+  .comp-card.benchmark .comp-name { color: var(--accent-hover); }
+  .comp-card.benchmark .comp-tag-badge { background: rgba(78,110,193,0.15); color: var(--accent); }
+  .comp-card.benchmark .comp-desc { color: var(--accent-active); }
+  .comp-card.benchmark .comp-where-head { color: var(--accent-hover); }
+  .comp-card.benchmark .comp-pts li { color: var(--accent-active); }
+  .comp-card.benchmark .comp-pitch-line { background: rgba(78,110,193,0.12); color: var(--accent); }
+  .comp-where-head { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin: 12px 0 6px; opacity: 0.9; }
+  .comp-where-pts { list-style: none; margin: 0 0 10px; padding: 0; }
+  .comp-where-pts li { font-size: 11px; padding: 2px 0; line-height: 1.35; }
+  .comp-card.win .comp-where-head { color: #12781C; }
+  .comp-card.win .comp-where-pts li { color: #0F5C14; }
+  .comp-card.mid .comp-where-head { color: var(--accent-hover); }
+  .comp-card.mid .comp-where-pts li { color: var(--accent-active); }
+  .comp-card.fight .comp-where-head { color: #9A4C22; }
+  .comp-card.fight .comp-where-pts li { color: #9A4C22; }
+  .comp-bullets-head { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin: 8px 0 4px; opacity: 0.95; }
+  .comp-card.win .comp-bullets-head { color: #12781C; }
+  .comp-card.mid .comp-bullets-head { color: var(--accent); }
+  .comp-card.fight .comp-bullets-head { color: #9A4C22; }
+  .comp-card.benchmark .comp-bullets-head { color: var(--accent); }
+  .comp-slider .comp-card { min-width: min(340px, 88vw); max-width: 380px; }
   .moat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-top: 18px; }
   .moat-item { text-align: center; padding: 16px; background: var(--white); border-radius: 10px; border: 1px solid var(--border-light); }
   .moat-icon { font-size: 22px; margin-bottom: 7px; }
@@ -260,6 +293,8 @@
     .uc-pane { padding: 20px; grid-template-columns: 1fr; gap: 20px; }
     .uc-pane.active { display: flex; flex-direction: column; }
     .ind-grid { grid-template-columns: 1fr; gap: 14px; }
+    .comp-slider .comp-card { min-width: min(280px, 78vw); max-width: 320px; }
+    .comp-arrow { width: 40px; min-width: 40px; height: 40px; font-size: 18px; }
     .comp-grid, .comp-grid-four { grid-template-columns: 1fr; gap: 12px; }
     .moat-grid { grid-template-columns: 1fr; gap: 12px; }
     .pitch-wrap { padding: 28px 20px; border-radius: 14px; }
@@ -694,59 +729,179 @@
 <div id="compete" class="section-wrap">
   <div class="section-label" data-i18n="comp.label">Competitive Positioning</div>
   <div class="section-title" data-i18n="comp.title">How to win against the market</div>
-  <div class="section-sub" data-i18n="comp.sub">Four key competitors — know your fight before every discovery call</div>
-  <div class="comp-grid comp-grid-four">
-    <div class="comp-card win">
-      <div class="comp-name" data-i18n="comp.1.name">vs Fathom</div>
-      <div class="comp-tag-badge" data-i18n="comp.1.badge">✓ STRONG WIN</div>
-      <div class="comp-desc" data-i18n="comp.1.desc">Fathom has moved beyond single-meeting notes: Deal View (HubSpot/Salesforce), CRM sync, AI Scorecards and behavioural coaching. Treat it as sales-ops friendly notetaker + light CI — not "just a notetaker."</div>
-      <ul class="comp-pts">
-        <li data-i18n="comp.1.li1">✓ Fathom only records Zoom/Meet/Teams when the user is present — no always-on org capture. We're telephony-native: 100% call capture.</li>
-        <li data-i18n="comp.1.li2">✓ Fathom cannot ingest uploaded external recordings. We cover calls + meetings + uploads.</li>
-        <li data-i18n="comp.1.li3">✓ Win on breadth: intelligence across full calls + meetings and across the organisation, not just meeting-by-meeting.</li>
-        <li data-i18n="comp.1.li4">✓ Ask Empower V2 answers operational questions from your entire conversation stack; Fathom is meeting-centric.</li>
-      </ul>
-      <div class="comp-pitch-line" data-i18n="comp.1.pitch">Pitch line: "When you need intelligence across the full calls + meetings world and the whole org — especially if telephony is central — Empower is the next step."</div>
-    </div>
-    <div class="comp-card win">
-      <div class="comp-name" data-i18n="comp.2.name">vs Noota</div>
-      <div class="comp-tag-badge" data-i18n="comp.2.badge">✓ STRONG WIN</div>
-      <div class="comp-desc" data-i18n="comp.2.desc">Noota pushes EU-first, secure, integrated note-taking with CRM + ATS (e.g. Bullhorn) and a "Call Recorder (VoIP)" on the roadmap. Strong on recruitment workflows and structured documentation.</div>
-      <ul class="comp-pts">
-        <li data-i18n="comp.2.li1">✓ Win on multi-channel coverage and org-wide intelligence: Ask Empower V2 is built for full conversation stack, not just meeting outputs.</li>
-        <li data-i18n="comp.2.li2">✓ Telephony-native workflow: we are the phone system; Noota integrates with one.</li>
-        <li data-i18n="comp.2.li3">✓ Recruitment-led: position Empower on multi-channel capture, coaching, and manager visibility — especially where phone drives throughput.</li>
-        <li data-i18n="comp.2.li4">✓ Sales-led: anchor on telephony-native capture and company-wide intelligence (patterns, blockers, objections); scorecards are table stakes.</li>
-      </ul>
-      <div class="comp-pitch-line" data-i18n="comp.2.pitch">Pitch line: "One platform for calls + meetings + recruitment — intelligence and capture in one place."</div>
-    </div>
-    <div class="comp-card mid">
-      <div class="comp-name" data-i18n="comp.3.name">vs Leexi</div>
-      <div class="comp-tag-badge" data-i18n="comp.3.badge">✓ COMPETITIVE WIN</div>
-      <div class="comp-desc" data-i18n="comp.3.desc">Leexi is EU security–forward (France-hosted data, GDPR, ISO 27001) and integrates with Ringover, Aircall, HubSpot, Salesforce. A frequent "Ringover adjacency" competitor — buyers can stay on Ringover and add Leexi for notes/analytics.</div>
-      <ul class="comp-pts">
-        <li data-i18n="comp.3.li1">✓ Consolidation: Empower + Ask Empower V2 removes the need for a second tool and increases team-level intelligence.</li>
-        <li data-i18n="comp.3.li2">✓ In Ringover accounts: if they already pay for telephony, adding Empower gives intelligence without another integration to maintain.</li>
-        <li data-i18n="comp.3.li3">✓ Move beyond "after-call notes" into organisation-wide conversational intelligence — patterns, coaching, risk signals.</li>
-        <li data-i18n="comp.3.li4">✓ One data governance story, one platform; Leexi = telephony + intelligence as two vendors.</li>
-      </ul>
-      <div class="comp-pitch-line" data-i18n="comp.3.pitch">Pitch line: "Reduce stack complexity — intelligence and telephony in one place, with Ask Empower V2 for the whole org."</div>
-    </div>
+  <div class="section-sub" data-i18n="comp.sub">Scroll for all competitors — Where they're strong, Silver bullets, Pitch line to win</div>
+  <div class="comp-slider-wrap">
+    <button type="button" class="comp-arrow comp-arrow-left" id="compArrowLeft" aria-label="Previous competitor">‹</button>
+    <div class="comp-slider" id="compSlider" role="region" aria-label="Competitor cards">
+    <!-- 1. vs Modjo -->
     <div class="comp-card fight">
-      <div class="comp-name" data-i18n="comp.4.name">vs Modjo</div>
-      <div class="comp-tag-badge" data-i18n="comp.4.badge">⚡ CLOSE FIGHT</div>
-      <div class="comp-desc" data-i18n="comp.4.desc">Modjo is our most direct European competitor. Be honest — but frame the trajectory clearly and confidently.</div>
-      <ul class="comp-pts">
-        <li data-i18n="comp.4.li1">✓ CRM auto-fill on calls today; full video coverage in April.</li>
-        <li data-i18n="comp.4.li2">✓ Modjo = sales only. We cover support + recruitment too.</li>
-        <li data-i18n="comp.4.li3">✓ Modjo has no telephony — pays for Ringover separately. We are the phone system.</li>
-        <li data-i18n="comp.4.li4">✓ ~€99+/user/month + 15 seat min. We're more accessible.</li>
-        <li data-i18n="comp.4.li5">△ Modjo: bi-directional CRM sync. We're building (Phase 4).</li>
+      <div class="comp-name" data-i18n="comp.1.name">vs Modjo</div>
+      <div class="comp-tag-badge" data-i18n="comp.1.badge">⚡ CLOSE FIGHT</div>
+      <div class="comp-desc" data-i18n="comp.1.desc">Modjo is Empower's closest European competitor in conversation intelligence.</div>
+      <div class="comp-where-head" data-i18n="comp.whereHead">Where they're strong</div>
+      <ul class="comp-where-pts">
+        <li data-i18n="comp.1.where1">Strong CRM auto-fill and sales methodology alignment</li>
+        <li data-i18n="comp.1.where2">Built specifically for sales organizations</li>
+        <li data-i18n="comp.1.where3">Deep pipeline and deal analytics</li>
+        <li data-i18n="comp.1.where4">Strong European brand in RevOps teams</li>
       </ul>
-      <div class="comp-pitch-line" data-i18n="comp.4.pitch">Pitch line: "Everything Modjo does — inside your phone system."</div>
+      <div class="comp-bullets-head" data-i18n="comp.bulletsHead">Silver bullets</div>
+      <ul class="comp-pts">
+        <li data-i18n="comp.1.li1">✔ We are the phone system. Modjo integrates with telephony — Empower is the telephony.</li>
+        <li data-i18n="comp.1.li2">✔ 100% call capture. Empower captures every phone call + meeting.</li>
+        <li data-i18n="comp.1.li3">✔ Multi-vertical. Modjo = sales only. Empower = sales + support + recruitment.</li>
+        <li data-i18n="comp.1.li4">✔ Analyse conversations without recording. Empower can analyze calls and meetings even when recording is disabled.</li>
+        <li data-i18n="comp.1.li5">✔ CRM automation catching up. Auto-fill for calls — video coverage coming April.</li>
+        <li data-i18n="comp.1.li6">✔ Lower barrier. Modjo requires ~15 seats minimum.</li>
+      </ul>
+      <div class="comp-pitch-line" data-i18n="comp.1.pitch">Pitch: "Everything Modjo does — inside your phone system."</div>
     </div>
+    <!-- 2. vs Fathom -->
+    <div class="comp-card win">
+      <div class="comp-name" data-i18n="comp.2.name">vs Fathom</div>
+      <div class="comp-tag-badge" data-i18n="comp.2.badge">✓ STRONG WIN</div>
+      <div class="comp-desc" data-i18n="comp.2.desc">Fathom is an AI meeting assistant, not a conversation intelligence platform. Records meetings only, mainly Zoom.</div>
+      <div class="comp-where-head" data-i18n="comp.whereHead">Where they're strong</div>
+      <ul class="comp-where-pts">
+        <li data-i18n="comp.2.where1">Extremely simple UX</li>
+        <li data-i18n="comp.2.where2">Very popular with individual sales reps</li>
+        <li data-i18n="comp.2.where3">Free tier adoption</li>
+        <li data-i18n="comp.2.where4">Good AI summaries and highlights</li>
+      </ul>
+      <div class="comp-bullets-head" data-i18n="comp.bulletsHead">Silver bullets</div>
+      <ul class="comp-pts">
+        <li data-i18n="comp.2.li1">✔ Meetings vs conversations. Fathom analyzes meetings. Empower analyzes all conversations across phone + video.</li>
+        <li data-i18n="comp.2.li2">✔ Organization intelligence. Fathom = meeting-by-meeting. Empower = cross-team intelligence.</li>
+        <li data-i18n="comp.2.li3">✔ Telephony native. Fathom has no phone system.</li>
+        <li data-i18n="comp.2.li4">✔ No-recording analysis. Empower can analyze conversations without recording calls.</li>
+        <li data-i18n="comp.2.li5">✔ Operational intelligence. Empower answers: top performers, objection trends, coaching gaps, deal signals. Fathom cannot.</li>
+      </ul>
+      <div class="comp-pitch-line" data-i18n="comp.2.pitch">Pitch: "Fathom records meetings. Empower understands your entire conversation business."</div>
+    </div>
+    <!-- 3. vs Claap -->
+    <div class="comp-card mid">
+      <div class="comp-name" data-i18n="comp.3.name">vs Claap</div>
+      <div class="comp-tag-badge" data-i18n="comp.3.badge">⚡ COMPETITIVE WIN</div>
+      <div class="comp-desc" data-i18n="comp.3.desc">Claap is a meeting-based sales intelligence platform, now part of Lemlist.</div>
+      <div class="comp-where-head" data-i18n="comp.whereHead">Where they're strong</div>
+      <ul class="comp-where-pts">
+        <li data-i18n="comp.3.where1">Built for sales teams</li>
+        <li data-i18n="comp.3.where2">Sales methodologies (MEDDIC, SPIN)</li>
+        <li data-i18n="comp.3.where3">AI query across meetings</li>
+        <li data-i18n="comp.3.where4">Strong Lemlist outbound ecosystem</li>
+      </ul>
+      <div class="comp-bullets-head" data-i18n="comp.bulletsHead">Silver bullets</div>
+      <ul class="comp-pts">
+        <li data-i18n="comp.3.li1">✔ Phone calls missing. Claap depends on Zoom / Meet / Teams. Empower captures 100% of conversations.</li>
+        <li data-i18n="comp.3.li2">✔ Telephony-native architecture.</li>
+        <li data-i18n="comp.3.li3">✔ Multi-vertical. Claap = sales only.</li>
+        <li data-i18n="comp.3.li4">✔ Conversation intelligence beyond meetings.</li>
+        <li data-i18n="comp.3.li5">✔ Analyse calls without recording them.</li>
+        <li data-i18n="comp.3.li6">✔ Embedded in communications stack.</li>
+      </ul>
+      <div class="comp-pitch-line" data-i18n="comp.3.pitch">Pitch: "Claap analyzes meetings. Empower analyzes your entire conversation stack."</div>
+    </div>
+    <!-- 4. vs Noota / Leexi / Fireflies / Read.ai -->
+    <div class="comp-card win">
+      <div class="comp-name" data-i18n="comp.4.name">vs Noota / Leexi / Fireflies / Read.ai</div>
+      <div class="comp-tag-badge" data-i18n="comp.4.badge">✓ STRONG WIN</div>
+      <div class="comp-desc" data-i18n="comp.4.desc">These tools are primarily AI meeting assistants and note-takers.</div>
+      <div class="comp-where-head" data-i18n="comp.whereHead">Where they're strong</div>
+      <ul class="comp-where-pts">
+        <li data-i18n="comp.4.where1">Fast meeting summaries</li>
+        <li data-i18n="comp.4.where2">Individual productivity</li>
+        <li data-i18n="comp.4.where3">Easy onboarding</li>
+        <li data-i18n="comp.4.where4">Good transcription accuracy</li>
+        <li data-i18n="comp.4.where5">Integrations with CRM / ATS</li>
+      </ul>
+      <div class="comp-bullets-head" data-i18n="comp.bulletsHead">Silver bullets</div>
+      <ul class="comp-pts">
+        <li data-i18n="comp.4.li1">✔ Meeting tools vs conversation intelligence. They answer "What happened in this meeting?" Empower answers "What is happening across our entire organization?"</li>
+        <li data-i18n="comp.4.li2">✔ Organization-level intelligence. Ask Empower analyzes trends, coaching gaps, objections, performance across months of conversations.</li>
+        <li data-i18n="comp.4.li3">✔ Telephony-native. They rely on bots, meeting capture, uploads. Empower is built into telephony.</li>
+        <li data-i18n="comp.4.li4">✔ Analyse calls even without recording. Empower can extract insights without requiring call recordings.</li>
+        <li data-i18n="comp.4.li5">✔ Cross-team analytics. They focus on individual meetings. Empower focuses on company-level intelligence.</li>
+      </ul>
+      <div class="comp-pitch-line" data-i18n="comp.4.pitch">Pitch: "Those tools write meeting notes. Empower tells you what your conversations mean."</div>
+    </div>
+    <!-- 5. vs Smart Note-Takers -->
+    <div class="comp-card win">
+      <div class="comp-name" data-i18n="comp.5.name">vs Smart Note-Takers</div>
+      <div class="comp-tag-badge" data-i18n="comp.5.badge">✓ STRONG WIN</div>
+      <div class="comp-desc" data-i18n="comp.5.desc">e.g. tl;dv, Otter, Granola, Notta, Fireflies, Read.ai</div>
+      <div class="comp-where-head" data-i18n="comp.whereHead">Where they're strong</div>
+      <ul class="comp-where-pts">
+        <li data-i18n="comp.5.where1">Cheap</li>
+        <li data-i18n="comp.5.where2">Quick meeting summaries</li>
+        <li data-i18n="comp.5.where3">Personal productivity</li>
+        <li data-i18n="comp.5.where4">Simple workflows</li>
+      </ul>
+      <div class="comp-bullets-head" data-i18n="comp.bulletsHead">Silver bullets</div>
+      <ul class="comp-pts">
+        <li data-i18n="comp.5.li1">✔ Built for individual productivity — no team performance intelligence</li>
+        <li data-i18n="comp.5.li2">✔ No coaching analytics</li>
+        <li data-i18n="comp.5.li3">✔ No conversation intelligence</li>
+        <li data-i18n="comp.5.li4">✔ No telephony data</li>
+        <li data-i18n="comp.5.li5">✔ No multi-channel conversation stack</li>
+      </ul>
+      <div class="comp-pitch-line" data-i18n="comp.5.pitch">Pitch: "AI note-takers capture meetings. Empower captures your business conversations."</div>
+    </div>
+    <!-- 6. vs Gong -->
+    <div class="comp-card benchmark">
+      <div class="comp-name" data-i18n="comp.6.name">vs Gong</div>
+      <div class="comp-tag-badge" data-i18n="comp.6.badge">⚡ ENTERPRISE BENCHMARK</div>
+      <div class="comp-desc" data-i18n="comp.6.desc">Gong is the revenue intelligence category leader.</div>
+      <div class="comp-where-head" data-i18n="comp.whereHead">Where they're strong</div>
+      <ul class="comp-where-pts">
+        <li data-i18n="comp.6.where1">Forecasting</li>
+        <li data-i18n="comp.6.where2">Pipeline analytics</li>
+        <li data-i18n="comp.6.where3">Deal intelligence</li>
+        <li data-i18n="comp.6.where4">Enterprise data models</li>
+        <li data-i18n="comp.6.where5">Mature RevOps workflows</li>
+      </ul>
+      <div class="comp-bullets-head" data-i18n="comp.bulletsHead">Silver bullets</div>
+      <ul class="comp-pts">
+        <li data-i18n="comp.6.li1">✔ Cost. Gong deployments often exceed $100k+ per year.</li>
+        <li data-i18n="comp.6.li2">✔ Time to value. Gong implementations take months. Empower works day one.</li>
+        <li data-i18n="comp.6.li3">✔ Native telephony. Gong requires integrations. Empower is built inside communications.</li>
+        <li data-i18n="comp.6.li4">✔ Multi-vertical. Gong = sales. Empower = sales + support + recruitment.</li>
+        <li data-i18n="comp.6.li5">✔ European compliance. Empower is EU-native.</li>
+        <li data-i18n="comp.6.li6">✔ Conversation intelligence foundation. Empower focuses on conversations, coaching, patterns, operational intelligence.</li>
+      </ul>
+      <div class="comp-pitch-line" data-i18n="comp.6.pitch">Pitch: "Gong is a revenue intelligence platform. Empower is the conversational intelligence foundation."</div>
+    </div>
+    <!-- 7. vs Dialpad / Aircall / CloudCall -->
+    <div class="comp-card mid">
+      <div class="comp-name" data-i18n="comp.7.name">vs Dialpad / Aircall / CloudCall</div>
+      <div class="comp-tag-badge" data-i18n="comp.7.badge">⚡ POSITIONING WIN</div>
+      <div class="comp-desc" data-i18n="comp.7.desc">These are telephony platforms, not conversation intelligence platforms.</div>
+      <div class="comp-where-head" data-i18n="comp.whereHead">Where they're strong</div>
+      <ul class="comp-where-pts">
+        <li data-i18n="comp.7.where1">Telephony infrastructure</li>
+        <li data-i18n="comp.7.where2">Calling reliability</li>
+        <li data-i18n="comp.7.where3">Call routing</li>
+        <li data-i18n="comp.7.where4">Contact center features</li>
+        <li data-i18n="comp.7.where5">Some include basic AI summaries</li>
+      </ul>
+      <div class="comp-bullets-head" data-i18n="comp.bulletsHead">Silver bullets</div>
+      <ul class="comp-pts">
+        <li data-i18n="comp.7.li1">✔ AI add-on vs AI platform. Their AI = limited call summaries.</li>
+        <li data-i18n="comp.7.li2">✔ No cross-conversation intelligence: coaching, trends, performance, objections.</li>
+        <li data-i18n="comp.7.li3">✔ No conversational AI layer. Ask Empower enables data queries, insights, trend analysis.</li>
+        <li data-i18n="comp.7.li4">✔ No multi-channel conversation stack. Empower analyzes calls, meetings, uploaded recordings.</li>
+        <li data-i18n="comp.7.li5">✔ Conversation intelligence without recording. Empower can analyze conversations even when recordings are disabled.</li>
+      </ul>
+      <div class="comp-pitch-line" data-i18n="comp.7.pitch">Pitch: "Dialpad and Aircall give you calls. Empower tells you what those calls mean."</div>
+    </div>
+    </div>
+    <button type="button" class="comp-arrow comp-arrow-right" id="compArrowRight" aria-label="Next competitor">›</button>
   </div>
 
+  <div class="comp-strategic-box" style="margin-top:16px; background:linear-gradient(135deg, rgba(127,163,254,0.08) 0%, rgba(78,110,193,0.06) 100%); border:1px solid rgba(78,110,193,0.2); border-radius:14px; padding:18px 22px; margin-bottom:14px;">
+    <div class="comp-strategic-title" data-i18n="comp.strategicTitle" style="font-size:12px; font-weight:700; color:var(--accent); margin-bottom:8px; letter-spacing:0.5px;">One strategic message to repeat</div>
+    <div class="comp-strategic-text" data-i18n="comp.strategicText" style="font-size:13px; color:var(--text-primary); line-height:1.6;">Empower is the only platform combining <strong>telephony + conversation intelligence + AI assistant</strong> in one system. Competitors usually provide one of the three.</div>
+    <div class="comp-norecord-text" data-i18n="comp.norecordText" style="font-size:12px; color:var(--text-intermediate); margin-top:10px; padding-top:10px; border-top:1px solid rgba(78,110,193,0.15); line-height:1.5;">Empower can analyse both audio and video calls without recording them — very useful for sensitive industries where call recording is forbidden.</div>
+  </div>
   <div style="margin-top:16px; background:var(--white); border-radius:14px; padding:22px; border:1px solid var(--border-light);">
     <div class="moat-heading" data-i18n="comp.moatHeading" style="font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:14px;">🛡️ Empower's Structural Moat — Lead with this in every pitch</div>
     <div class="moat-grid">
@@ -927,15 +1082,30 @@
       "ind.2.q1": "Is there any mention of Aircall or Modjo in calls this week?", "ind.2.q2": "What are the main features requested by enterprise clients?", "ind.2.q3": "Budget identified but no next steps in the last 7 days — show me", "ind.2.q4": "Compare Josua and Othmane's demo performance month over month",
       "ind.3.title": "Recruitment & Staffing", "ind.3.subtitle": "CANDIDATE INTELLIGENCE + ATS SYNC", "ind.3.pitch": "Recruiters conduct dozens of calls per week. Empower turns those conversations into structured candidate profiles, synced to ATS — no manual note-taking required.",
       "ind.3.q1": "Summarize all calls with this candidate and highlight fit signals", "ind.3.q2": "Which candidates mentioned salary above our range?", "ind.3.q3": "Generate a candidate brief for the client from my interview", "ind.3.q4": "What are recruiter performance trends this month?",
-      "comp.label": "Competitive Positioning", "comp.title": "How to win against the market", "comp.sub": "Four key competitors — know your fight before every discovery call",
-      "comp.1.name": "vs Fathom", "comp.1.badge": "✓ STRONG WIN", "comp.1.desc": "Fathom has moved beyond single-meeting notes: Deal View (HubSpot/Salesforce), CRM sync, AI Scorecards and behavioural coaching. Treat it as sales-ops friendly notetaker + light CI — not \"just a notetaker.\"",
-      "comp.1.li1": "✓ Fathom only records Zoom/Meet/Teams when the user is present — no always-on org capture. We're telephony-native: 100% call capture.", "comp.1.li2": "✓ Fathom cannot ingest uploaded external recordings. We cover calls + meetings + uploads.", "comp.1.li3": "✓ Win on breadth: intelligence across full calls + meetings and across the organisation, not just meeting-by-meeting.", "comp.1.li4": "✓ Ask Empower V2 answers operational questions from your entire conversation stack; Fathom is meeting-centric.", "comp.1.pitch": "Pitch line: \"When you need intelligence across the full calls + meetings world and the whole org — especially if telephony is central — Empower is the next step.\"",
-      "comp.2.name": "vs Noota", "comp.2.badge": "✓ STRONG WIN", "comp.2.desc": "Noota pushes EU-first, secure, integrated note-taking with CRM + ATS (e.g. Bullhorn) and a \"Call Recorder (VoIP)\" on the roadmap. Strong on recruitment workflows and structured documentation.",
-      "comp.2.li1": "✓ Win on multi-channel coverage and org-wide intelligence: Ask Empower V2 is built for full conversation stack, not just meeting outputs.", "comp.2.li2": "✓ Telephony-native workflow: we are the phone system; Noota integrates with one.", "comp.2.li3": "✓ Recruitment-led: position Empower on multi-channel capture, coaching, and manager visibility — especially where phone drives throughput.", "comp.2.li4": "✓ Sales-led: anchor on telephony-native capture and company-wide intelligence (patterns, blockers, objections); scorecards are table stakes.", "comp.2.pitch": "Pitch line: \"One platform for calls + meetings + recruitment — intelligence and capture in one place.\"",
-      "comp.3.name": "vs Leexi", "comp.3.badge": "✓ COMPETITIVE WIN", "comp.3.desc": "Leexi is EU security–forward (France-hosted data, GDPR, ISO 27001) and integrates with Ringover, Aircall, HubSpot, Salesforce. A frequent \"Ringover adjacency\" competitor — buyers can stay on Ringover and add Leexi for notes/analytics.",
-      "comp.3.li1": "✓ Consolidation: Empower + Ask Empower V2 removes the need for a second tool and increases team-level intelligence.", "comp.3.li2": "✓ In Ringover accounts: if they already pay for telephony, adding Empower gives intelligence without another integration to maintain.", "comp.3.li3": "✓ Move beyond \"after-call notes\" into organisation-wide conversational intelligence — patterns, coaching, risk signals.", "comp.3.li4": "✓ One data governance story, one platform; Leexi = telephony + intelligence as two vendors.", "comp.3.pitch": "Pitch line: \"Reduce stack complexity — intelligence and telephony in one place, with Ask Empower V2 for the whole org.\"",
-      "comp.4.name": "vs Modjo", "comp.4.badge": "⚡ CLOSE FIGHT", "comp.4.desc": "Modjo is our most direct European competitor. Be honest — but frame the trajectory clearly and confidently.",
-      "comp.4.li1": "✓ CRM auto-fill on calls today; full video coverage in April.", "comp.4.li2": "✓ Modjo = sales only. We cover support + recruitment too.", "comp.4.li3": "✓ Modjo has no telephony — pays for Ringover separately. We are the phone system.", "comp.4.li4": "✓ ~€99+/user/month + 15 seat min. We're more accessible.", "comp.4.li5": "△ Modjo: bi-directional CRM sync. We're building (Phase 4).", "comp.4.pitch": "Pitch line: \"Everything Modjo does — inside your phone system.\"",
+      "comp.label": "Competitive Positioning", "comp.title": "How to win against the market", "comp.sub": "Scroll for all competitors — Where they're strong, Silver bullets, Pitch line to win",
+      "comp.whereHead": "Where they're strong", "comp.bulletsHead": "Silver bullets",
+      "comp.strategicTitle": "One strategic message to repeat", "comp.strategicText": "Empower is the only platform combining <strong>telephony + conversation intelligence + AI assistant</strong> in one system. Competitors usually provide one of the three.", "comp.norecordText": "Empower can analyse both audio and video calls without recording them — very useful for sensitive industries where call recording is forbidden.",
+      "comp.1.name": "vs Modjo", "comp.1.badge": "⚡ CLOSE FIGHT", "comp.1.desc": "Modjo is Empower's closest European competitor in conversation intelligence.",
+      "comp.1.where1": "Strong CRM auto-fill and sales methodology alignment", "comp.1.where2": "Built specifically for sales organizations", "comp.1.where3": "Deep pipeline and deal analytics", "comp.1.where4": "Strong European brand in RevOps teams",
+      "comp.1.li1": "✔ We are the phone system. Modjo integrates with telephony — Empower is the telephony.", "comp.1.li2": "✔ 100% call capture. Empower captures every phone call + meeting.", "comp.1.li3": "✔ Multi-vertical. Modjo = sales only. Empower = sales + support + recruitment.", "comp.1.li4": "✔ Analyse conversations without recording. Empower can analyze calls and meetings even when recording is disabled.", "comp.1.li5": "✔ CRM automation catching up. Auto-fill for calls — video coverage coming April.", "comp.1.li6": "✔ Lower barrier. Modjo requires ~15 seats minimum.", "comp.1.pitch": "Pitch: \"Everything Modjo does — inside your phone system.\"",
+      "comp.2.name": "vs Fathom", "comp.2.badge": "✓ STRONG WIN", "comp.2.desc": "Fathom is an AI meeting assistant, not a conversation intelligence platform. Records meetings only, mainly Zoom.",
+      "comp.2.where1": "Extremely simple UX", "comp.2.where2": "Very popular with individual sales reps", "comp.2.where3": "Free tier adoption", "comp.2.where4": "Good AI summaries and highlights",
+      "comp.2.li1": "✔ Meetings vs conversations. Fathom analyzes meetings. Empower analyzes all conversations across phone + video.", "comp.2.li2": "✔ Organization intelligence. Fathom = meeting-by-meeting. Empower = cross-team intelligence.", "comp.2.li3": "✔ Telephony native. Fathom has no phone system.", "comp.2.li4": "✔ No-recording analysis. Empower can analyze conversations without recording calls.", "comp.2.li5": "✔ Operational intelligence. Empower answers: top performers, objection trends, coaching gaps, deal signals. Fathom cannot.", "comp.2.pitch": "Pitch: \"Fathom records meetings. Empower understands your entire conversation business.\"",
+      "comp.3.name": "vs Claap", "comp.3.badge": "⚡ COMPETITIVE WIN", "comp.3.desc": "Claap is a meeting-based sales intelligence platform, now part of Lemlist.",
+      "comp.3.where1": "Built for sales teams", "comp.3.where2": "Sales methodologies (MEDDIC, SPIN)", "comp.3.where3": "AI query across meetings", "comp.3.where4": "Strong Lemlist outbound ecosystem",
+      "comp.3.li1": "✔ Phone calls missing. Claap depends on Zoom / Meet / Teams. Empower captures 100% of conversations.", "comp.3.li2": "✔ Telephony-native architecture.", "comp.3.li3": "✔ Multi-vertical. Claap = sales only.", "comp.3.li4": "✔ Conversation intelligence beyond meetings.", "comp.3.li5": "✔ Analyse calls without recording them.", "comp.3.li6": "✔ Embedded in communications stack.", "comp.3.pitch": "Pitch: \"Claap analyzes meetings. Empower analyzes your entire conversation stack.\"",
+      "comp.4.name": "vs Noota / Leexi / Fireflies / Read.ai", "comp.4.badge": "✓ STRONG WIN", "comp.4.desc": "These tools are primarily AI meeting assistants and note-takers.",
+      "comp.4.where1": "Fast meeting summaries", "comp.4.where2": "Individual productivity", "comp.4.where3": "Easy onboarding", "comp.4.where4": "Good transcription accuracy", "comp.4.where5": "Integrations with CRM / ATS",
+      "comp.4.li1": "✔ Meeting tools vs conversation intelligence. They answer \"What happened in this meeting?\" Empower answers \"What is happening across our entire organization?\"", "comp.4.li2": "✔ Organization-level intelligence. Ask Empower analyzes trends, coaching gaps, objections, performance across months of conversations.", "comp.4.li3": "✔ Telephony-native. They rely on bots, meeting capture, uploads. Empower is built into telephony.", "comp.4.li4": "✔ Analyse calls even without recording. Empower can extract insights without requiring call recordings.", "comp.4.li5": "✔ Cross-team analytics. They focus on individual meetings. Empower focuses on company-level intelligence.", "comp.4.pitch": "Pitch: \"Those tools write meeting notes. Empower tells you what your conversations mean.\"",
+      "comp.5.name": "vs Smart Note-Takers", "comp.5.badge": "✓ STRONG WIN", "comp.5.desc": "e.g. tl;dv, Otter, Granola, Notta, Fireflies, Read.ai",
+      "comp.5.where1": "Cheap", "comp.5.where2": "Quick meeting summaries", "comp.5.where3": "Personal productivity", "comp.5.where4": "Simple workflows",
+      "comp.5.li1": "✔ Built for individual productivity — no team performance intelligence", "comp.5.li2": "✔ No coaching analytics", "comp.5.li3": "✔ No conversation intelligence", "comp.5.li4": "✔ No telephony data", "comp.5.li5": "✔ No multi-channel conversation stack", "comp.5.pitch": "Pitch: \"AI note-takers capture meetings. Empower captures your business conversations.\"",
+      "comp.6.name": "vs Gong", "comp.6.badge": "⚡ ENTERPRISE BENCHMARK", "comp.6.desc": "Gong is the revenue intelligence category leader.",
+      "comp.6.where1": "Forecasting", "comp.6.where2": "Pipeline analytics", "comp.6.where3": "Deal intelligence", "comp.6.where4": "Enterprise data models", "comp.6.where5": "Mature RevOps workflows",
+      "comp.6.li1": "✔ Cost. Gong deployments often exceed $100k+ per year.", "comp.6.li2": "✔ Time to value. Gong implementations take months. Empower works day one.", "comp.6.li3": "✔ Native telephony. Gong requires integrations. Empower is built inside communications.", "comp.6.li4": "✔ Multi-vertical. Gong = sales. Empower = sales + support + recruitment.", "comp.6.li5": "✔ European compliance. Empower is EU-native.", "comp.6.li6": "✔ Conversation intelligence foundation. Empower focuses on conversations, coaching, patterns, operational intelligence.", "comp.6.pitch": "Pitch: \"Gong is a revenue intelligence platform. Empower is the conversational intelligence foundation.\"",
+      "comp.7.name": "vs Dialpad / Aircall / CloudCall", "comp.7.badge": "⚡ POSITIONING WIN", "comp.7.desc": "These are telephony platforms, not conversation intelligence platforms.",
+      "comp.7.where1": "Telephony infrastructure", "comp.7.where2": "Calling reliability", "comp.7.where3": "Call routing", "comp.7.where4": "Contact center features", "comp.7.where5": "Some include basic AI summaries",
+      "comp.7.li1": "✔ AI add-on vs AI platform. Their AI = limited call summaries.", "comp.7.li2": "✔ No cross-conversation intelligence: coaching, trends, performance, objections.", "comp.7.li3": "✔ No conversational AI layer. Ask Empower enables data queries, insights, trend analysis.", "comp.7.li4": "✔ No multi-channel conversation stack. Empower analyzes calls, meetings, uploaded recordings.", "comp.7.li5": "✔ Conversation intelligence without recording. Empower can analyze conversations even when recordings are disabled.", "comp.7.pitch": "Pitch: \"Dialpad and Aircall give you calls. Empower tells you what those calls mean.\"",
       "comp.moatHeading": "🛡️ Empower's Structural Moat — Lead with this in every pitch",
       "comp.moat1.title": "Native Telephony", "comp.moat1.desc": "Every competitor integrates with a phone tool. Empower IS the phone tool — 100% capture, zero setup.",
       "comp.moat2.title": "European Data", "comp.moat2.desc": "GDPR-compliant, EU data residency, multilingual transcription and analysis by design.",
@@ -1045,14 +1215,16 @@
       "ind.2.q1": "Y a-t-il une mention d'Aircall ou Modjo dans les appels cette semaine ?", "ind.2.q2": "Quelles sont les principales fonctionnalités demandées par les clients enterprise ?", "ind.2.q3": "Budget identifié mais pas de prochaines étapes dans les 7 derniers jours — montre-moi", "ind.2.q4": "Compare les perfs démo de Josua et Othmane mois par mois",
       "ind.3.title": "Recrutement et intérim", "ind.3.subtitle": "INTELLIGENCE CANDIDAT + SYNC ATS", "ind.3.pitch": "Les recruteurs passent des dizaines d'appels par semaine. Empower transforme ces conversations en profils candidats structurés, synchronisés avec l'ATS — plus de prise de notes manuelle.",
       "ind.3.q1": "Résume tous les appels avec ce candidat et mets en avant les signaux de fit", "ind.3.q2": "Quels candidats ont mentionné un salaire au-dessus de notre fourchette ?", "ind.3.q3": "Génère une fiche candidat pour le client à partir de mon entretien", "ind.3.q4": "Quelles sont les tendances de performance recruteurs ce mois-ci ?",
-      "comp.1.name": "vs Fathom", "comp.1.badge": "✓ VICTOIRE NETTE", "comp.1.desc": "Fathom a dépassé les notes mono-réunion : Deal View (HubSpot/Salesforce), sync CRM, AI Scorecards et coaching comportemental. Traitez-le comme notetaker sales-ops + light CI — pas « juste un preneur de notes ».",
-      "comp.1.li1": "✓ Fathom n'enregistre Zoom/Meet/Teams que si l'utilisateur est présent — pas de capture org toujours active. Nous sommes natifs téléphonie : 100 % de capture.", "comp.1.li2": "✓ Fathom ne peut pas ingérer d'enregistrements externes uploadés. Nous couvrons appels + réunions + uploads.", "comp.1.li3": "✓ Gagnez sur l'ampleur : intelligence sur appels + réunions et sur toute l'organisation, pas seulement réunion par réunion.", "comp.1.li4": "✓ Ask Empower V2 répond aux questions opérationnelles depuis toute votre stack conversationnelle ; Fathom est centré réunions.", "comp.1.pitch": "Argument : « Quand vous avez besoin d'intelligence sur le monde appels + réunions et toute l'org — surtout si la téléphonie est centrale — Empower est la prochaine étape. »",
-      "comp.2.name": "vs Noota", "comp.2.badge": "✓ VICTOIRE NETTE", "comp.2.desc": "Noota mise sur EU-first, sécurisé, prise de notes intégrée avec CRM + ATS (ex. Bullhorn) et un « Call Recorder (VoIP) » en roadmap. Fort sur les workflows recrutement et la documentation structurée.",
-      "comp.2.li1": "✓ Gagnez sur la couverture multi-canal et l'intelligence org : Ask Empower V2 est fait pour toute la stack conversationnelle, pas seulement les sorties réunions.", "comp.2.li2": "✓ Workflow téléphonie native : nous sommes le système téléphonique ; Noota s'intègre à un.", "comp.2.li3": "✓ Piloté recrutement : positionnez Empower sur capture multi-canal, coaching et visibilité manager — surtout où le téléphone pilote le volume.", "comp.2.li4": "✓ Piloté ventes : ancrez sur capture téléphonie native et intelligence à l'échelle entreprise (patterns, blocages, objections) ; les scorecards sont du table stakes.", "comp.2.pitch": "Argument : « Une plateforme pour appels + réunions + recrutement — intelligence et capture en un seul endroit. »",
-      "comp.3.name": "vs Leexi", "comp.3.badge": "✓ VICTOIRE CONCURRENTIELLE", "comp.3.desc": "Leexi est orienté sécurité UE (données hébergées en France, RGPD, ISO 27001) et s'intègre à Ringover, Aircall, HubSpot, Salesforce. Concurrent « adjacency Ringover » fréquent — les acheteurs peuvent rester sur Ringover et ajouter Leexi pour notes/analytics.",
-      "comp.3.li1": "✓ Consolidation : Empower + Ask Empower V2 supprime le besoin d'un second outil et renforce l'intelligence au niveau équipe.", "comp.3.li2": "✓ En comptes Ringover : s'ils paient déjà la téléphonie, ajouter Empower apporte l'intelligence sans autre intégration à maintenir.", "comp.3.li3": "✓ Au-delà des « notes post-appel » vers l'intelligence conversationnelle à l'échelle org — patterns, coaching, signaux de risque.", "comp.3.li4": "✓ Une gouvernance des données, une plateforme ; Leexi = téléphonie + intelligence en deux fournisseurs.", "comp.3.pitch": "Argument : « Réduisez la complexité de la stack — intelligence et téléphonie en un seul endroit, avec Ask Empower V2 pour toute l'org. »",
-      "comp.4.name": "vs Modjo", "comp.4.badge": "⚡ COMBAT SERRÉ", "comp.4.desc": "Modjo est notre concurrent européen le plus direct. Soyez honnête — mais cadrez la trajectoire clairement et avec confiance.",
-      "comp.4.li1": "✓ Auto-remplissage CRM sur les appels aujourd'hui ; couverture vidéo complète en avril.", "comp.4.li2": "✓ Modjo = ventes uniquement. Nous couvrons support + recrutement aussi.", "comp.4.li3": "✓ Modjo n'a pas de téléphonie — paie Ringover à part. Nous sommes le système téléphonique.", "comp.4.li4": "✓ ~99 €+/user/mois + 15 sièges min. Nous sommes plus accessibles.", "comp.4.li5": "△ Modjo : sync CRM bidirectionnelle. Nous construisons (Phase 4).", "comp.4.pitch": "Argument : « Tout ce que fait Modjo — dans votre système téléphonique. »",
+      "comp.sub": "Faites défiler pour tous les concurrents — Où ils sont forts, Silver bullets, Argument pour gagner",
+      "comp.whereHead": "Où ils sont forts", "comp.bulletsHead": "Silver bullets",
+      "comp.strategicTitle": "Un message stratégique à répéter", "comp.strategicText": "Empower est la seule plateforme qui combine <strong>téléphonie + intelligence conversationnelle + assistant IA</strong> en un seul système. Les concurrents n'en offrent généralement qu'un.", "comp.norecordText": "Empower peut analyser les appels audio et vidéo sans les enregistrer — très utile pour les secteurs sensibles où l'enregistrement des appels est interdit.",
+      "comp.1.name": "vs Modjo", "comp.1.badge": "⚡ COMBAT SERRÉ", "comp.1.desc": "Modjo est le concurrent européen le plus proche d'Empower en intelligence conversationnelle.", "comp.1.pitch": "Argument : « Tout ce que fait Modjo — dans votre système téléphonique. »",
+      "comp.2.name": "vs Fathom", "comp.2.badge": "✓ VICTOIRE NETTE", "comp.2.desc": "Fathom est un assistant de réunion IA, pas une plateforme d'intelligence conversationnelle. N'enregistre que les réunions, surtout Zoom.", "comp.2.pitch": "Argument : « Fathom enregistre les réunions. Empower comprend toute votre activité conversationnelle. »",
+      "comp.3.name": "vs Claap", "comp.3.badge": "⚡ VICTOIRE CONCURRENTIELLE", "comp.3.desc": "Claap est une plateforme d'intelligence commerciale basée sur les réunions, désormais partie de Lemlist.", "comp.3.pitch": "Argument : « Claap analyse les réunions. Empower analyse toute votre stack conversationnelle. »",
+      "comp.4.name": "vs Noota / Leexi / Fireflies / Read.ai", "comp.4.badge": "✓ VICTOIRE NETTE", "comp.4.desc": "Ces outils sont d'abord des assistants de réunion et preneurs de notes IA.", "comp.4.pitch": "Argument : « Ces outils rédigent des notes de réunion. Empower vous dit ce que signifient vos conversations. »",
+      "comp.5.name": "vs Smart Note-Takers", "comp.5.badge": "✓ VICTOIRE NETTE", "comp.5.desc": "ex. tl;dv, Otter, Granola, Notta, Fireflies, Read.ai", "comp.5.pitch": "Argument : « Les preneurs de notes IA capturent les réunions. Empower capture vos conversations métier. »",
+      "comp.6.name": "vs Gong", "comp.6.badge": "⚡ BENCHMARK ENTERPRISE", "comp.6.desc": "Gong est le leader de la catégorie revenue intelligence.", "comp.6.pitch": "Argument : « Gong est une plateforme revenue intelligence. Empower est le socle d'intelligence conversationnelle. »",
+      "comp.7.name": "vs Dialpad / Aircall / CloudCall", "comp.7.badge": "⚡ VICTOIRE POSITIONNEMENT", "comp.7.desc": "Ce sont des plateformes de téléphonie, pas d'intelligence conversationnelle.", "comp.7.pitch": "Argument : « Dialpad et Aircall vous donnent les appels. Empower vous dit ce qu'ils signifient. »",
       "comp.moatHeading": "🛡️ Le fossé structurel d'Empower — Menez avec ça dans chaque pitch",
       "comp.moat1.title": "Téléphonie native", "comp.moat1.desc": "Chaque concurrent s'intègre à un outil téléphonique. Empower EST l'outil téléphonique — 100 % de capture, zéro config.",
       "comp.moat2.title": "Données européennes", "comp.moat2.desc": "Conformité RGPD, résidence des données UE, transcription et analyse multilingues par conception.",
@@ -1071,7 +1243,7 @@
       "uc.label": "Par persona", "uc.title": "Qui utilise Ask Empower V2, et comment", "uc.sub": "Des questions réelles d'utilisateurs réels — montrez aux prospects à quoi ressemble une journée avec Ask Empower V2",
       "uc.tab.rep": "💼 Commercial", "uc.tab.mgr": "📈 Responsable ventes", "uc.tab.support": "🎧 Support", "uc.tab.recruiter": "👥 Recruteur", "uc.tab.coach": "🏆 Coach / Enablement",
       "ind.label": "Par secteur", "ind.title": "Propositions de valeur par industrie", "ind.sub": "Adaptez l'argumentaire au monde de votre prospect",
-      "comp.label": "Positionnement concurrentiel", "comp.title": "Comment gagner face au marché", "comp.sub": "Quatre concurrents clés — connaissez votre combat avant chaque discovery",
+      "comp.label": "Positionnement concurrentiel", "comp.title": "Comment gagner face au marché",
       "pitch.label": "Argumentaire", "pitch.title": "Quoi dire — et comment le dire", "pitch.sub": "Gérez chaque scénario prospect avec confiance",
       "pitch.qa2q": "❓ « On utilise déjà Fathom. »", "pitch.qa2a": "Fathom a Deal View, sync CRM et scorecards de coaching — ne dites pas « juste un preneur de notes ». <strong>Gagnez sur couverture et adoption :</strong> ils n'enregistrent que Zoom/Meet/Teams quand l'utilisateur est présent et ne peuvent pas ingérer d'enregistrements externes. Positionnez Ask Empower V2 comme la prochaine étape quand ils ont besoin d'intelligence sur le monde appels + réunions et toute l'organisation — surtout si la téléphonie est centrale (prospection, inbound, screening).",
       "pitch.qa3q": "❓ « On utilise déjà Fireflies. »", "pitch.qa3a": "Fireflies a AskFred et l'intelligence conversationnelle (sujets, sentiment, tendances). <strong>Différenciez sur le périmètre :</strong> positionnez Ask Empower V2 comme intelligence conversationnelle à l'échelle entreprise pour les équipes client (ventes/support/recrutement), pas seulement une base de réunions. S'ils sont sur Ringover, un seul système bat bot de réunion + plateforme téléphonique séparée. Ne prétendez pas que Fireflies n'a pas d'analytics — différenciez sur appels + réunions et questions opérationnelles depuis toute la stack conversationnelle.",
@@ -1166,14 +1338,16 @@
       "ind.2.q1": "¿Hay alguna mención de Aircall o Modjo en las llamadas esta semana?", "ind.2.q2": "¿Cuáles son las principales funcionalidades solicitadas por clientes enterprise?", "ind.2.q3": "Presupuesto identificado pero sin próximos pasos en los últimos 7 días — muéstrame", "ind.2.q4": "Compara el rendimiento de demo de Josua y Othmane mes a mes",
       "ind.3.title": "Reclutamiento y staffing", "ind.3.subtitle": "INTELIGENCIA CANDIDATO + SYNC ATS", "ind.3.pitch": "Los reclutadores hacen decenas de llamadas por semana. Empower convierte esas conversaciones en perfiles de candidato estructurados, sincronizados con el ATS — sin notas manuales.",
       "ind.3.q1": "Resume todas las llamadas con este candidato y destaca señales de fit", "ind.3.q2": "¿Qué candidatos mencionaron salario por encima de nuestro rango?", "ind.3.q3": "Genera una ficha de candidato para el cliente desde mi entrevista", "ind.3.q4": "¿Cuáles son las tendencias de rendimiento de reclutadores este mes?",
-      "comp.1.name": "vs Fathom", "comp.1.badge": "✓ VICTORIA CLARA", "comp.1.desc": "Fathom ha ido más allá de las notas de una sola reunión: Deal View (HubSpot/Salesforce), sincronización CRM, AI Scorecards y coaching conductual. Trátalo como tomador de notas orientado a sales-ops + light CI — no \"solo un tomador de notas\".",
-      "comp.1.li1": "✓ Fathom solo graba Zoom/Meet/Teams cuando el usuario está presente — sin captura org siempre activa. Nosotros somos nativos de telefonía: 100 % de captura.", "comp.1.li2": "✓ Fathom no puede ingerir grabaciones externas subidas. Nosotros cubrimos llamadas + reuniones + subidas.", "comp.1.li3": "✓ Gana en amplitud: inteligencia en llamadas + reuniones y en toda la organización, no solo reunión a reunión.", "comp.1.li4": "✓ Ask Empower V2 responde preguntas operativas desde toda tu pila de conversaciones; Fathom está centrado en reuniones.", "comp.1.pitch": "Frase: \"Cuando necesitas inteligencia en el mundo llamadas + reuniones y toda la org — sobre todo si la telefonía es central — Empower es el siguiente paso.\"",
-      "comp.2.name": "vs Noota", "comp.2.badge": "✓ VICTORIA CLARA", "comp.2.desc": "Noota apuesta por EU-first, seguro, toma de notas integrada con CRM + ATS (ej. Bullhorn) y un \"Call Recorder (VoIP)\" en la hoja de ruta. Fuerte en flujos de reclutamiento y documentación estructurada.",
-      "comp.2.li1": "✓ Gana en cobertura multicanal e inteligencia a nivel org: Ask Empower V2 está pensado para toda la pila de conversaciones, no solo salidas de reuniones.", "comp.2.li2": "✓ Flujo de telefonía nativa: nosotros somos el sistema telefónico; Noota se integra con uno.", "comp.2.li3": "✓ Liderado por reclutamiento: posiciona Empower en captura multicanal, coaching y visibilidad del manager — sobre todo donde el teléfono impulsa el volumen.", "comp.2.li4": "✓ Liderado por ventas: ancla en captura de telefonía nativa e inteligencia a nivel empresa (patrones, bloqueos, objeciones); los scorecards son table stakes.", "comp.2.pitch": "Frase: \"Una plataforma para llamadas + reuniones + reclutamiento — inteligencia y captura en un solo lugar.\"",
-      "comp.3.name": "vs Leexi", "comp.3.badge": "✓ VICTORIA COMPETITIVA", "comp.3.desc": "Leexi es orientado a seguridad UE (datos alojados en Francia, GDPR, ISO 27001) y se integra con Ringover, Aircall, HubSpot, Salesforce. Competidor frecuente de \"adyacencia Ringover\" — los compradores pueden quedarse en Ringover y añadir Leexi para notas/analytics.",
-      "comp.3.li1": "✓ Consolidación: Empower + Ask Empower V2 elimina la necesidad de una segunda herramienta y aumenta la inteligencia a nivel de equipo.", "comp.3.li2": "✓ En cuentas Ringover: si ya pagan por telefonía, añadir Empower aporta inteligencia sin otra integración que mantener.", "comp.3.li3": "✓ Más allá de las \"notas post-llamada\" hacia inteligencia conversacional a nivel org — patrones, coaching, señales de riesgo.", "comp.3.li4": "✓ Una gobernanza de datos, una plataforma; Leexi = telefonía + inteligencia en dos proveedores.", "comp.3.pitch": "Frase: \"Reduce la complejidad de la pila — inteligencia y telefonía en un solo lugar, con Ask Empower V2 para toda la org.\"",
-      "comp.4.name": "vs Modjo", "comp.4.badge": "⚡ COMBATE CERRADO", "comp.4.desc": "Modjo es nuestro competidor europeo más directo. Sé honesto — pero enmarca la trayectoria con claridad y confianza.",
-      "comp.4.li1": "✓ Auto-relleno CRM en llamadas hoy; cobertura de video completa en abril.", "comp.4.li2": "✓ Modjo = solo ventas. Nosotros cubrimos soporte y reclutamiento también.", "comp.4.li3": "✓ Modjo no tiene telefonía — paga Ringover por separado. Nosotros somos el sistema telefónico.", "comp.4.li4": "✓ ~99 €+/usuario/mes + 15 asientos mín. Somos más accesibles.", "comp.4.li5": "△ Modjo: sincronización CRM bidireccional. La estamos construyendo (Fase 4).", "comp.4.pitch": "Frase: \"Todo lo que hace Modjo — dentro de tu sistema telefónico.\"",
+      "comp.sub": "Desplázate para ver todos los competidores — Dónde son fuertes, Silver bullets, Frase para ganar",
+      "comp.whereHead": "Dónde son fuertes", "comp.bulletsHead": "Silver bullets",
+      "comp.strategicTitle": "Un mensaje estratégico a repetir", "comp.strategicText": "Empower es la única plataforma que combina <strong>telefonía + inteligencia conversacional + asistente IA</strong> en un solo sistema. Los competidores suelen ofrecer solo uno de los tres.", "comp.norecordText": "Empower puede analizar llamadas de audio y vídeo sin grabarlas — muy útil en sectores sensibles donde está prohibido grabar llamadas.",
+      "comp.1.name": "vs Modjo", "comp.1.badge": "⚡ COMBATE CERRADO", "comp.1.desc": "Modjo es el competidor europeo más cercano a Empower en inteligencia conversacional.", "comp.1.pitch": "Frase: \"Todo lo que hace Modjo — dentro de tu sistema telefónico.\"",
+      "comp.2.name": "vs Fathom", "comp.2.badge": "✓ VICTORIA CLARA", "comp.2.desc": "Fathom es un asistente de reuniones IA, no una plataforma de inteligencia conversacional. Solo graba reuniones, sobre todo Zoom.", "comp.2.pitch": "Frase: \"Fathom graba reuniones. Empower entiende todo tu negocio conversacional.\"",
+      "comp.3.name": "vs Claap", "comp.3.badge": "⚡ VICTORIA COMPETITIVA", "comp.3.desc": "Claap es una plataforma de inteligencia comercial basada en reuniones, ahora parte de Lemlist.", "comp.3.pitch": "Frase: \"Claap analiza reuniones. Empower analiza toda tu pila conversacional.\"",
+      "comp.4.name": "vs Noota / Leexi / Fireflies / Read.ai", "comp.4.badge": "✓ VICTORIA CLARA", "comp.4.desc": "Estas herramientas son sobre todo asistentes de reunión y tomadores de notas IA.", "comp.4.pitch": "Frase: \"Esas herramientas escriben notas de reunión. Empower te dice qué significan tus conversaciones.\"",
+      "comp.5.name": "vs Smart Note-Takers", "comp.5.badge": "✓ VICTORIA CLARA", "comp.5.desc": "ej. tl;dv, Otter, Granola, Notta, Fireflies, Read.ai", "comp.5.pitch": "Frase: \"Los tomadores de notas IA capturan reuniones. Empower captura tus conversaciones de negocio.\"",
+      "comp.6.name": "vs Gong", "comp.6.badge": "⚡ BENCHMARK ENTERPRISE", "comp.6.desc": "Gong es el líder de la categoría revenue intelligence.", "comp.6.pitch": "Frase: \"Gong es una plataforma de revenue intelligence. Empower es la base de inteligencia conversacional.\"",
+      "comp.7.name": "vs Dialpad / Aircall / CloudCall", "comp.7.badge": "⚡ VICTORIA DE POSICIONAMIENTO", "comp.7.desc": "Son plataformas de telefonía, no de inteligencia conversacional.", "comp.7.pitch": "Frase: \"Dialpad y Aircall te dan las llamadas. Empower te dice qué significan.\"",
       "comp.moatHeading": "🛡️ El foso estructural de Empower — Lidera con esto en cada pitch",
       "comp.moat1.title": "Telefonía nativa", "comp.moat1.desc": "Cada competidor se integra con una herramienta de teléfono. Empower ES la herramienta de teléfono — 100 % de captura, cero configuración.",
       "comp.moat2.title": "Datos europeos", "comp.moat2.desc": "Cumplimiento GDPR, residencia de datos en la UE, transcripción y análisis multilingües por diseño.",
@@ -1192,7 +1366,7 @@
       "uc.label": "Por persona", "uc.title": "Quién usa Ask Empower V2 y cómo", "uc.sub": "Preguntas reales de usuarios reales — muestra a los prospects cómo es un día con Ask Empower V2",
       "uc.tab.rep": "💼 Representante", "uc.tab.mgr": "📈 Director comercial", "uc.tab.support": "🎧 Soporte", "uc.tab.recruiter": "👥 Reclutador", "uc.tab.coach": "🏆 Coach / Enablement",
       "ind.label": "Por sector", "ind.title": "Propuestas de valor por industria", "ind.sub": "Adapta el argumentario al mundo de tu prospect",
-      "comp.label": "Posicionamiento competitivo", "comp.title": "Cómo ganar en el mercado", "comp.sub": "Cuatro competidores clave — conoce tu batalla antes de cada discovery",
+      "comp.label": "Posicionamiento competitivo", "comp.title": "Cómo ganar en el mercado",
       "pitch.label": "Argumentario", "pitch.title": "Qué decir — y cómo decirlo", "pitch.sub": "Gestiona cada escenario con prospectos con confianza",
       "pitch.qa2q": "❓ « Ya usamos Fathom. »", "pitch.qa2a": "Fathom tiene Deal View, sincronización CRM y scorecards de coaching — no lo llames \"solo un tomador de notas\". <strong>Gana en cobertura y adopción:</strong> solo graban Zoom/Meet/Teams cuando el usuario está presente y no pueden ingerir grabaciones externas. Posiciona Ask Empower V2 como el siguiente paso cuando necesiten inteligencia en el mundo llamadas + reuniones y toda la organización — sobre todo si la telefonía es central (prospección, inbound, screening).",
       "pitch.qa3q": "❓ « Ya usamos Fireflies. »", "pitch.qa3a": "Fireflies tiene AskFred e inteligencia conversacional (temas, sentimiento, tendencias). <strong>Diferenciate en alcance:</strong> posiciona Ask Empower V2 como inteligencia conversacional a nivel empresa para equipos de cara al cliente (ventas/soporte/reclutamiento), no solo una base de reuniones. Si están en Ringover, un solo sistema gana a bot de reuniones + plataforma telefónica separada. No digas que Fireflies no tiene analytics — diferencia en llamadas + reuniones y preguntas operativas desde toda la pila de conversaciones.",
@@ -1262,6 +1436,27 @@
       if (typeof localStorage !== 'undefined') localStorage.setItem('lang', lang);
       applyLanguage(lang);
     });
+  })();
+  (function() {
+    var slider = document.getElementById('compSlider');
+    var leftBtn = document.getElementById('compArrowLeft');
+    var rightBtn = document.getElementById('compArrowRight');
+    if (!slider || !leftBtn || !rightBtn) return;
+    function updateArrows() {
+      var scrollLeft = slider.scrollLeft;
+      var maxScroll = slider.scrollWidth - slider.clientWidth;
+      leftBtn.disabled = scrollLeft <= 2;
+      rightBtn.disabled = maxScroll <= 2 || scrollLeft >= maxScroll - 2;
+    }
+    function scrollByCard(direction) {
+      var card = slider.querySelector('.comp-card');
+      var step = card ? (card.offsetWidth + 14) : 320;
+      slider.scrollBy({ left: direction * step, behavior: 'smooth' });
+    }
+    leftBtn.addEventListener('click', function() { scrollByCard(-1); });
+    rightBtn.addEventListener('click', function() { scrollByCard(1); });
+    slider.addEventListener('scroll', updateArrows);
+    updateArrows();
   })();
 </script>
 </body>
