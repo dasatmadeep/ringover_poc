@@ -1,0 +1,28 @@
+# Nuxt
+.nuxt
+.output
+.data
+*.log
+node_modules
+dist
+
+# Vercel
+.vercel
+
+# Env
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
