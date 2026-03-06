@@ -43,9 +43,13 @@
   body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg-light); color: var(--text-primary); -webkit-font-smoothing: antialiased; }
 
   /* NAV */
-  nav { background: var(--bg-inverted); padding: 13px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; flex-wrap: wrap; gap: 12px; }
+  nav { background: var(--bg-inverted); padding: 15px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; flex-wrap: wrap; gap: 12px; }
   .nav-logo { color: var(--white); font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 8px; }
   .nav-logo-dot { width: 8px; height: 8px; background: var(--brand); border-radius: 50%; }
+  .nav-right { display: flex; align-items: center; gap: 12px; }
+  .nav-lang { background: rgba(255,255,255,0.08); color: var(--white); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 6px 10px; font-size: 12px; font-weight: 600; cursor: pointer; min-width: 52px; -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 8px center; padding-right: 26px; }
+  .nav-lang:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.3); }
+  .nav-lang:focus { outline: 2px solid var(--brand); outline-offset: 2px; }
   .nav-badge { background: var(--accent); color: var(--white); font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 1.2px; }
   .nav-tabs { display: flex; gap: 4px; align-items: center; }
   .nav-tab { color: rgba(255,255,255,0.5); font-size: 12px; cursor: pointer; padding: 5px 12px; border-radius: 6px; border: none; background: transparent; transition: all .2s; font-weight: 500; }
@@ -225,7 +229,7 @@
   }
 
   @media (max-width: 768px) {
-    nav { padding: 12px 20px; padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
+    nav { padding: 14px 20px; padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
     .nav-tabs { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-inverted); flex-direction: column; padding: 12px; border-top: 1px solid rgba(255,255,255,0.08); gap: 4px; }
     .nav-tabs.is-open { display: flex; }
     .nav-tab { width: 100%; text-align: left; padding: 12px 16px; font-size: 14px; min-height: 44px; display: flex; align-items: center; }
@@ -264,7 +268,7 @@
   }
 
   @media (max-width: 480px) {
-    nav { padding: 10px 16px; }
+    nav { padding: 12px 16px; }
     .nav-logo { font-size: 13px; }
     .nav-badge { font-size: 9px; padding: 2px 8px; }
     .hero { padding: 32px 16px 28px; }
@@ -314,101 +318,107 @@
     <span class="nav-toggle-icon" aria-hidden="true">☰</span>
   </button>
   <div class="nav-tabs" id="navTabs" role="navigation">
-    <button type="button" class="nav-tab active" onclick="scrollSec('evolution')">Evolution</button>
-    <button type="button" class="nav-tab" onclick="scrollSec('capabilities')">V2 Capabilities</button>
-    <button type="button" class="nav-tab" onclick="scrollSec('usecases')">Use Cases</button>
-    <button type="button" class="nav-tab" onclick="scrollSec('industries')">Industries</button>
-    <button type="button" class="nav-tab" onclick="scrollSec('compete')">vs Competitors</button>
-    <button type="button" class="nav-tab" onclick="scrollSec('pitch')">Sales Pitch</button>
+    <button type="button" class="nav-tab active" onclick="scrollSec('evolution')" data-i18n="nav.evolution">Evolution</button>
+    <button type="button" class="nav-tab" onclick="scrollSec('capabilities')" data-i18n="nav.capabilities">V2 Capabilities</button>
+    <button type="button" class="nav-tab" onclick="scrollSec('usecases')" data-i18n="nav.usecases">Use Cases</button>
+    <button type="button" class="nav-tab" onclick="scrollSec('industries')" data-i18n="nav.industries">Industries</button>
+    <button type="button" class="nav-tab" onclick="scrollSec('compete')" data-i18n="nav.compete">vs Competitors</button>
+    <button type="button" class="nav-tab" onclick="scrollSec('pitch')" data-i18n="nav.pitch">Sales Pitch</button>
   </div>
-  <div class="nav-badge">V2 LAUNCH</div>
+  <div class="nav-right">
+    <select class="nav-lang" id="langSelect" aria-label="Language">
+      <option value="en">EN</option>
+      <option value="fr">FR</option>
+      <option value="es">ES</option>
+    </select>
+    <div class="nav-badge" data-i18n="nav.badge">V2 LAUNCH</div>
+  </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-eyebrow">⚡ ASK EMPOWER V2 — INTERNAL LAUNCH BRIEF</div>
-  <h1>Your company's conversations,<br><span class="hl">finally intelligent.</span></h1>
-  <p class="hero-sub">Ask Empower V2 transforms Empower from a single-call chatbot into a company-wide conversational intelligence engine — the foundation of Ringover's Revenue Intelligence platform.</p>
+  <div class="hero-eyebrow" data-i18n="hero.eyebrow">⚡ ASK EMPOWER V2 — INTERNAL LAUNCH BRIEF</div>
+  <h1 data-i18n="hero.title">Your company's conversations,<br><span class="hl">finally intelligent.</span></h1>
+  <p class="hero-sub" data-i18n="hero.sub">Ask Empower V2 transforms Empower from a single-call chatbot into a company-wide conversational intelligence engine — the foundation of Ringover's Revenue Intelligence platform.</p>
   <div class="hero-stats">
-    <div class="stat"><div class="stat-num">V1→V2</div><div class="stat-label">Major Platform Leap</div></div>
-    <div class="stat"><div class="stat-num">1 call</div><div class="stat-label">V1 context limit</div></div>
-    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">V2 company-wide</div></div>
-    <div class="stat"><div class="stat-num">5</div><div class="stat-label">Phases to Revenue OS</div></div>
+    <div class="stat"><div class="stat-num">V1→V2</div><div class="stat-label" data-i18n="hero.stat1">Major Platform Leap</div></div>
+    <div class="stat"><div class="stat-num">1 call</div><div class="stat-label" data-i18n="hero.stat2">V1 context limit</div></div>
+    <div class="stat"><div class="stat-num">∞</div><div class="stat-label" data-i18n="hero.stat3">V2 company-wide</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label" data-i18n="hero.stat4">Phases to Revenue OS</div></div>
   </div>
 </div>
 
 <!-- EVOLUTION -->
 <div id="evolution" class="section-wrap">
-  <div class="section-label">The Journey</div>
-  <div class="section-title">How Ask Empower evolved</div>
-  <div class="section-sub">From single-call chatbot → company conversational intelligence → full revenue operating system</div>
+  <div class="section-label" data-i18n="evo.label">The Journey</div>
+  <div class="section-title" data-i18n="evo.title">How Ask Empower evolved</div>
+  <div class="section-sub" data-i18n="evo.sub">From single-call chatbot → company conversational intelligence → full revenue operating system</div>
   <div class="evo-wrap">
     <div class="evo-grid">
       <div class="evo-card v1">
-        <div class="evo-badge">V1 — LAUNCHED 2024</div>
-        <div class="evo-title">Single-Call Assistant</div>
+        <div class="evo-badge" data-i18n="evo.v1.badge">V1 — LAUNCHED 2024</div>
+        <div class="evo-title" data-i18n="evo.v1.title">Single-Call Assistant</div>
         <ul class="evo-list">
-          <li>Limited to 1 call ID at a time</li>
-          <li>Last 10 conversations only</li>
-          <li>No cross-agent or cross-team context</li>
-          <li>Basic Q&A on individual call content</li>
-          <li>Micro-value, not strategic impact</li>
+          <li data-i18n="evo.v1.li1">Limited to 1 call ID at a time</li>
+          <li data-i18n="evo.v1.li2">Last 10 conversations only</li>
+          <li data-i18n="evo.v1.li3">No cross-agent or cross-team context</li>
+          <li data-i18n="evo.v1.li4">Basic Q&A on individual call content</li>
+          <li data-i18n="evo.v1.li5">Micro-value, not strategic impact</li>
         </ul>
       </div>
       <div class="evo-arrow">→</div>
       <div class="evo-card v2">
-        <div class="evo-badge">✦ V2 — LIVE NOW</div>
-        <div class="evo-title">Company-Wide Intelligence</div>
+        <div class="evo-badge" data-i18n="evo.v2.badge">✦ V2 — LIVE NOW</div>
+        <div class="evo-title" data-i18n="evo.v2.title">Company-Wide Intelligence</div>
         <ul class="evo-list">
-          <li>Cross-call, cross-agent, cross-team context</li>
-          <li>Ask about any conversation, any time</li>
-          <li>Trend analysis, objections, performance at scale</li>
-          <li>Coaching insights + skill gap detection</li>
-          <li>Multilingual: EN, FR, ES, DE, IT + more</li>
-          <li>Sales, Support & Recruitment use cases</li>
+          <li data-i18n="evo.v2.li1">Cross-call, cross-agent, cross-team context</li>
+          <li data-i18n="evo.v2.li2">Ask about any conversation, any time</li>
+          <li data-i18n="evo.v2.li3">Trend analysis, objections, performance at scale</li>
+          <li data-i18n="evo.v2.li4">Coaching insights + skill gap detection</li>
+          <li data-i18n="evo.v2.li5">Multilingual: EN, FR, ES, DE, IT + more</li>
+          <li data-i18n="evo.v2.li6">Sales, Support & Recruitment use cases</li>
         </ul>
       </div>
       <div class="evo-arrow">→</div>
       <div class="evo-card future">
-        <div class="evo-badge">FUTURE — ROADMAP</div>
-        <div class="evo-title">Revenue Intelligence OS</div>
+        <div class="evo-badge" data-i18n="evo.future.badge">FUTURE — ROADMAP</div>
+        <div class="evo-title" data-i18n="evo.future.title">Revenue Intelligence OS</div>
         <ul class="evo-list">
-          <li>Full bi-directional CRM sync</li>
-          <li>Deal health + pipeline intelligence</li>
-          <li>Forecast confidence scoring</li>
-          <li>Real-time proactive alerts</li>
-          <li>Deal Rooms per opportunity</li>
-          <li>Competes with Gong at full scale</li>
+          <li data-i18n="evo.future.li1">Full bi-directional CRM sync</li>
+          <li data-i18n="evo.future.li2">Deal health + pipeline intelligence</li>
+          <li data-i18n="evo.future.li3">Forecast confidence scoring</li>
+          <li data-i18n="evo.future.li4">Real-time proactive alerts</li>
+          <li data-i18n="evo.future.li5">Deal Rooms per opportunity</li>
+          <li data-i18n="evo.future.li6">Competes with Gong at full scale</li>
         </ul>
       </div>
     </div>
-    <!-- Roadmap strip -->
     <div style="margin-top:28px;">
-      <div style="font-size:11px;font-weight:700;color:var(--text-secondary);letter-spacing:1.5px;margin-bottom:12px;text-transform:uppercase;">Roadmap Progress</div>
+      <div class="rm-heading" data-i18n="evo.rmHeading" style="font-size:11px;font-weight:700;color:var(--text-secondary);letter-spacing:1.5px;margin-bottom:12px;text-transform:uppercase;">Roadmap Progress</div>
       <div class="rm-strip">
         <div class="rm-item">
           <div class="rm-dot done">✓</div>
-          <div><div class="rm-label-title">Ask Empower Global</div><div class="rm-label-sub">Phase 1 — Live now</div></div>
+          <div><div class="rm-label-title" data-i18n="evo.rm1.title">Ask Empower Global</div><div class="rm-label-sub" data-i18n="evo.rm1.sub">Phase 1 — Live now</div></div>
         </div>
         <div class="rm-line active"></div>
         <div class="rm-item">
           <div class="rm-dot now">2</div>
-          <div><div class="rm-label-title">Coaching & Skills</div><div class="rm-label-sub">Phase 2 — In progress</div></div>
+          <div><div class="rm-label-title" data-i18n="evo.rm2.title">Coaching & Skills</div><div class="rm-label-sub" data-i18n="evo.rm2.sub">Phase 2 — In progress</div></div>
         </div>
         <div class="rm-line upcoming"></div>
         <div class="rm-item">
           <div class="rm-dot soon">3</div>
-          <div><div class="rm-label-title">Real-Time Alerts</div><div class="rm-label-sub">Phase 3 — Coming soon</div></div>
+          <div><div class="rm-label-title" data-i18n="evo.rm3.title">Real-Time Alerts</div><div class="rm-label-sub" data-i18n="evo.rm3.sub">Phase 3 — Coming soon</div></div>
         </div>
         <div class="rm-line upcoming"></div>
         <div class="rm-item">
           <div class="rm-dot soon">4</div>
-          <div><div class="rm-label-title">CRM Integration</div><div class="rm-label-sub">Phase 4 — April 2026</div></div>
+          <div><div class="rm-label-title" data-i18n="evo.rm4.title">CRM Integration</div><div class="rm-label-sub" data-i18n="evo.rm4.sub">Phase 4 — April 2026</div></div>
         </div>
         <div class="rm-line upcoming"></div>
         <div class="rm-item">
           <div class="rm-dot next">5</div>
-          <div><div class="rm-label-title">Deal Room & Revenue Intel</div><div class="rm-label-sub">Phase 5 — Roadmap</div></div>
+          <div><div class="rm-label-title" data-i18n="evo.rm5.title">Deal Room & Revenue Intel</div><div class="rm-label-sub" data-i18n="evo.rm5.sub">Phase 5 — Roadmap</div></div>
         </div>
       </div>
     </div>
@@ -419,63 +429,63 @@
 
 <!-- V2 CAPABILITIES -->
 <div id="capabilities" class="section-wrap">
-  <div class="section-label">What's New</div>
-  <div class="section-title">Ask Empower V2 — Core Capabilities</div>
-  <div class="section-sub">Everything V1 could do, plus an entirely new layer of cross-company intelligence</div>
+  <div class="section-label" data-i18n="cap.label">What's New</div>
+  <div class="section-title" data-i18n="cap.title">Ask Empower V2 — Core Capabilities</div>
+  <div class="section-sub" data-i18n="cap.sub">Everything V1 could do, plus an entirely new layer of cross-company intelligence</div>
   <div class="caps-grid">
     <div class="cap-card">
       <div class="cap-icon">🌐</div>
-      <div class="cap-title">Company-Wide Conversation Search</div>
-      <div class="cap-desc">Ask questions across your entire call and meeting library. Search by agent, team, tag, topic, date range, or client name.</div>
-      <span class="cap-tag live">✓ Live</span>
+      <div class="cap-title" data-i18n="cap.1.title">Company-Wide Conversation Search</div>
+      <div class="cap-desc" data-i18n="cap.1.desc">Ask questions across your entire call and meeting library. Search by agent, team, tag, topic, date range, or client name.</div>
+      <span class="cap-tag live" data-i18n="cap.tagLive">✓ Live</span>
     </div>
     <div class="cap-card">
       <div class="cap-icon">📊</div>
-      <div class="cap-title">Cross-Agent Performance Analysis</div>
-      <div class="cap-desc">Compare rep performance, identify top performers, surface coaching gaps, and track skill progression across your team.</div>
-      <span class="cap-tag live">✓ Live</span>
+      <div class="cap-title" data-i18n="cap.2.title">Cross-Agent Performance Analysis</div>
+      <div class="cap-desc" data-i18n="cap.2.desc">Compare rep performance, identify top performers, surface coaching gaps, and track skill progression across your team.</div>
+      <span class="cap-tag live" data-i18n="cap.tagLive">✓ Live</span>
     </div>
     <div class="cap-card">
       <div class="cap-icon">🎯</div>
-      <div class="cap-title">Trend & Pattern Detection</div>
-      <div class="cap-desc">Spot objection trends month over month, track competitor mentions, identify recurring customer pain points at scale.</div>
-      <span class="cap-tag live">✓ Live</span>
+      <div class="cap-title" data-i18n="cap.3.title">Trend & Pattern Detection</div>
+      <div class="cap-desc" data-i18n="cap.3.desc">Spot objection trends month over month, track competitor mentions, identify recurring customer pain points at scale.</div>
+      <span class="cap-tag live" data-i18n="cap.tagLive">✓ Live</span>
     </div>
     <div class="cap-card">
       <div class="cap-icon">💬</div>
-      <div class="cap-title">Account & Contact Intelligence</div>
-      <div class="cap-desc">Get full context on any account or contact — full call history, pain points, objections, and next steps before you call.</div>
-      <span class="cap-tag live">✓ Live</span>
+      <div class="cap-title" data-i18n="cap.4.title">Account & Contact Intelligence</div>
+      <div class="cap-desc" data-i18n="cap.4.desc">Get full context on any account or contact — full call history, pain points, objections, and next steps before you call.</div>
+      <span class="cap-tag live" data-i18n="cap.tagLive">✓ Live</span>
     </div>
     <div class="cap-card">
       <div class="cap-icon">🏷️</div>
-      <div class="cap-title">Tag-Based Intelligence</div>
-      <div class="cap-desc">Analyse calls by custom tags (Prospect, Demo, Objection, Competitor). Understand what's happening inside any call segment.</div>
-      <span class="cap-tag live">✓ Live</span>
+      <div class="cap-title" data-i18n="cap.5.title">Tag-Based Intelligence</div>
+      <div class="cap-desc" data-i18n="cap.5.desc">Analyse calls by custom tags (Prospect, Demo, Objection, Competitor). Understand what's happening inside any call segment.</div>
+      <span class="cap-tag live" data-i18n="cap.tagLive">✓ Live</span>
     </div>
     <div class="cap-card">
       <div class="cap-icon">🔗</div>
-      <div class="cap-title">Multi-Channel Coverage</div>
-      <div class="cap-desc">Ringover calls, Zoom, Google Meet, MS Teams, physical meetings, Aircall, RingCentral, or any call via public upload API.</div>
-      <span class="cap-tag live">✓ Live</span>
+      <div class="cap-title" data-i18n="cap.6.title">Multi-Channel Coverage</div>
+      <div class="cap-desc" data-i18n="cap.6.desc">Ringover calls, Zoom, Google Meet, MS Teams, physical meetings, Aircall, RingCentral, or any call via public upload API.</div>
+      <span class="cap-tag live" data-i18n="cap.tagLive">✓ Live</span>
     </div>
     <div class="cap-card">
       <div class="cap-icon">⚡</div>
-      <div class="cap-title">CRM Auto-Sync</div>
-      <div class="cap-desc">Call summaries and action items sync to CRM today. CRM auto-fill (field enrichment) for calls AND video meetings ships April 2026.</div>
-      <span class="cap-tag april">🔜 April 2026 (full)</span>
+      <div class="cap-title" data-i18n="cap.7.title">CRM Auto-Sync</div>
+      <div class="cap-desc" data-i18n="cap.7.desc">Call summaries and action items sync to CRM today. CRM auto-fill (field enrichment) for calls AND video meetings ships April 2026.</div>
+      <span class="cap-tag april" data-i18n="cap.tagApril">🔜 April 2026 (full)</span>
     </div>
     <div class="cap-card">
       <div class="cap-icon">🧠</div>
-      <div class="cap-title">AI-Generated Coaching Content</div>
-      <div class="cap-desc">Generate coaching plans, identify MEDDIC/SPIN/BANT gaps per rep, build demo scripts from top performer call data.</div>
-      <span class="cap-tag live">✓ Live</span>
+      <div class="cap-title" data-i18n="cap.8.title">AI-Generated Coaching Content</div>
+      <div class="cap-desc" data-i18n="cap.8.desc">Generate coaching plans, identify MEDDIC/SPIN/BANT gaps per rep, build demo scripts from top performer call data.</div>
+      <span class="cap-tag live" data-i18n="cap.tagLive">✓ Live</span>
     </div>
     <div class="cap-card">
       <div class="cap-icon">✍️</div>
-      <div class="cap-title">Follow-Up & Email Generation</div>
-      <div class="cap-desc">Generate contextual follow-up emails, client summaries, meeting prep briefs, and next-step plans from real conversation data.</div>
-      <span class="cap-tag live">✓ Live</span>
+      <div class="cap-title" data-i18n="cap.9.title">Follow-Up & Email Generation</div>
+      <div class="cap-desc" data-i18n="cap.9.desc">Generate contextual follow-up emails, client summaries, meeting prep briefs, and next-step plans from real conversation data.</div>
+      <span class="cap-tag live" data-i18n="cap.tagLive">✓ Live</span>
     </div>
   </div>
 </div>
@@ -484,16 +494,16 @@
 
 <!-- USE CASES -->
 <div id="usecases" class="section-wrap">
-  <div class="section-label">By Persona</div>
-  <div class="section-title">Who uses Ask Empower V2, and how</div>
-  <div class="section-sub">Real questions from real users — show prospects exactly what a day with Ask Empower V2 looks like</div>
+  <div class="section-label" data-i18n="uc.label">By Persona</div>
+  <div class="section-title" data-i18n="uc.title">Who uses Ask Empower V2, and how</div>
+  <div class="section-sub" data-i18n="uc.sub">Real questions from real users — show prospects exactly what a day with Ask Empower V2 looks like</div>
   <div class="uc-box">
     <div class="uc-tabs">
-      <button class="uc-tab active" onclick="switchTab('rep',this)">💼 Sales Rep</button>
-      <button class="uc-tab" onclick="switchTab('mgr',this)">📈 Sales Manager</button>
-      <button class="uc-tab" onclick="switchTab('support',this)">🎧 Support Team</button>
-      <button class="uc-tab" onclick="switchTab('recruiter',this)">👥 Recruiter</button>
-      <button class="uc-tab" onclick="switchTab('coach',this)">🏆 Coach / Enablement</button>
+      <button class="uc-tab active" onclick="switchTab('rep',this)" data-i18n="uc.tab.rep">💼 Sales Rep</button>
+      <button class="uc-tab" onclick="switchTab('mgr',this)" data-i18n="uc.tab.mgr">📈 Sales Manager</button>
+      <button class="uc-tab" onclick="switchTab('support',this)" data-i18n="uc.tab.support">🎧 Support Team</button>
+      <button class="uc-tab" onclick="switchTab('recruiter',this)" data-i18n="uc.tab.recruiter">👥 Recruiter</button>
+      <button class="uc-tab" onclick="switchTab('coach',this)" data-i18n="uc.tab.coach">🏆 Coach / Enablement</button>
     </div>
 
     <!-- REP -->
@@ -501,25 +511,25 @@
       <div>
         <div class="persona-header">
           <div class="persona-avatar">💼</div>
-          <div><div class="persona-name">Sales Representative</div><div class="persona-role">Before, during & after every call</div></div>
+          <div><div class="persona-name" data-i18n="uc.rep.name">Sales Representative</div><div class="persona-role" data-i18n="uc.rep.role">Before, during & after every call</div></div>
         </div>
         <div class="q-list">
-          <div class="q-item hi"><div class="q-text">Prepare my next meeting with ABSYS CYBORG — what's the full history?</div><div class="q-val">→ Instant meeting prep from full call history</div></div>
-          <div class="q-item hi"><div class="q-text">What are the pain points of Atmadeep DAS across all our calls?</div><div class="q-val">→ Full account intelligence before you dial</div></div>
-          <div class="q-item"><div class="q-text">What's blocking the next step with SPVIE ASSURANCES?</div><div class="q-val">→ Surfaces deal blockers and open objections</div></div>
-          <div class="q-item hi"><div class="q-text">Write a follow-up email after my call with Kaino — include the 3 unanswered questions</div><div class="q-val">→ Contextual AI-drafted follow-up</div></div>
-          <div class="q-item"><div class="q-text">Is there any competitor mention in the call with Atmadeep DAS?</div><div class="q-val">→ Competitive intelligence from your own calls</div></div>
-          <div class="q-item"><div class="q-text">When is Laurent Sevenier expected to sign?</div><div class="q-val">→ Commitment signals extracted from calls</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.rep.q1t">Prepare my next meeting with ABSYS CYBORG — what's the full history?</div><div class="q-val" data-i18n="uc.rep.q1v">→ Instant meeting prep from full call history</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.rep.q2t">What are the pain points of Atmadeep DAS across all our calls?</div><div class="q-val" data-i18n="uc.rep.q2v">→ Full account intelligence before you dial</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.rep.q3t">What's blocking the next step with SPVIE ASSURANCES?</div><div class="q-val" data-i18n="uc.rep.q3v">→ Surfaces deal blockers and open objections</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.rep.q4t">Write a follow-up email after my call with Kaino — include the 3 unanswered questions</div><div class="q-val" data-i18n="uc.rep.q4v">→ Contextual AI-drafted follow-up</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.rep.q5t">Is there any competitor mention in the call with Atmadeep DAS?</div><div class="q-val" data-i18n="uc.rep.q5v">→ Competitive intelligence from your own calls</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.rep.q6t">When is Laurent Sevenier expected to sign?</div><div class="q-val" data-i18n="uc.rep.q6v">→ Commitment signals extracted from calls</div></div>
         </div>
       </div>
       <div>
-        <div class="value-box"><div class="value-box-label">💡 THE VALUE IN ONE LINE</div><div class="value-box-text">"Every rep enters every call knowing more, follows up faster, and never loses deal context again."</div></div>
+        <div class="value-box"><div class="value-box-label" data-i18n="uc.valLabel">💡 THE VALUE IN ONE LINE</div><div class="value-box-text" data-i18n="uc.rep.val">"Every rep enters every call knowing more, follows up faster, and never loses deal context again."</div></div>
         <div class="q-list">
-          <div class="q-item"><div class="q-text">Give me the agenda of my day</div><div class="q-val">→ Calendar + call prep combined</div></div>
-          <div class="q-item"><div class="q-text">Show me calls where we discussed HubSpot integration</div><div class="q-val">→ Semantic cross-call search</div></div>
-          <div class="q-item hi"><div class="q-text">What is the status of the deal with PLAYTOMIC SL?</div><div class="q-val">→ Deal summary from conversation history</div></div>
-          <div class="q-item"><div class="q-text">Summarize my last 3 calls with ABSYS CYBORG</div><div class="q-val">→ Account summary in seconds</div></div>
-          <div class="q-item"><div class="q-text">What are the main objections clients raise about pricing?</div><div class="q-val">→ Pattern intelligence across all calls</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.rep.q7t">Give me the agenda of my day</div><div class="q-val" data-i18n="uc.rep.q7v">→ Calendar + call prep combined</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.rep.q8t">Show me calls where we discussed HubSpot integration</div><div class="q-val" data-i18n="uc.rep.q8v">→ Semantic cross-call search</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.rep.q9t">What is the status of the deal with PLAYTOMIC SL?</div><div class="q-val" data-i18n="uc.rep.q9v">→ Deal summary from conversation history</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.rep.q10t">Summarize my last 3 calls with ABSYS CYBORG</div><div class="q-val" data-i18n="uc.rep.q10v">→ Account summary in seconds</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.rep.q11t">What are the main objections clients raise about pricing?</div><div class="q-val" data-i18n="uc.rep.q11v">→ Pattern intelligence across all calls</div></div>
         </div>
       </div>
     </div>
@@ -529,24 +539,24 @@
       <div>
         <div class="persona-header">
           <div class="persona-avatar">📈</div>
-          <div><div class="persona-name">Head of Sales / Sales Manager</div><div class="persona-role">Team oversight, pipeline visibility, rep development</div></div>
+          <div><div class="persona-name" data-i18n="uc.mgr.name">Head of Sales / Sales Manager</div><div class="persona-role" data-i18n="uc.mgr.role">Team oversight, pipeline visibility, rep development</div></div>
         </div>
         <div class="q-list">
-          <div class="q-item hi"><div class="q-text">Top 10 users by calls and video calls last month — give me a table</div><div class="q-val">→ Instant activity leaderboard</div></div>
-          <div class="q-item hi"><div class="q-text">Who are the best performers in the (ES) AE MID group — calls vs video calls?</div><div class="q-val">→ Team segmentation + performance view</div></div>
-          <div class="q-item"><div class="q-text">Show Daniel Hernandez's last calls with scores — which should I coach?</div><div class="q-val">→ Score-triggered coaching queue</div></div>
-          <div class="q-item hi"><div class="q-text">Drill into objections by type over 3 months — which are most common and least resolved?</div><div class="q-val">→ Strategic insight for enablement & product</div></div>
-          <div class="q-item"><div class="q-text">Is there a correlation between calls over 45 min and close rate?</div><div class="q-val">→ Data-driven sales process insight</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.mgr.q1t">Top 10 users by calls and video calls last month — give me a table</div><div class="q-val" data-i18n="uc.mgr.q1v">→ Instant activity leaderboard</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.mgr.q2t">Who are the best performers in the (ES) AE MID group — calls vs video calls?</div><div class="q-val" data-i18n="uc.mgr.q2v">→ Team segmentation + performance view</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.mgr.q3t">Show Daniel Hernandez's last calls with scores — which should I coach?</div><div class="q-val" data-i18n="uc.mgr.q3v">→ Score-triggered coaching queue</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.mgr.q4t">Drill into objections by type over 3 months — which are most common and least resolved?</div><div class="q-val" data-i18n="uc.mgr.q4v">→ Strategic insight for enablement & product</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.mgr.q5t">Is there a correlation between calls over 45 min and close rate?</div><div class="q-val" data-i18n="uc.mgr.q5v">→ Data-driven sales process insight</div></div>
         </div>
       </div>
       <div>
-        <div class="value-box"><div class="value-box-label">💡 THE VALUE IN ONE LINE</div><div class="value-box-text">"A sales manager reviews 3× more calls in the same time, with AI surfacing what matters — not gut feel."</div></div>
+        <div class="value-box"><div class="value-box-label" data-i18n="uc.valLabel">💡 THE VALUE IN ONE LINE</div><div class="value-box-text" data-i18n="uc.mgr.val">"A sales manager reviews 3× more calls in the same time, with AI surfacing what matters — not gut feel."</div></div>
         <div class="q-list">
-          <div class="q-item"><div class="q-text">Top 10 objections in discovery calls in February with suggested responses</div><div class="q-val">→ Monthly objection intelligence</div></div>
-          <div class="q-item hi"><div class="q-text">Compare top performer's demo script with the team — show 3 key differences</div><div class="q-val">→ Best practice identification at scale</div></div>
-          <div class="q-item"><div class="q-text">Generate a personalised coaching plan for March — 2 objectives per week with KPIs</div><div class="q-val">→ AI-generated structured coaching plans</div></div>
-          <div class="q-item hi"><div class="q-text">What deals have budget identified but no next steps in the last 7 days?</div><div class="q-val">→ Pipeline risk detection from call data</div></div>
-          <div class="q-item"><div class="q-text">Compare Othmane and Josua's performance month over month for 3 months</div><div class="q-val">→ Rep vs rep trend analysis</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.mgr.q6t">Top 10 objections in discovery calls in February with suggested responses</div><div class="q-val" data-i18n="uc.mgr.q6v">→ Monthly objection intelligence</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.mgr.q7t">Compare top performer's demo script with the team — show 3 key differences</div><div class="q-val" data-i18n="uc.mgr.q7v">→ Best practice identification at scale</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.mgr.q8t">Generate a personalised coaching plan for March — 2 objectives per week with KPIs</div><div class="q-val" data-i18n="uc.mgr.q8v">→ AI-generated structured coaching plans</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.mgr.q9t">What deals have budget identified but no next steps in the last 7 days?</div><div class="q-val" data-i18n="uc.mgr.q9v">→ Pipeline risk detection from call data</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.mgr.q10t">Compare Othmane and Josua's performance month over month for 3 months</div><div class="q-val" data-i18n="uc.mgr.q10v">→ Rep vs rep trend analysis</div></div>
         </div>
       </div>
     </div>
@@ -556,23 +566,23 @@
       <div>
         <div class="persona-header">
           <div class="persona-avatar">🎧</div>
-          <div><div class="persona-name">Customer Support / CSM Team</div><div class="persona-role">Issue detection, CSAT, quality analysis</div></div>
+          <div><div class="persona-name" data-i18n="uc.support.name">Customer Support / CSM Team</div><div class="persona-role" data-i18n="uc.support.role">Issue detection, CSAT, quality analysis</div></div>
         </div>
         <div class="q-list">
-          <div class="q-item hi"><div class="q-text">Analyse the last 50 CSM Onboarding calls — what are the recurring client irritants?</div><div class="q-val">→ Systemic issue detection at scale</div></div>
-          <div class="q-item hi"><div class="q-text">Show calls with Pain/Challenge tag where the customer expressed frustration — top 3</div><div class="q-val">→ Churn risk identification</div></div>
-          <div class="q-item"><div class="q-text">Is there any churn risk for ABSYS CYBORG?</div><div class="q-val">→ Account health from conversation signals</div></div>
-          <div class="q-item hi"><div class="q-text">Who are the satisfied clients based on the "Satisfait" tag?</div><div class="q-val">→ CSAT proxy from conversation tags</div></div>
-          <div class="q-item"><div class="q-text">What are the main features requested by clients this week?</div><div class="q-val">→ Voice of Customer for product teams</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.support.q1t">Analyse the last 50 CSM Onboarding calls — what are the recurring client irritants?</div><div class="q-val" data-i18n="uc.support.q1v">→ Systemic issue detection at scale</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.support.q2t">Show calls with Pain/Challenge tag where the customer expressed frustration — top 3</div><div class="q-val" data-i18n="uc.support.q2v">→ Churn risk identification</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.support.q3t">Is there any churn risk for ABSYS CYBORG?</div><div class="q-val" data-i18n="uc.support.q3v">→ Account health from conversation signals</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.support.q4t">Who are the satisfied clients based on the "Satisfait" tag?</div><div class="q-val" data-i18n="uc.support.q4v">→ CSAT proxy from conversation tags</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.support.q5t">What are the main features requested by clients this week?</div><div class="q-val" data-i18n="uc.support.q5v">→ Voice of Customer for product teams</div></div>
         </div>
       </div>
       <div>
-        <div class="value-box"><div class="value-box-label">💡 THE VALUE IN ONE LINE</div><div class="value-box-text">"Support managers stop firefighting and start pattern-matching — fixing root causes, not individual tickets."</div></div>
+        <div class="value-box"><div class="value-box-label" data-i18n="uc.valLabel">💡 THE VALUE IN ONE LINE</div><div class="value-box-text" data-i18n="uc.support.val">"Support managers stop firefighting and start pattern-matching — fixing root causes, not individual tickets."</div></div>
         <div class="q-list">
-          <div class="q-item"><div class="q-text">Analyse ADMIN calls — what are the principal friction points?</div><div class="q-val">→ Process friction mapped from call data</div></div>
-          <div class="q-item hi"><div class="q-text">Analyse the 50 last CSM Onboarding calls and extract client pain points</div><div class="q-val">→ Qualitative support quality analysis</div></div>
-          <div class="q-item"><div class="q-text">Generate a meeting summary to send to a client after onboarding</div><div class="q-val">→ Automated post-call client communication</div></div>
-          <div class="q-item"><div class="q-text">What are the most used topics in the last 3 months of support calls?</div><div class="q-val">→ Support trend intelligence</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.support.q6t">Analyse ADMIN calls — what are the principal friction points?</div><div class="q-val" data-i18n="uc.support.q6v">→ Process friction mapped from call data</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.support.q7t">Analyse the 50 last CSM Onboarding calls and extract client pain points</div><div class="q-val" data-i18n="uc.support.q7v">→ Qualitative support quality analysis</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.support.q8t">Generate a meeting summary to send to a client after onboarding</div><div class="q-val" data-i18n="uc.support.q8v">→ Automated post-call client communication</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.support.q9t">What are the most used topics in the last 3 months of support calls?</div><div class="q-val" data-i18n="uc.support.q9v">→ Support trend intelligence</div></div>
         </div>
       </div>
     </div>
@@ -582,22 +592,22 @@
       <div>
         <div class="persona-header">
           <div class="persona-avatar">👥</div>
-          <div><div class="persona-name">Recruiter / Talent Acquisition</div><div class="persona-role">Candidate intelligence, interview analysis, ATS sync</div></div>
+          <div><div class="persona-name" data-i18n="uc.recruiter.name">Recruiter / Talent Acquisition</div><div class="persona-role" data-i18n="uc.recruiter.role">Candidate intelligence, interview analysis, ATS sync</div></div>
         </div>
         <div class="q-list">
-          <div class="q-item hi"><div class="q-text">Summarize all my calls with this candidate — key strengths and red flags?</div><div class="q-val">→ Candidate profile from real conversations</div></div>
-          <div class="q-item hi"><div class="q-text">What questions did we ask in the last 20 interviews for this role — are we consistent?</div><div class="q-val">→ Interview process quality control</div></div>
-          <div class="q-item"><div class="q-text">Which recruiters are having the most engaged candidate calls this month?</div><div class="q-val">→ Recruiter performance benchmarking</div></div>
-          <div class="q-item"><div class="q-text">What are the most common candidate objections to our clients' offers?</div><div class="q-val">→ Offer intelligence for talent strategy</div></div>
-          <div class="q-item hi"><div class="q-text">Prepare me for my next call — what did we discuss last time with this candidate?</div><div class="q-val">→ Instant candidate history brief</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.recruiter.q1t">Summarize all my calls with this candidate — key strengths and red flags?</div><div class="q-val" data-i18n="uc.recruiter.q1v">→ Candidate profile from real conversations</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.recruiter.q2t">What questions did we ask in the last 20 interviews for this role — are we consistent?</div><div class="q-val" data-i18n="uc.recruiter.q2v">→ Interview process quality control</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.recruiter.q3t">Which recruiters are having the most engaged candidate calls this month?</div><div class="q-val" data-i18n="uc.recruiter.q3v">→ Recruiter performance benchmarking</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.recruiter.q4t">What are the most common candidate objections to our clients' offers?</div><div class="q-val" data-i18n="uc.recruiter.q4v">→ Offer intelligence for talent strategy</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.recruiter.q5t">Prepare me for my next call — what did we discuss last time with this candidate?</div><div class="q-val" data-i18n="uc.recruiter.q5v">→ Instant candidate history brief</div></div>
         </div>
       </div>
       <div>
-        <div class="value-box"><div class="value-box-label">💡 THE VALUE IN ONE LINE</div><div class="value-box-text">"Recruiters stop relying on memory and start making decisions from structured conversation intelligence."</div></div>
+        <div class="value-box"><div class="value-box-label" data-i18n="uc.valLabel">💡 THE VALUE IN ONE LINE</div><div class="value-box-text" data-i18n="uc.recruiter.val">"Recruiters stop relying on memory and start making decisions from structured conversation intelligence."</div></div>
         <div class="q-list">
-          <div class="q-item"><div class="q-text">Which candidates mentioned salary expectations above our range?</div><div class="q-val">→ Compensation signal extraction</div></div>
-          <div class="q-item hi"><div class="q-text">Generate a candidate summary in the client's language for ATS upload</div><div class="q-val">→ Auto-generated structured candidate notes</div></div>
-          <div class="q-item"><div class="q-text">What are the most used topics in calls tagged as "Positive" this quarter?</div><div class="q-val">→ Success pattern identification</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.recruiter.q6t">Which candidates mentioned salary expectations above our range?</div><div class="q-val" data-i18n="uc.recruiter.q6v">→ Compensation signal extraction</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.recruiter.q7t">Generate a candidate summary in the client's language for ATS upload</div><div class="q-val" data-i18n="uc.recruiter.q7v">→ Auto-generated structured candidate notes</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.recruiter.q8t">What are the most used topics in calls tagged as "Positive" this quarter?</div><div class="q-val" data-i18n="uc.recruiter.q8v">→ Success pattern identification</div></div>
         </div>
       </div>
     </div>
@@ -607,23 +617,23 @@
       <div>
         <div class="persona-header">
           <div class="persona-avatar">🏆</div>
-          <div><div class="persona-name">Sales Coach / Enablement Manager</div><div class="persona-role">Structured skill development at team scale</div></div>
+          <div><div class="persona-name" data-i18n="uc.coach.name">Sales Coach / Enablement Manager</div><div class="persona-role" data-i18n="uc.coach.role">Structured skill development at team scale</div></div>
         </div>
         <div class="q-list">
-          <div class="q-item hi"><div class="q-text">Show me where Juan is missing MEDDIC elements — with alternative phrasings</div><div class="q-val">→ Methodology gap detection + coaching copy</div></div>
-          <div class="q-item hi"><div class="q-text">Build me a complete Empower demo script in French based on my strengths and weaknesses</div><div class="q-val">→ Personalised script from your own call data</div></div>
-          <div class="q-item"><div class="q-text">Show Othmane's calls with a Monopolisation score below 50</div><div class="q-val">→ Score-based coaching queue</div></div>
-          <div class="q-item hi"><div class="q-text">Analyse the 5 last lost deals — common objections + 2 negotiation techniques</div><div class="q-val">→ Win/loss analysis with actionable takeaways</div></div>
-          <div class="q-item"><div class="q-text">Extract the 5 best "aha moments" from Empower demos last month</div><div class="q-val">→ Best practice library built automatically</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.coach.q1t">Show me where Juan is missing MEDDIC elements — with alternative phrasings</div><div class="q-val" data-i18n="uc.coach.q1v">→ Methodology gap detection + coaching copy</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.coach.q2t">Build me a complete Empower demo script in French based on my strengths and weaknesses</div><div class="q-val" data-i18n="uc.coach.q2v">→ Personalised script from your own call data</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.coach.q3t">Show Othmane's calls with a Monopolisation score below 50</div><div class="q-val" data-i18n="uc.coach.q3v">→ Score-based coaching queue</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.coach.q4t">Analyse the 5 last lost deals — common objections + 2 negotiation techniques</div><div class="q-val" data-i18n="uc.coach.q4v">→ Win/loss analysis with actionable takeaways</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.coach.q5t">Extract the 5 best "aha moments" from Empower demos last month</div><div class="q-val" data-i18n="uc.coach.q5v">→ Best practice library built automatically</div></div>
         </div>
       </div>
       <div>
-        <div class="value-box"><div class="value-box-label">💡 THE VALUE IN ONE LINE</div><div class="value-box-text">"Coaches stop reviewing random calls and start running data-driven, personalised development programmes."</div></div>
+        <div class="value-box"><div class="value-box-label" data-i18n="uc.valLabel">💡 THE VALUE IN ONE LINE</div><div class="value-box-text" data-i18n="uc.coach.val">"Coaches stop reviewing random calls and start running data-driven, personalised development programmes."</div></div>
         <div class="q-list">
-          <div class="q-item"><div class="q-text">How can Joshua Vischel improve in calls longer than 10 min — last 3 months?</div><div class="q-val">→ Duration-filtered performance coaching</div></div>
-          <div class="q-item hi"><div class="q-text">Compare the top performer's demo script vs the rest of the team</div><div class="q-val">→ Knowledge transfer from top to bottom</div></div>
-          <div class="q-item"><div class="q-text">Identify the 3 moments in this call where the rep lost the prospect's attention</div><div class="q-val">→ Micro-coaching at call level</div></div>
-          <div class="q-item"><div class="q-text">How should I handle: "I don't have time, just send me an email"?</div><div class="q-val">→ Objection handling from winning calls</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.coach.q6t">How can Joshua Vischel improve in calls longer than 10 min — last 3 months?</div><div class="q-val" data-i18n="uc.coach.q6v">→ Duration-filtered performance coaching</div></div>
+          <div class="q-item hi"><div class="q-text" data-i18n="uc.coach.q7t">Compare the top performer's demo script vs the rest of the team</div><div class="q-val" data-i18n="uc.coach.q7v">→ Knowledge transfer from top to bottom</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.coach.q8t">Identify the 3 moments in this call where the rep lost the prospect's attention</div><div class="q-val" data-i18n="uc.coach.q8v">→ Micro-coaching at call level</div></div>
+          <div class="q-item"><div class="q-text" data-i18n="uc.coach.q9t">How should I handle: "I don't have time, just send me an email"?</div><div class="q-val" data-i18n="uc.coach.q9v">→ Objection handling from winning calls</div></div>
         </div>
       </div>
     </div>
@@ -634,44 +644,44 @@
 
 <!-- INDUSTRIES -->
 <div id="industries" class="section-wrap">
-  <div class="section-label">By Industry</div>
-  <div class="section-title">Industry-specific value propositions</div>
-  <div class="section-sub">Tailor the pitch to your prospect's world</div>
+  <div class="section-label" data-i18n="ind.label">By Industry</div>
+  <div class="section-title" data-i18n="ind.title">Industry-specific value propositions</div>
+  <div class="section-sub" data-i18n="ind.sub">Tailor the pitch to your prospect's world</div>
   <div class="ind-grid">
     <div class="ind-card">
       <div class="ind-icon">🏦</div>
-      <div class="ind-title">Insurance & Financial Services</div>
-      <div class="ind-subtitle">COMPLIANCE + CLIENT INTELLIGENCE</div>
-      <div class="ind-pitch">High-volume, compliance-sensitive environments where every call needs to be documented, searchable, and auditable. Empower transforms call archives into structured client intelligence.</div>
+      <div class="ind-title" data-i18n="ind.1.title">Insurance & Financial Services</div>
+      <div class="ind-subtitle" data-i18n="ind.1.subtitle">COMPLIANCE + CLIENT INTELLIGENCE</div>
+      <div class="ind-pitch" data-i18n="ind.1.pitch">High-volume, compliance-sensitive environments where every call needs to be documented, searchable, and auditable. Empower transforms call archives into structured client intelligence.</div>
       <div class="ind-qs">
-        <div class="ind-q">Give me all calls with SPVIE ASSURANCES and their next steps</div>
-        <div class="ind-q">What objections came up in renewal calls in January?</div>
-        <div class="ind-q">How has pricing feedback changed over the last quarter?</div>
-        <div class="ind-q">Show calls where "contract" was mentioned with negative sentiment</div>
+        <div class="ind-q" data-i18n="ind.1.q1">Give me all calls with SPVIE ASSURANCES and their next steps</div>
+        <div class="ind-q" data-i18n="ind.1.q2">What objections came up in renewal calls in January?</div>
+        <div class="ind-q" data-i18n="ind.1.q3">How has pricing feedback changed over the last quarter?</div>
+        <div class="ind-q" data-i18n="ind.1.q4">Show calls where "contract" was mentioned with negative sentiment</div>
       </div>
     </div>
     <div class="ind-card">
       <div class="ind-icon">🚀</div>
-      <div class="ind-title">B2B SaaS / Technology Sales</div>
-      <div class="ind-subtitle">DEAL INTELLIGENCE + COMPETITIVE AWARENESS</div>
-      <div class="ind-pitch">Fast-moving sales cycles where reps need instant context, managers need pipeline visibility, and enablement needs to scale best practices faster than headcount grows.</div>
+      <div class="ind-title" data-i18n="ind.2.title">B2B SaaS / Technology Sales</div>
+      <div class="ind-subtitle" data-i18n="ind.2.subtitle">DEAL INTELLIGENCE + COMPETITIVE AWARENESS</div>
+      <div class="ind-pitch" data-i18n="ind.2.pitch">Fast-moving sales cycles where reps need instant context, managers need pipeline visibility, and enablement needs to scale best practices faster than headcount grows.</div>
       <div class="ind-qs">
-        <div class="ind-q">Is there any mention of Aircall or Modjo in calls this week?</div>
-        <div class="ind-q">What are the main features requested by enterprise clients?</div>
-        <div class="ind-q">Budget identified but no next steps in the last 7 days — show me</div>
-        <div class="ind-q">Compare Josua and Othmane's demo performance month over month</div>
+        <div class="ind-q" data-i18n="ind.2.q1">Is there any mention of Aircall or Modjo in calls this week?</div>
+        <div class="ind-q" data-i18n="ind.2.q2">What are the main features requested by enterprise clients?</div>
+        <div class="ind-q" data-i18n="ind.2.q3">Budget identified but no next steps in the last 7 days — show me</div>
+        <div class="ind-q" data-i18n="ind.2.q4">Compare Josua and Othmane's demo performance month over month</div>
       </div>
     </div>
     <div class="ind-card">
       <div class="ind-icon">🧑‍💼</div>
-      <div class="ind-title">Recruitment & Staffing</div>
-      <div class="ind-subtitle">CANDIDATE INTELLIGENCE + ATS SYNC</div>
-      <div class="ind-pitch">Recruiters conduct dozens of calls per week. Empower turns those conversations into structured candidate profiles, synced to ATS — no manual note-taking required.</div>
+      <div class="ind-title" data-i18n="ind.3.title">Recruitment & Staffing</div>
+      <div class="ind-subtitle" data-i18n="ind.3.subtitle">CANDIDATE INTELLIGENCE + ATS SYNC</div>
+      <div class="ind-pitch" data-i18n="ind.3.pitch">Recruiters conduct dozens of calls per week. Empower turns those conversations into structured candidate profiles, synced to ATS — no manual note-taking required.</div>
       <div class="ind-qs">
-        <div class="ind-q">Summarize all calls with this candidate and highlight fit signals</div>
-        <div class="ind-q">Which candidates mentioned salary above our range?</div>
-        <div class="ind-q">Generate a candidate brief for the client from my interview</div>
-        <div class="ind-q">What are recruiter performance trends this month?</div>
+        <div class="ind-q" data-i18n="ind.3.q1">Summarize all calls with this candidate and highlight fit signals</div>
+        <div class="ind-q" data-i18n="ind.3.q2">Which candidates mentioned salary above our range?</div>
+        <div class="ind-q" data-i18n="ind.3.q3">Generate a candidate brief for the client from my interview</div>
+        <div class="ind-q" data-i18n="ind.3.q4">What are recruiter performance trends this month?</div>
       </div>
     </div>
   </div>
@@ -681,58 +691,58 @@
 
 <!-- COMPETITIVE -->
 <div id="compete" class="section-wrap">
-  <div class="section-label">Competitive Positioning</div>
-  <div class="section-title">How to win against the market</div>
-  <div class="section-sub">Three categories, three different pitches — know your fight before every discovery call</div>
+  <div class="section-label" data-i18n="comp.label">Competitive Positioning</div>
+  <div class="section-title" data-i18n="comp.title">How to win against the market</div>
+  <div class="section-sub" data-i18n="comp.sub">Three categories, three different pitches — know your fight before every discovery call</div>
   <div class="comp-grid">
     <div class="comp-card win">
-      <div class="comp-name">vs Fathom / Granola / Fireflies</div>
-      <div class="comp-tag-badge">✓ STRONG WIN</div>
-      <div class="comp-desc">These are meeting notetakers. Great for summaries. Zero team intelligence. Empower is a different category entirely.</div>
+      <div class="comp-name" data-i18n="comp.1.name">vs Fathom / Granola / Fireflies</div>
+      <div class="comp-tag-badge" data-i18n="comp.1.badge">✓ STRONG WIN</div>
+      <div class="comp-desc" data-i18n="comp.1.desc">These are meeting notetakers. Great for summaries. Zero team intelligence. Empower is a different category entirely.</div>
       <ul class="comp-pts">
-        <li>✓ They analyse 1 call. We analyse your entire company.</li>
-        <li>✓ No coaching layer. We score and improve reps.</li>
-        <li>✓ They don't touch phone calls. We're telephony-native.</li>
-        <li>✓ No trend analysis, no team views, no skill tracking.</li>
-        <li>✓ CRM auto-fill: they barely push notes. We auto-fill fields.</li>
+        <li data-i18n="comp.1.li1">✓ They analyse 1 call. We analyse your entire company.</li>
+        <li data-i18n="comp.1.li2">✓ No coaching layer. We score and improve reps.</li>
+        <li data-i18n="comp.1.li3">✓ They don't touch phone calls. We're telephony-native.</li>
+        <li data-i18n="comp.1.li4">✓ No trend analysis, no team views, no skill tracking.</li>
+        <li data-i18n="comp.1.li5">✓ CRM auto-fill: they barely push notes. We auto-fill fields.</li>
       </ul>
-      <div class="comp-pitch-line">Pitch line: "You've outgrown your notetaker."</div>
+      <div class="comp-pitch-line" data-i18n="comp.1.pitch">Pitch line: "You've outgrown your notetaker."</div>
     </div>
     <div class="comp-card mid">
-      <div class="comp-name">vs Claap / Read.ai</div>
-      <div class="comp-tag-badge">✓ COMPETITIVE WIN</div>
-      <div class="comp-desc">Stronger products — but still no telephony layer. Claap was acquired by Lemlist in Oct 2025 — roadmap uncertainty is real.</div>
+      <div class="comp-name" data-i18n="comp.2.name">vs Claap / Read.ai</div>
+      <div class="comp-tag-badge" data-i18n="comp.2.badge">✓ COMPETITIVE WIN</div>
+      <div class="comp-desc" data-i18n="comp.2.desc">Stronger products — but still no telephony layer. Claap was acquired by Lemlist in Oct 2025 — roadmap uncertainty is real.</div>
       <ul class="comp-pts">
-        <li>✓ No native telephony — they need Zoom/Teams to function.</li>
-        <li>✓ Claap is sales-only. We cover sales, support, recruitment.</li>
-        <li>✓ CRM auto-fill parity today, we match and will surpass.</li>
-        <li>✓ Claap's acquisition creates instability and roadmap risk.</li>
-        <li>✓ Empower backed by Ringover's full telephony infrastructure.</li>
+        <li data-i18n="comp.2.li1">✓ No native telephony — they need Zoom/Teams to function.</li>
+        <li data-i18n="comp.2.li2">✓ Claap is sales-only. We cover sales, support, recruitment.</li>
+        <li data-i18n="comp.2.li3">✓ CRM auto-fill parity today, we match and will surpass.</li>
+        <li data-i18n="comp.2.li4">✓ Claap's acquisition creates instability and roadmap risk.</li>
+        <li data-i18n="comp.2.li5">✓ Empower backed by Ringover's full telephony infrastructure.</li>
       </ul>
-      <div class="comp-pitch-line">Pitch line: "Built on your calls, not bolted onto your meetings."</div>
+      <div class="comp-pitch-line" data-i18n="comp.2.pitch">Pitch line: "Built on your calls, not bolted onto your meetings."</div>
     </div>
     <div class="comp-card fight">
-      <div class="comp-name">vs Modjo</div>
-      <div class="comp-tag-badge">⚡ CLOSE FIGHT</div>
-      <div class="comp-desc">Modjo is our most direct European competitor. Be honest — but frame the trajectory clearly and confidently.</div>
+      <div class="comp-name" data-i18n="comp.3.name">vs Modjo</div>
+      <div class="comp-tag-badge" data-i18n="comp.3.badge">⚡ CLOSE FIGHT</div>
+      <div class="comp-desc" data-i18n="comp.3.desc">Modjo is our most direct European competitor. Be honest — but frame the trajectory clearly and confidently.</div>
       <ul class="comp-pts">
-        <li>✓ CRM auto-fill on calls today; full video coverage in April.</li>
-        <li>✓ Modjo = sales only. We cover support + recruitment too.</li>
-        <li>✓ Modjo has no telephony — pays for Ringover separately.</li>
-        <li>✓ ~€99+/user/month + 15 seat min. We're more accessible.</li>
-        <li>△ Modjo: bi-directional CRM sync. We're building (Phase 4).</li>
+        <li data-i18n="comp.3.li1">✓ CRM auto-fill on calls today; full video coverage in April.</li>
+        <li data-i18n="comp.3.li2">✓ Modjo = sales only. We cover support + recruitment too.</li>
+        <li data-i18n="comp.3.li3">✓ Modjo has no telephony — pays for Ringover separately.</li>
+        <li data-i18n="comp.3.li4">✓ ~€99+/user/month + 15 seat min. We're more accessible.</li>
+        <li data-i18n="comp.3.li5">△ Modjo: bi-directional CRM sync. We're building (Phase 4).</li>
       </ul>
-      <div class="comp-pitch-line">Pitch line: "Everything Modjo does — inside your phone system."</div>
+      <div class="comp-pitch-line" data-i18n="comp.3.pitch">Pitch line: "Everything Modjo does — inside your phone system."</div>
     </div>
   </div>
 
   <div style="margin-top:16px; background:var(--white); border-radius:14px; padding:22px; border:1px solid var(--border-light);">
-    <div style="font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:14px;">🛡️ Empower's Structural Moat — Lead with this in every pitch</div>
+    <div class="moat-heading" data-i18n="comp.moatHeading" style="font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:14px;">🛡️ Empower's Structural Moat — Lead with this in every pitch</div>
     <div class="moat-grid">
-      <div class="moat-item"><div class="moat-icon">📞</div><div class="moat-title">Native Telephony</div><div class="moat-desc">Every competitor integrates with a phone tool. Empower IS the phone tool — 100% capture, zero setup.</div></div>
-      <div class="moat-item"><div class="moat-icon">🌍</div><div class="moat-title">European Data</div><div class="moat-desc">GDPR-compliant, EU data residency, multilingual transcription and analysis by design.</div></div>
-      <div class="moat-item"><div class="moat-icon">🔀</div><div class="moat-title">Multi-Vertical</div><div class="moat-desc">Sales + Support + Recruitment. One platform, three teams, one subscription.</div></div>
-      <div class="moat-item"><div class="moat-icon">💰</div><div class="moat-title">Price Accessible</div><div class="moat-desc">No $50K platform fees. No 15-seat minimums. Real value from day one, at any team size.</div></div>
+      <div class="moat-item"><div class="moat-icon">📞</div><div class="moat-title" data-i18n="comp.moat1.title">Native Telephony</div><div class="moat-desc" data-i18n="comp.moat1.desc">Every competitor integrates with a phone tool. Empower IS the phone tool — 100% capture, zero setup.</div></div>
+      <div class="moat-item"><div class="moat-icon">🌍</div><div class="moat-title" data-i18n="comp.moat2.title">European Data</div><div class="moat-desc" data-i18n="comp.moat2.desc">GDPR-compliant, EU data residency, multilingual transcription and analysis by design.</div></div>
+      <div class="moat-item"><div class="moat-icon">🔀</div><div class="moat-title" data-i18n="comp.moat3.title">Multi-Vertical</div><div class="moat-desc" data-i18n="comp.moat3.desc">Sales + Support + Recruitment. One platform, three teams, one subscription.</div></div>
+      <div class="moat-item"><div class="moat-icon">💰</div><div class="moat-title" data-i18n="comp.moat4.title">Price Accessible</div><div class="moat-desc" data-i18n="comp.moat4.desc">No $50K platform fees. No 15-seat minimums. Real value from day one, at any team size.</div></div>
     </div>
   </div>
 </div>
@@ -741,59 +751,59 @@
 
 <!-- SALES PITCH -->
 <div id="pitch" class="section-wrap">
-  <div class="section-label">Sales Pitch</div>
-  <div class="section-title">What to say — and how to say it</div>
-  <div class="section-sub">Handle every prospect scenario with confidence</div>
+  <div class="section-label" data-i18n="pitch.label">Sales Pitch</div>
+  <div class="section-title" data-i18n="pitch.title">What to say — and how to say it</div>
+  <div class="section-sub" data-i18n="pitch.sub">Handle every prospect scenario with confidence</div>
   <div class="pitch-wrap">
     <div class="pitch-grid">
       <div>
-        <div class="pitch-title">The 30-Second Pitch</div>
+        <div class="pitch-title" data-i18n="pitch.30secTitle">The 30-Second Pitch</div>
         <div class="pitch-hero-box">
-          <div class="pitch-hero-text">"Ask Empower V2 is your company's conversational intelligence engine. Instead of searching through recordings, you simply <strong>ask</strong> — about a client, a rep, a deal, a trend, an objection. It answers from the full history of your team's calls and meetings. Your sales reps close faster, your managers coach smarter, and your entire team stops losing context between conversations."</div>
+          <div class="pitch-hero-text" data-i18n="pitch.30secText">"Ask Empower V2 is your company's conversational intelligence engine. Instead of searching through recordings, you simply <strong>ask</strong> — about a client, a rep, a deal, a trend, an objection. It answers from the full history of your team's calls and meetings. Your sales reps close faster, your managers coach smarter, and your entire team stops losing context between conversations."</div>
         </div>
-        <div class="pitch-title" style="font-size:15px; margin-bottom:12px;">Handle the Hard Questions</div>
+        <div class="pitch-title pitch-subtitle" data-i18n="pitch.hardTitle" style="font-size:15px; margin-bottom:12px;">Handle the Hard Questions</div>
         <div class="pitch-qa">
-          <div class="pitch-qa-q">❓ "Can it update my CRM automatically?"</div>
-          <div class="pitch-qa-a">Yes. Call summaries and action items sync to your CRM today for both calls and video meetings. <strong>CRM auto-fill (field enrichment) for both calls and video meetings ships in April 2026.</strong> Full bi-directional sync is on our roadmap.</div>
-        </div>
-        <div class="pitch-qa">
-          <div class="pitch-qa-q">❓ "We already use Fireflies / Fathom."</div>
-          <div class="pitch-qa-a">Those are meeting recorders. <strong>Empower is conversational intelligence.</strong> Ask it about your team's top objections across 3 months, or which reps need MEDDIC coaching. Your current tool can't do that.</div>
+          <div class="pitch-qa-q" data-i18n="pitch.qa1q">❓ "Can it update my CRM automatically?"</div>
+          <div class="pitch-qa-a" data-i18n="pitch.qa1a">Yes. Call summaries and action items sync to your CRM today for both calls and video meetings. <strong>CRM auto-fill (field enrichment) for both calls and video meetings ships in April 2026.</strong> Full bi-directional sync is on our roadmap.</div>
         </div>
         <div class="pitch-qa">
-          <div class="pitch-qa-q">❓ "How is this different from Modjo?"</div>
-          <div class="pitch-qa-a">Modjo is a good tool — but it integrates with your phone system. <strong>Empower is your phone system.</strong> 100% call capture, natively. Lower cost, no seat minimums, covering sales, support, and recruitment.</div>
+          <div class="pitch-qa-q" data-i18n="pitch.qa2q">❓ "We already use Fireflies / Fathom."</div>
+          <div class="pitch-qa-a" data-i18n="pitch.qa2a">Those are meeting recorders. <strong>Empower is conversational intelligence.</strong> Ask it about your team's top objections across 3 months, or which reps need MEDDIC coaching. Your current tool can't do that.</div>
         </div>
         <div class="pitch-qa">
-          <div class="pitch-qa-q">❓ "We don't use Ringover."</div>
-          <div class="pitch-qa-a"><strong>Empower works standalone.</strong> Native integrations with Aircall and RingCentral. Any other call system can push via our public upload API. No need to switch phone providers.</div>
+          <div class="pitch-qa-q" data-i18n="pitch.qa3q">❓ "How is this different from Modjo?"</div>
+          <div class="pitch-qa-a" data-i18n="pitch.qa3a">Modjo is a good tool — but it integrates with your phone system. <strong>Empower is your phone system.</strong> 100% call capture, natively. Lower cost, no seat minimums, covering sales, support, and recruitment.</div>
+        </div>
+        <div class="pitch-qa">
+          <div class="pitch-qa-q" data-i18n="pitch.qa4q">❓ "We don't use Ringover."</div>
+          <div class="pitch-qa-a" data-i18n="pitch.qa4a"><strong>Empower works standalone.</strong> Native integrations with Aircall and RingCentral. Any other call system can push via our public upload API. No need to switch phone providers.</div>
         </div>
       </div>
       <div>
-        <div class="pitch-title">Discovery Questions by Role</div>
+        <div class="pitch-title" data-i18n="pitch.discTitle">Discovery Questions by Role</div>
         <div class="disc-q" style="border-left-color: var(--brand);">
-          <div class="disc-q-label">FOR SALES MANAGERS</div>
-          <div class="disc-q-text">"When a rep finishes a call, how long does it take them to update the CRM and write a follow-up?"</div>
+          <div class="disc-q-label" data-i18n="pitch.disc1label">FOR SALES MANAGERS</div>
+          <div class="disc-q-text" data-i18n="pitch.disc1text">"When a rep finishes a call, how long does it take them to update the CRM and write a follow-up?"</div>
         </div>
         <div class="disc-q" style="border-left-color: var(--accent-hover);">
-          <div class="disc-q-label">FOR HEADS OF SALES</div>
-          <div class="disc-q-text">"If I asked you right now what the top 5 objections your team heard last month were — could you answer in 30 seconds?"</div>
+          <div class="disc-q-label" data-i18n="pitch.disc2label">FOR HEADS OF SALES</div>
+          <div class="disc-q-text" data-i18n="pitch.disc2text">"If I asked you right now what the top 5 objections your team heard last month were — could you answer in 30 seconds?"</div>
         </div>
         <div class="disc-q" style="border-left-color: var(--brand-accent);">
-          <div class="disc-q-label">FOR COACHES / ENABLEMENT</div>
-          <div class="disc-q-text">"How do you currently identify which reps need coaching — and what triggers that conversation?"</div>
+          <div class="disc-q-label" data-i18n="pitch.disc3label">FOR COACHES / ENABLEMENT</div>
+          <div class="disc-q-text" data-i18n="pitch.disc3text">"How do you currently identify which reps need coaching — and what triggers that conversation?"</div>
         </div>
         <div class="disc-q" style="border-left-color: var(--bg-deep);">
-          <div class="disc-q-label">FOR SUPPORT / CSM</div>
-          <div class="disc-q-text">"How do you currently detect when a customer is at churn risk — before they tell you?"</div>
+          <div class="disc-q-label" data-i18n="pitch.disc4label">FOR SUPPORT / CSM</div>
+          <div class="disc-q-text" data-i18n="pitch.disc4text">"How do you currently detect when a customer is at churn risk — before they tell you?"</div>
         </div>
         <div class="disc-q" style="border-left-color: #7986CB;">
-          <div class="disc-q-label">FOR RECRUITMENT AGENCIES</div>
-          <div class="disc-q-text">"After a candidate call, how long does it take your team to write up notes and update the ATS?"</div>
+          <div class="disc-q-label" data-i18n="pitch.disc5label">FOR RECRUITMENT AGENCIES</div>
+          <div class="disc-q-text" data-i18n="pitch.disc5text">"After a candidate call, how long does it take your team to write up notes and update the ATS?"</div>
         </div>
         <div class="warn-box">
-          <div class="warn-title">⚠️ What NOT to Promise</div>
-          <div class="warn-text">Do not position Empower as a <strong>revenue intelligence or forecasting tool yet.</strong> Do not promise that Ask Empower can accurately predict <strong>deal probability, pipeline health, or forecast accuracy</strong> — this requires CRM data not yet connected.<br><br><strong>The right framing:</strong> "Empower is the conversational intelligence foundation that revenue intelligence is built on. We're building it phase by phase — and Phase 4 (full CRM sync) lands in April 2026."</div>
+          <div class="warn-title" data-i18n="pitch.warnTitle">⚠️ What NOT to Promise</div>
+          <div class="warn-text" data-i18n="pitch.warnText">Do not position Empower as a <strong>revenue intelligence or forecasting tool yet.</strong> Do not promise that Ask Empower can accurately predict <strong>deal probability, pipeline health, or forecast accuracy</strong> — this requires CRM data not yet connected.<br><br><strong>The right framing:</strong> "Empower is the conversational intelligence foundation that revenue intelligence is built on. We're building it phase by phase — and Phase 4 (full CRM sync) lands in April 2026."</div>
         </div>
       </div>
     </div>
@@ -801,10 +811,368 @@
 </div>
 
 <footer>
-  <p><strong>Ask Empower V2</strong> — Internal Sales Enablement · Empower by Ringover · March 2026 · Confidential</p>
+  <p data-i18n="footer.text"><strong>Ask Empower V2</strong> — Internal Sales Enablement · Empower by Ringover · March 2026 · Confidential</p>
 </footer>
 
 <script>
+  var I18N = {
+    en: {
+      "nav.evolution": "Evolution", "nav.capabilities": "V2 Capabilities", "nav.usecases": "Use Cases", "nav.industries": "Industries", "nav.compete": "vs Competitors", "nav.pitch": "Sales Pitch", "nav.badge": "V2 LAUNCH",
+      "hero.eyebrow": "⚡ ASK EMPOWER V2 — INTERNAL LAUNCH BRIEF",
+      "hero.title": "Your company's conversations,<br><span class=\"hl\">finally intelligent.</span>",
+      "hero.sub": "Ask Empower V2 transforms Empower from a single-call chatbot into a company-wide conversational intelligence engine — the foundation of Ringover's Revenue Intelligence platform.",
+      "hero.stat1": "Major Platform Leap", "hero.stat2": "V1 context limit", "hero.stat3": "V2 company-wide", "hero.stat4": "Phases to Revenue OS",
+      "evo.label": "The Journey", "evo.title": "How Ask Empower evolved",
+      "evo.sub": "From single-call chatbot → company conversational intelligence → full revenue operating system",
+      "evo.v1.badge": "V1 — LAUNCHED 2024", "evo.v1.title": "Single-Call Assistant",
+      "evo.v1.li1": "Limited to 1 call ID at a time", "evo.v1.li2": "Last 10 conversations only", "evo.v1.li3": "No cross-agent or cross-team context", "evo.v1.li4": "Basic Q&A on individual call content", "evo.v1.li5": "Micro-value, not strategic impact",
+      "evo.v2.badge": "✦ V2 — LIVE NOW", "evo.v2.title": "Company-Wide Intelligence",
+      "evo.v2.li1": "Cross-call, cross-agent, cross-team context", "evo.v2.li2": "Ask about any conversation, any time", "evo.v2.li3": "Trend analysis, objections, performance at scale", "evo.v2.li4": "Coaching insights + skill gap detection", "evo.v2.li5": "Multilingual: EN, FR, ES, DE, IT + more", "evo.v2.li6": "Sales, Support & Recruitment use cases",
+      "evo.future.badge": "FUTURE — ROADMAP", "evo.future.title": "Revenue Intelligence OS",
+      "evo.future.li1": "Full bi-directional CRM sync", "evo.future.li2": "Deal health + pipeline intelligence", "evo.future.li3": "Forecast confidence scoring", "evo.future.li4": "Real-time proactive alerts", "evo.future.li5": "Deal Rooms per opportunity", "evo.future.li6": "Competes with Gong at full scale",
+      "evo.rmHeading": "Roadmap Progress", "evo.rm1.title": "Ask Empower Global", "evo.rm1.sub": "Phase 1 — Live now", "evo.rm2.title": "Coaching & Skills", "evo.rm2.sub": "Phase 2 — In progress", "evo.rm3.title": "Real-Time Alerts", "evo.rm3.sub": "Phase 3 — Coming soon", "evo.rm4.title": "CRM Integration", "evo.rm4.sub": "Phase 4 — April 2026", "evo.rm5.title": "Deal Room & Revenue Intel", "evo.rm5.sub": "Phase 5 — Roadmap",
+      "cap.label": "What's New", "cap.title": "Ask Empower V2 — Core Capabilities", "cap.sub": "Everything V1 could do, plus an entirely new layer of cross-company intelligence",
+      "cap.1.title": "Company-Wide Conversation Search", "cap.1.desc": "Ask questions across your entire call and meeting library. Search by agent, team, tag, topic, date range, or client name.",
+      "cap.2.title": "Cross-Agent Performance Analysis", "cap.2.desc": "Compare rep performance, identify top performers, surface coaching gaps, and track skill progression across your team.",
+      "cap.3.title": "Trend & Pattern Detection", "cap.3.desc": "Spot objection trends month over month, track competitor mentions, identify recurring customer pain points at scale.",
+      "cap.4.title": "Account & Contact Intelligence", "cap.4.desc": "Get full context on any account or contact — full call history, pain points, objections, and next steps before you call.",
+      "cap.5.title": "Tag-Based Intelligence", "cap.5.desc": "Analyse calls by custom tags (Prospect, Demo, Objection, Competitor). Understand what's happening inside any call segment.",
+      "cap.6.title": "Multi-Channel Coverage", "cap.6.desc": "Ringover calls, Zoom, Google Meet, MS Teams, physical meetings, Aircall, RingCentral, or any call via public upload API.",
+      "cap.7.title": "CRM Auto-Sync", "cap.7.desc": "Call summaries and action items sync to CRM today. CRM auto-fill (field enrichment) for calls AND video meetings ships April 2026.",
+      "cap.8.title": "AI-Generated Coaching Content", "cap.8.desc": "Generate coaching plans, identify MEDDIC/SPIN/BANT gaps per rep, build demo scripts from top performer call data.",
+      "cap.9.title": "Follow-Up & Email Generation", "cap.9.desc": "Generate contextual follow-up emails, client summaries, meeting prep briefs, and next-step plans from real conversation data.",
+      "cap.tagLive": "✓ Live", "cap.tagApril": "🔜 April 2026 (full)",
+      "uc.label": "By Persona", "uc.title": "Who uses Ask Empower V2, and how", "uc.sub": "Real questions from real users — show prospects exactly what a day with Ask Empower V2 looks like",
+      "uc.tab.rep": "💼 Sales Rep", "uc.tab.mgr": "📈 Sales Manager", "uc.tab.support": "🎧 Support Team", "uc.tab.recruiter": "👥 Recruiter", "uc.tab.coach": "🏆 Coach / Enablement",
+      "uc.valLabel": "💡 THE VALUE IN ONE LINE",
+      "uc.rep.name": "Sales Representative", "uc.rep.role": "Before, during & after every call", "uc.rep.val": "\"Every rep enters every call knowing more, follows up faster, and never loses deal context again.\"",
+      "uc.rep.q1t": "Prepare my next meeting with ABSYS CYBORG — what's the full history?", "uc.rep.q1v": "→ Instant meeting prep from full call history",
+      "uc.rep.q2t": "What are the pain points of Atmadeep DAS across all our calls?", "uc.rep.q2v": "→ Full account intelligence before you dial",
+      "uc.rep.q3t": "What's blocking the next step with SPVIE ASSURANCES?", "uc.rep.q3v": "→ Surfaces deal blockers and open objections",
+      "uc.rep.q4t": "Write a follow-up email after my call with Kaino — include the 3 unanswered questions", "uc.rep.q4v": "→ Contextual AI-drafted follow-up",
+      "uc.rep.q5t": "Is there any competitor mention in the call with Atmadeep DAS?", "uc.rep.q5v": "→ Competitive intelligence from your own calls",
+      "uc.rep.q6t": "When is Laurent Sevenier expected to sign?", "uc.rep.q6v": "→ Commitment signals extracted from calls",
+      "uc.rep.q7t": "Give me the agenda of my day", "uc.rep.q7v": "→ Calendar + call prep combined",
+      "uc.rep.q8t": "Show me calls where we discussed HubSpot integration", "uc.rep.q8v": "→ Semantic cross-call search",
+      "uc.rep.q9t": "What is the status of the deal with PLAYTOMIC SL?", "uc.rep.q9v": "→ Deal summary from conversation history",
+      "uc.rep.q10t": "Summarize my last 3 calls with ABSYS CYBORG", "uc.rep.q10v": "→ Account summary in seconds",
+      "uc.rep.q11t": "What are the main objections clients raise about pricing?", "uc.rep.q11v": "→ Pattern intelligence across all calls",
+      "uc.mgr.name": "Head of Sales / Sales Manager", "uc.mgr.role": "Team oversight, pipeline visibility, rep development", "uc.mgr.val": "\"A sales manager reviews 3× more calls in the same time, with AI surfacing what matters — not gut feel.\"",
+      "uc.mgr.q1t": "Top 10 users by calls and video calls last month — give me a table", "uc.mgr.q1v": "→ Instant activity leaderboard",
+      "uc.mgr.q2t": "Who are the best performers in the (ES) AE MID group — calls vs video calls?", "uc.mgr.q2v": "→ Team segmentation + performance view",
+      "uc.mgr.q3t": "Show Daniel Hernandez's last calls with scores — which should I coach?", "uc.mgr.q3v": "→ Score-triggered coaching queue",
+      "uc.mgr.q4t": "Drill into objections by type over 3 months — which are most common and least resolved?", "uc.mgr.q4v": "→ Strategic insight for enablement & product",
+      "uc.mgr.q5t": "Is there a correlation between calls over 45 min and close rate?", "uc.mgr.q5v": "→ Data-driven sales process insight",
+      "uc.mgr.q6t": "Top 10 objections in discovery calls in February with suggested responses", "uc.mgr.q6v": "→ Monthly objection intelligence",
+      "uc.mgr.q7t": "Compare top performer's demo script with the team — show 3 key differences", "uc.mgr.q7v": "→ Best practice identification at scale",
+      "uc.mgr.q8t": "Generate a personalised coaching plan for March — 2 objectives per week with KPIs", "uc.mgr.q8v": "→ AI-generated structured coaching plans",
+      "uc.mgr.q9t": "What deals have budget identified but no next steps in the last 7 days?", "uc.mgr.q9v": "→ Pipeline risk detection from call data",
+      "uc.mgr.q10t": "Compare Othmane and Josua's performance month over month for 3 months", "uc.mgr.q10v": "→ Rep vs rep trend analysis",
+      "uc.support.name": "Customer Support / CSM Team", "uc.support.role": "Issue detection, CSAT, quality analysis", "uc.support.val": "\"Support managers stop firefighting and start pattern-matching — fixing root causes, not individual tickets.\"",
+      "uc.support.q1t": "Analyse the last 50 CSM Onboarding calls — what are the recurring client irritants?", "uc.support.q1v": "→ Systemic issue detection at scale",
+      "uc.support.q2t": "Show calls with Pain/Challenge tag where the customer expressed frustration — top 3", "uc.support.q2v": "→ Churn risk identification",
+      "uc.support.q3t": "Is there any churn risk for ABSYS CYBORG?", "uc.support.q3v": "→ Account health from conversation signals",
+      "uc.support.q4t": "Who are the satisfied clients based on the \"Satisfait\" tag?", "uc.support.q4v": "→ CSAT proxy from conversation tags",
+      "uc.support.q5t": "What are the main features requested by clients this week?", "uc.support.q5v": "→ Voice of Customer for product teams",
+      "uc.support.q6t": "Analyse ADMIN calls — what are the principal friction points?", "uc.support.q6v": "→ Process friction mapped from call data",
+      "uc.support.q7t": "Analyse the 50 last CSM Onboarding calls and extract client pain points", "uc.support.q7v": "→ Qualitative support quality analysis",
+      "uc.support.q8t": "Generate a meeting summary to send to a client after onboarding", "uc.support.q8v": "→ Automated post-call client communication",
+      "uc.support.q9t": "What are the most used topics in the last 3 months of support calls?", "uc.support.q9v": "→ Support trend intelligence",
+      "uc.recruiter.name": "Recruiter / Talent Acquisition", "uc.recruiter.role": "Candidate intelligence, interview analysis, ATS sync", "uc.recruiter.val": "\"Recruiters stop relying on memory and start making decisions from structured conversation intelligence.\"",
+      "uc.recruiter.q1t": "Summarize all my calls with this candidate — key strengths and red flags?", "uc.recruiter.q1v": "→ Candidate profile from real conversations",
+      "uc.recruiter.q2t": "What questions did we ask in the last 20 interviews for this role — are we consistent?", "uc.recruiter.q2v": "→ Interview process quality control",
+      "uc.recruiter.q3t": "Which recruiters are having the most engaged candidate calls this month?", "uc.recruiter.q3v": "→ Recruiter performance benchmarking",
+      "uc.recruiter.q4t": "What are the most common candidate objections to our clients' offers?", "uc.recruiter.q4v": "→ Offer intelligence for talent strategy",
+      "uc.recruiter.q5t": "Prepare me for my next call — what did we discuss last time with this candidate?", "uc.recruiter.q5v": "→ Instant candidate history brief",
+      "uc.recruiter.q6t": "Which candidates mentioned salary expectations above our range?", "uc.recruiter.q6v": "→ Compensation signal extraction",
+      "uc.recruiter.q7t": "Generate a candidate summary in the client's language for ATS upload", "uc.recruiter.q7v": "→ Auto-generated structured candidate notes",
+      "uc.recruiter.q8t": "What are the most used topics in calls tagged as \"Positive\" this quarter?", "uc.recruiter.q8v": "→ Success pattern identification",
+      "uc.coach.name": "Sales Coach / Enablement Manager", "uc.coach.role": "Structured skill development at team scale", "uc.coach.val": "\"Coaches stop reviewing random calls and start running data-driven, personalised development programmes.\"",
+      "uc.coach.q1t": "Show me where Juan is missing MEDDIC elements — with alternative phrasings", "uc.coach.q1v": "→ Methodology gap detection + coaching copy",
+      "uc.coach.q2t": "Build me a complete Empower demo script in French based on my strengths and weaknesses", "uc.coach.q2v": "→ Personalised script from your own call data",
+      "uc.coach.q3t": "Show Othmane's calls with a Monopolisation score below 50", "uc.coach.q3v": "→ Score-based coaching queue",
+      "uc.coach.q4t": "Analyse the 5 last lost deals — common objections + 2 negotiation techniques", "uc.coach.q4v": "→ Win/loss analysis with actionable takeaways",
+      "uc.coach.q5t": "Extract the 5 best \"aha moments\" from Empower demos last month", "uc.coach.q5v": "→ Best practice library built automatically",
+      "uc.coach.q6t": "How can Joshua Vischel improve in calls longer than 10 min — last 3 months?", "uc.coach.q6v": "→ Duration-filtered performance coaching",
+      "uc.coach.q7t": "Compare the top performer's demo script vs the rest of the team", "uc.coach.q7v": "→ Knowledge transfer from top to bottom",
+      "uc.coach.q8t": "Identify the 3 moments in this call where the rep lost the prospect's attention", "uc.coach.q8v": "→ Micro-coaching at call level",
+      "uc.coach.q9t": "How should I handle: \"I don't have time, just send me an email\"?", "uc.coach.q9v": "→ Objection handling from winning calls",
+      "ind.label": "By Industry", "ind.title": "Industry-specific value propositions", "ind.sub": "Tailor the pitch to your prospect's world",
+      "ind.1.title": "Insurance & Financial Services", "ind.1.subtitle": "COMPLIANCE + CLIENT INTELLIGENCE", "ind.1.pitch": "High-volume, compliance-sensitive environments where every call needs to be documented, searchable, and auditable. Empower transforms call archives into structured client intelligence.",
+      "ind.1.q1": "Give me all calls with SPVIE ASSURANCES and their next steps", "ind.1.q2": "What objections came up in renewal calls in January?", "ind.1.q3": "How has pricing feedback changed over the last quarter?", "ind.1.q4": "Show calls where \"contract\" was mentioned with negative sentiment",
+      "ind.2.title": "B2B SaaS / Technology Sales", "ind.2.subtitle": "DEAL INTELLIGENCE + COMPETITIVE AWARENESS", "ind.2.pitch": "Fast-moving sales cycles where reps need instant context, managers need pipeline visibility, and enablement needs to scale best practices faster than headcount grows.",
+      "ind.2.q1": "Is there any mention of Aircall or Modjo in calls this week?", "ind.2.q2": "What are the main features requested by enterprise clients?", "ind.2.q3": "Budget identified but no next steps in the last 7 days — show me", "ind.2.q4": "Compare Josua and Othmane's demo performance month over month",
+      "ind.3.title": "Recruitment & Staffing", "ind.3.subtitle": "CANDIDATE INTELLIGENCE + ATS SYNC", "ind.3.pitch": "Recruiters conduct dozens of calls per week. Empower turns those conversations into structured candidate profiles, synced to ATS — no manual note-taking required.",
+      "ind.3.q1": "Summarize all calls with this candidate and highlight fit signals", "ind.3.q2": "Which candidates mentioned salary above our range?", "ind.3.q3": "Generate a candidate brief for the client from my interview", "ind.3.q4": "What are recruiter performance trends this month?",
+      "comp.label": "Competitive Positioning", "comp.title": "How to win against the market", "comp.sub": "Three categories, three different pitches — know your fight before every discovery call",
+      "comp.1.name": "vs Fathom / Granola / Fireflies", "comp.1.badge": "✓ STRONG WIN", "comp.1.desc": "These are meeting notetakers. Great for summaries. Zero team intelligence. Empower is a different category entirely.",
+      "comp.1.li1": "✓ They analyse 1 call. We analyse your entire company.", "comp.1.li2": "✓ No coaching layer. We score and improve reps.", "comp.1.li3": "✓ They don't touch phone calls. We're telephony-native.", "comp.1.li4": "✓ No trend analysis, no team views, no skill tracking.", "comp.1.li5": "✓ CRM auto-fill: they barely push notes. We auto-fill fields.", "comp.1.pitch": "Pitch line: \"You've outgrown your notetaker.\"",
+      "comp.2.name": "vs Claap / Read.ai", "comp.2.badge": "✓ COMPETITIVE WIN", "comp.2.desc": "Stronger products — but still no telephony layer. Claap was acquired by Lemlist in Oct 2025 — roadmap uncertainty is real.",
+      "comp.2.li1": "✓ No native telephony — they need Zoom/Teams to function.", "comp.2.li2": "✓ Claap is sales-only. We cover sales, support, recruitment.", "comp.2.li3": "✓ CRM auto-fill parity today, we match and will surpass.", "comp.2.li4": "✓ Claap's acquisition creates instability and roadmap risk.", "comp.2.li5": "✓ Empower backed by Ringover's full telephony infrastructure.", "comp.2.pitch": "Pitch line: \"Built on your calls, not bolted onto your meetings.\"",
+      "comp.3.name": "vs Modjo", "comp.3.badge": "⚡ CLOSE FIGHT", "comp.3.desc": "Modjo is our most direct European competitor. Be honest — but frame the trajectory clearly and confidently.",
+      "comp.3.li1": "✓ CRM auto-fill on calls today; full video coverage in April.", "comp.3.li2": "✓ Modjo = sales only. We cover support + recruitment too.", "comp.3.li3": "✓ Modjo has no telephony — pays for Ringover separately.", "comp.3.li4": "✓ ~€99+/user/month + 15 seat min. We're more accessible.", "comp.3.li5": "△ Modjo: bi-directional CRM sync. We're building (Phase 4).", "comp.3.pitch": "Pitch line: \"Everything Modjo does — inside your phone system.\"",
+      "comp.moatHeading": "🛡️ Empower's Structural Moat — Lead with this in every pitch",
+      "comp.moat1.title": "Native Telephony", "comp.moat1.desc": "Every competitor integrates with a phone tool. Empower IS the phone tool — 100% capture, zero setup.",
+      "comp.moat2.title": "European Data", "comp.moat2.desc": "GDPR-compliant, EU data residency, multilingual transcription and analysis by design.",
+      "comp.moat3.title": "Multi-Vertical", "comp.moat3.desc": "Sales + Support + Recruitment. One platform, three teams, one subscription.",
+      "comp.moat4.title": "Price Accessible", "comp.moat4.desc": "No $50K platform fees. No 15-seat minimums. Real value from day one, at any team size.",
+      "pitch.label": "Sales Pitch", "pitch.title": "What to say — and how to say it", "pitch.sub": "Handle every prospect scenario with confidence",
+      "pitch.30secTitle": "The 30-Second Pitch", "pitch.30secText": "\"Ask Empower V2 is your company's conversational intelligence engine. Instead of searching through recordings, you simply <strong>ask</strong> — about a client, a rep, a deal, a trend, an objection. It answers from the full history of your team's calls and meetings. Your sales reps close faster, your managers coach smarter, and your entire team stops losing context between conversations.\"",
+      "pitch.hardTitle": "Handle the Hard Questions",
+      "pitch.qa1q": "❓ \"Can it update my CRM automatically?\"", "pitch.qa1a": "Yes. Call summaries and action items sync to your CRM today for both calls and video meetings. <strong>CRM auto-fill (field enrichment) for both calls and video meetings ships in April 2026.</strong> Full bi-directional sync is on our roadmap.",
+      "pitch.qa2q": "❓ \"We already use Fireflies / Fathom.\"", "pitch.qa2a": "Those are meeting recorders. <strong>Empower is conversational intelligence.</strong> Ask it about your team's top objections across 3 months, or which reps need MEDDIC coaching. Your current tool can't do that.",
+      "pitch.qa3q": "❓ \"How is this different from Modjo?\"", "pitch.qa3a": "Modjo is a good tool — but it integrates with your phone system. <strong>Empower is your phone system.</strong> 100% call capture, natively. Lower cost, no seat minimums, covering sales, support, and recruitment.",
+      "pitch.qa4q": "❓ \"We don't use Ringover.\"", "pitch.qa4a": "<strong>Empower works standalone.</strong> Native integrations with Aircall and RingCentral. Any other call system can push via our public upload API. No need to switch phone providers.",
+      "pitch.discTitle": "Discovery Questions by Role",
+      "pitch.disc1label": "FOR SALES MANAGERS", "pitch.disc1text": "\"When a rep finishes a call, how long does it take them to update the CRM and write a follow-up?\"",
+      "pitch.disc2label": "FOR HEADS OF SALES", "pitch.disc2text": "\"If I asked you right now what the top 5 objections your team heard last month were — could you answer in 30 seconds?\"",
+      "pitch.disc3label": "FOR COACHES / ENABLEMENT", "pitch.disc3text": "\"How do you currently identify which reps need coaching — and what triggers that conversation?\"",
+      "pitch.disc4label": "FOR SUPPORT / CSM", "pitch.disc4text": "\"How do you currently detect when a customer is at churn risk — before they tell you?\"",
+      "pitch.disc5label": "FOR RECRUITMENT AGENCIES", "pitch.disc5text": "\"After a candidate call, how long does it take your team to write up notes and update the ATS?\"",
+      "pitch.warnTitle": "⚠️ What NOT to Promise", "pitch.warnText": "Do not position Empower as a <strong>revenue intelligence or forecasting tool yet.</strong> Do not promise that Ask Empower can accurately predict <strong>deal probability, pipeline health, or forecast accuracy</strong> — this requires CRM data not yet connected.<br><br><strong>The right framing:</strong> \"Empower is the conversational intelligence foundation that revenue intelligence is built on. We're building it phase by phase — and Phase 4 (full CRM sync) lands in April 2026.\"",
+      "footer.text": "<strong>Ask Empower V2</strong> — Internal Sales Enablement · Empower by Ringover · March 2026 · Confidential"
+    },
+    fr: {
+      "nav.evolution": "Évolution", "nav.capabilities": "Fonctionnalités V2", "nav.usecases": "Cas d'usage", "nav.industries": "Secteurs", "nav.compete": "vs Concurrents", "nav.pitch": "Argumentaire", "nav.badge": "V2 LANCEMENT",
+      "hero.eyebrow": "⚡ ASK EMPOWER V2 — BRIEF INTERNE DE LANCEMENT",
+      "hero.title": "Les conversations de votre entreprise,<br><span class=\"hl\">enfin intelligentes.</span>",
+      "hero.sub": "Ask Empower V2 transforme Empower d'un chatbot d'appel unique en moteur d'intelligence conversationnelle à l'échelle de l'entreprise — le socle de la plateforme Revenue Intelligence de Ringover.",
+      "hero.stat1": "Saut de plateforme majeur", "hero.stat2": "Limite V1 (contexte)", "hero.stat3": "V2 toute l'entreprise", "hero.stat4": "Phases vers Revenue OS",
+      "evo.label": "Le parcours", "evo.title": "Comment Ask Empower a évolué",
+      "evo.sub": "D'un chatbot mono-appel → intelligence conversationnelle entreprise → système d'exploitation revenue complet",
+      "evo.v1.badge": "V1 — LANCÉ 2024", "evo.v1.title": "Assistant mono-appel",
+      "evo.v1.li1": "Limité à 1 ID d'appel à la fois", "evo.v1.li2": "Dernières 10 conversations uniquement", "evo.v1.li3": "Pas de contexte inter-agents ou inter-équipes", "evo.v1.li4": "Q&R basiques sur le contenu d'un appel", "evo.v1.li5": "Valeur micro, pas d'impact stratégique",
+      "evo.v2.badge": "✦ V2 — EN LIGNE", "evo.v2.title": "Intelligence à l'échelle entreprise",
+      "evo.v2.li1": "Contexte inter-appels, inter-agents, inter-équipes", "evo.v2.li2": "Interrogez n'importe quelle conversation, à tout moment", "evo.v2.li3": "Analyse de tendances, objections, performance à l'échelle", "evo.v2.li4": "Insights coaching + détection des écarts de compétences", "evo.v2.li5": "Multilingue : EN, FR, ES, DE, IT et plus", "evo.v2.li6": "Cas d'usage Ventes, Support & Recrutement",
+      "evo.future.badge": "FUTUR — FEUILLE DE ROUTE", "evo.future.title": "OS Revenue Intelligence",
+      "evo.future.li1": "Synchronisation CRM bidirectionnelle complète", "evo.future.li2": "Santé des deals + intelligence pipeline", "evo.future.li3": "Score de confiance des prévisions", "evo.future.li4": "Alertes proactives en temps réel", "evo.future.li5": "Deal Rooms par opportunité", "evo.future.li6": "Concurrence avec Gong à pleine échelle",
+      "evo.rmHeading": "Avancement de la feuille de route", "evo.rm1.title": "Ask Empower Global", "evo.rm1.sub": "Phase 1 — En ligne", "evo.rm2.title": "Coaching & Compétences", "evo.rm2.sub": "Phase 2 — En cours", "evo.rm3.title": "Alertes temps réel", "evo.rm3.sub": "Phase 3 — Bientôt", "evo.rm4.title": "Intégration CRM", "evo.rm4.sub": "Phase 4 — Avril 2026", "evo.rm5.title": "Deal Room & Revenue Intel", "evo.rm5.sub": "Phase 5 — Feuille de route",
+      "cap.label": "Nouveautés", "cap.title": "Ask Empower V2 — Fonctionnalités principales", "cap.sub": "Tout ce que V1 faisait, plus une nouvelle couche d'intelligence cross-entreprise",
+      "cap.1.title": "Recherche conversationnelle à l'échelle entreprise", "cap.1.desc": "Posez des questions sur l'ensemble de votre bibliothèque d'appels et de réunions. Recherche par agent, équipe, tag, sujet, plage de dates ou nom de client.",
+      "cap.2.title": "Analyse de performance inter-agents", "cap.2.desc": "Comparez les performances des commerciaux, identifiez les meilleurs, repérez les écarts de coaching et suivez la progression des compétences.",
+      "cap.3.title": "Détection de tendances et de patterns", "cap.3.desc": "Repérez les tendances d'objections mois par mois, suivez les mentions de concurrents, identifiez les points de douleur récurrents à l'échelle.",
+      "cap.4.title": "Intelligence compte et contact", "cap.4.desc": "Obtenez le contexte complet sur n'importe quel compte ou contact — historique d'appels, points de douleur, objections et prochaines étapes avant d'appeler.",
+      "cap.5.title": "Intelligence par tags", "cap.5.desc": "Analysez les appels par tags personnalisés (Prospect, Démo, Objection, Concurrent). Comprenez ce qui se passe dans chaque segment d'appel.",
+      "cap.6.title": "Couverture multi-canal", "cap.6.desc": "Appels Ringover, Zoom, Google Meet, MS Teams, réunions physiques, Aircall, RingCentral ou tout appel via l'API d'upload publique.",
+      "cap.7.title": "Synchronisation CRM automatique", "cap.7.desc": "Résumés d'appels et actions synchronisent avec le CRM aujourd'hui. Auto-remplissage CRM (enrichissement) pour appels et visioconférences en avril 2026.",
+      "cap.8.title": "Contenu de coaching généré par l'IA", "cap.8.desc": "Générez des plans de coaching, identifiez les écarts MEDDIC/SPIN/BANT par commercial, construisez des scripts démo à partir des meilleurs appels.",
+      "cap.9.title": "Relance et génération d'e-mails", "cap.9.desc": "Générez des e-mails de relance contextuels, résumés clients, briefs de préparation et plans de prochaines étapes à partir des conversations.",
+      "cap.tagLive": "✓ En ligne", "cap.tagApril": "🔜 Avril 2026 (complet)",
+      "uc.valLabel": "💡 LA VALEUR EN UNE PHRASE",
+      "uc.rep.name": "Commercial", "uc.rep.role": "Avant, pendant et après chaque appel", "uc.rep.val": "\"Chaque commercial entre dans chaque appel mieux préparé, relaie plus vite et ne perd plus le contexte deal.\"",
+      "uc.rep.q1t": "Prépare ma prochaine réunion avec ABSYS CYBORG — quel est l'historique complet ?", "uc.rep.q1v": "→ Préparation meeting instantanée à partir de l'historique d'appels",
+      "uc.rep.q2t": "Quels sont les points de douleur d'Atmadeep DAS sur tous nos appels ?", "uc.rep.q2v": "→ Intelligence compte complète avant d'appeler",
+      "uc.rep.q3t": "Qu'est-ce qui bloque la prochaine étape avec SPVIE ASSURANCES ?", "uc.rep.q3v": "→ Met en lumière les blocages et objections ouvertes",
+      "uc.rep.q4t": "Rédige un e-mail de relance après mon appel avec Kaino — inclus les 3 questions sans réponse", "uc.rep.q4v": "→ Relance contextuelle rédigée par l'IA",
+      "uc.rep.q5t": "Y a-t-il une mention de concurrent dans l'appel avec Atmadeep DAS ?", "uc.rep.q5v": "→ Intelligence concurrentielle à partir de vos appels",
+      "uc.rep.q6t": "Quand Laurent Sevenier est-il censé signer ?", "uc.rep.q6v": "→ Signaux d'engagement extraits des appels",
+      "uc.rep.q7t": "Donne-moi l'agenda de ma journée", "uc.rep.q7v": "→ Calendrier et préparation d'appels combinés",
+      "uc.rep.q8t": "Montre-moi les appels où on a parlé de l'intégration HubSpot", "uc.rep.q8v": "→ Recherche sémantique inter-appels",
+      "uc.rep.q9t": "Quel est le statut du deal avec PLAYTOMIC SL ?", "uc.rep.q9v": "→ Résumé deal à partir de l'historique de conversations",
+      "uc.rep.q10t": "Résume mes 3 derniers appels avec ABSYS CYBORG", "uc.rep.q10v": "→ Résumé compte en quelques secondes",
+      "uc.rep.q11t": "Quelles sont les principales objections des clients sur le prix ?", "uc.rep.q11v": "→ Intelligence des patterns sur tous les appels",
+      "uc.mgr.name": "Directeur commercial / Sales Manager", "uc.mgr.role": "Supervision équipe, visibilité pipeline, développement des reps", "uc.mgr.val": "\"Un sales manager revoit 3× plus d'appels dans le même temps, l'IA met en avant ce qui compte — pas l'intuition.\"",
+      "uc.mgr.q1t": "Top 10 des utilisateurs par appels et visio le mois dernier — donne-moi un tableau", "uc.mgr.q1v": "→ Classement d'activité instantané",
+      "uc.mgr.q2t": "Qui sont les meilleurs performeurs du groupe (ES) AE MID — appels vs visio ?", "uc.mgr.q2v": "→ Segmentation équipe + vue performance",
+      "uc.mgr.q3t": "Montre les derniers appels de Daniel Hernandez avec scores — lesquels coacher ?", "uc.mgr.q3v": "→ File de coaching déclenchée par les scores",
+      "uc.mgr.q4t": "Analyse les objections par type sur 3 mois — les plus fréquentes et les moins résolues ?", "uc.mgr.q4v": "→ Insight stratégique pour l'enablement et le produit",
+      "uc.mgr.q5t": "Y a-t-il une corrélation entre appels > 45 min et taux de closing ?", "uc.mgr.q5v": "→ Insight process de vente data-driven",
+      "uc.mgr.q6t": "Top 10 des objections en discovery en février avec réponses suggérées", "uc.mgr.q6v": "→ Intelligence objections mensuelle",
+      "uc.mgr.q7t": "Compare le script démo du top performer à l'équipe — montre 3 différences clés", "uc.mgr.q7v": "→ Identification des bonnes pratiques à l'échelle",
+      "uc.mgr.q8t": "Génère un plan de coaching personnalisé pour mars — 2 objectifs par semaine avec KPIs", "uc.mgr.q8v": "→ Plans de coaching structurés générés par l'IA",
+      "uc.mgr.q9t": "Quels deals ont le budget identifié mais pas de prochaines étapes dans les 7 derniers jours ?", "uc.mgr.q9v": "→ Détection du risque pipeline à partir des appels",
+      "uc.mgr.q10t": "Compare les perfs d'Othmane et Josua sur 3 mois, mois par mois", "uc.mgr.q10v": "→ Analyse de tendance rep vs rep",
+      "uc.support.name": "Support client / Équipe CSM", "uc.support.role": "Détection des problèmes, CSAT, analyse qualité", "uc.support.val": "\"Les managers support arrêtent le firefighting et font du pattern-matching — en traitant les causes racines, pas les tickets.\"",
+      "uc.support.q1t": "Analyse les 50 derniers appels Onboarding CSM — quels sont les irritants récurrents ?", "uc.support.q1v": "→ Détection des problèmes systémiques à l'échelle",
+      "uc.support.q2t": "Montre les appels avec tag Pain/Challenge où le client a exprimé de la frustration — top 3", "uc.support.q2v": "→ Identification du risque de churn",
+      "uc.support.q3t": "Y a-t-il un risque de churn pour ABSYS CYBORG ?", "uc.support.q3v": "→ Santé du compte à partir des signaux de conversation",
+      "uc.support.q4t": "Qui sont les clients satisfaits d'après le tag « Satisfait » ?", "uc.support.q4v": "→ Proxy CSAT à partir des tags de conversation",
+      "uc.support.q5t": "Quelles sont les principales fonctionnalités demandées par les clients cette semaine ?", "uc.support.q5v": "→ Voix du client pour les équipes produit",
+      "uc.support.q6t": "Analyse les appels ADMIN — quels sont les principaux points de friction ?", "uc.support.q6v": "→ Friction de process mappée à partir des appels",
+      "uc.support.q7t": "Analyse les 50 derniers appels Onboarding CSM et extrais les points de douleur clients", "uc.support.q7v": "→ Analyse qualitative de la qualité support",
+      "uc.support.q8t": "Génère un résumé de réunion à envoyer au client après l'onboarding", "uc.support.q8v": "→ Communication client post-appel automatisée",
+      "uc.support.q9t": "Quels sont les sujets les plus utilisés dans les appels support des 3 derniers mois ?", "uc.support.q9v": "→ Intelligence des tendances support",
+      "uc.recruiter.name": "Recruteur / Acquisition de talents", "uc.recruiter.role": "Intelligence candidat, analyse d'entretiens, sync ATS", "uc.recruiter.val": "\"Les recruteurs arrêtent de se reposer sur la mémoire et prennent des décisions à partir de l'intelligence conversationnelle structurée.\"",
+      "uc.recruiter.q1t": "Résume tous mes appels avec ce candidat — forces et signaux d'alerte ?", "uc.recruiter.q1v": "→ Profil candidat à partir des conversations réelles",
+      "uc.recruiter.q2t": "Quelles questions a-t-on posées dans les 20 derniers entretiens pour ce poste — sommes-nous cohérents ?", "uc.recruiter.q2v": "→ Contrôle qualité du process d'entretien",
+      "uc.recruiter.q3t": "Quels recruteurs ont les appels candidats les plus engagés ce mois-ci ?", "uc.recruiter.q3v": "→ Benchmarking performance recruteurs",
+      "uc.recruiter.q4t": "Quelles sont les objections candidats les plus fréquentes aux offres de nos clients ?", "uc.recruiter.q4v": "→ Intelligence des offres pour la stratégie talents",
+      "uc.recruiter.q5t": "Prépare-moi pour mon prochain appel — de quoi a-t-on parlé la dernière fois avec ce candidat ?", "uc.recruiter.q5v": "→ Brief historique candidat instantané",
+      "uc.recruiter.q6t": "Quels candidats ont mentionné des attentes salariales au-dessus de notre fourchette ?", "uc.recruiter.q6v": "→ Extraction des signaux de rémunération",
+      "uc.recruiter.q7t": "Génère un résumé candidat dans la langue du client pour upload ATS", "uc.recruiter.q7v": "→ Notes candidat structurées auto-générées",
+      "uc.recruiter.q8t": "Quels sont les sujets les plus utilisés dans les appels tagués « Positif » ce trimestre ?", "uc.recruiter.q8v": "→ Identification des patterns de succès",
+      "uc.coach.name": "Coach commercial / Responsable Enablement", "uc.coach.role": "Développement structuré des compétences à l'échelle équipe", "uc.coach.val": "\"Les coaches arrêtent de revoir des appels au hasard et lancent des programmes de développement data-driven et personnalisés.\"",
+      "uc.coach.q1t": "Montre-moi où Juan manque des éléments MEDDIC — avec des formulations alternatives", "uc.coach.q1v": "→ Détection des écarts de méthodologie + copie de coaching",
+      "uc.coach.q2t": "Construis-moi un script démo Empower complet en français selon mes forces et faiblesses", "uc.coach.q2v": "→ Script personnalisé à partir de tes propres appels",
+      "uc.coach.q3t": "Montre les appels d'Othmane avec un score Monopolisation sous 50", "uc.coach.q3v": "→ File de coaching basée sur les scores",
+      "uc.coach.q4t": "Analyse les 5 derniers deals perdus — objections communes + 2 techniques de négociation", "uc.coach.q4v": "→ Analyse win/loss avec axes d'action",
+      "uc.coach.q5t": "Extrais les 5 meilleurs « aha moments » des démos Empower du mois dernier", "uc.coach.q5v": "→ Bibliothèque de bonnes pratiques construite automatiquement",
+      "uc.coach.q6t": "Comment Joshua Vischel peut-il s'améliorer dans les appels > 10 min — 3 derniers mois ?", "uc.coach.q6v": "→ Coaching performance filtré par durée",
+      "uc.coach.q7t": "Compare le script démo du top performer au reste de l'équipe", "uc.coach.q7v": "→ Transfert de connaissance du haut vers le bas",
+      "uc.coach.q8t": "Identifie les 3 moments dans cet appel où le rep a perdu l'attention du prospect", "uc.coach.q8v": "→ Micro-coaching au niveau de l'appel",
+      "uc.coach.q9t": "Comment gérer : « Je n'ai pas le temps, envoyez-moi un e-mail » ?", "uc.coach.q9v": "→ Gestion des objections à partir des appels gagnants",
+      "ind.1.title": "Assurance et services financiers", "ind.1.subtitle": "CONFORMITÉ + INTELLIGENCE CLIENT", "ind.1.pitch": "Environnements à fort volume et sensibles à la conformité où chaque appel doit être documenté, recherchable et auditable. Empower transforme les archives d'appels en intelligence client structurée.",
+      "ind.1.q1": "Donne-moi tous les appels avec SPVIE ASSURANCES et leurs prochaines étapes", "ind.1.q2": "Quelles objections sont apparues dans les appels de renouvellement en janvier ?", "ind.1.q3": "Comment le feedback sur les prix a-t-il évolué sur le dernier trimestre ?", "ind.1.q4": "Montre les appels où « contrat » a été mentionné avec un sentiment négatif",
+      "ind.2.title": "B2B SaaS / Vente technologique", "ind.2.subtitle": "INTELLIGENCE DEAL + AWARENESS CONCURRENTIEL", "ind.2.pitch": "Cycles de vente rapides où les reps ont besoin de contexte instantané, les managers de visibilité pipeline et l'enablement de scaler les bonnes pratiques plus vite que les effectifs.",
+      "ind.2.q1": "Y a-t-il une mention d'Aircall ou Modjo dans les appels cette semaine ?", "ind.2.q2": "Quelles sont les principales fonctionnalités demandées par les clients enterprise ?", "ind.2.q3": "Budget identifié mais pas de prochaines étapes dans les 7 derniers jours — montre-moi", "ind.2.q4": "Compare les perfs démo de Josua et Othmane mois par mois",
+      "ind.3.title": "Recrutement et intérim", "ind.3.subtitle": "INTELLIGENCE CANDIDAT + SYNC ATS", "ind.3.pitch": "Les recruteurs passent des dizaines d'appels par semaine. Empower transforme ces conversations en profils candidats structurés, synchronisés avec l'ATS — plus de prise de notes manuelle.",
+      "ind.3.q1": "Résume tous les appels avec ce candidat et mets en avant les signaux de fit", "ind.3.q2": "Quels candidats ont mentionné un salaire au-dessus de notre fourchette ?", "ind.3.q3": "Génère une fiche candidat pour le client à partir de mon entretien", "ind.3.q4": "Quelles sont les tendances de performance recruteurs ce mois-ci ?",
+      "comp.1.name": "vs Fathom / Granola / Fireflies", "comp.1.badge": "✓ VICTOIRE NETTE", "comp.1.desc": "Ce sont des preneurs de notes de réunion. Bien pour les résumés. Zéro intelligence d'équipe. Empower est une catégorie entièrement différente.",
+      "comp.1.li1": "✓ Ils analysent 1 appel. Nous analysons toute votre entreprise.", "comp.1.li2": "✓ Pas de couche coaching. Nous scorons et améliorons les reps.", "comp.1.li3": "✓ Ils ne touchent pas aux appels téléphoniques. Nous sommes natifs téléphonie.", "comp.1.li4": "✓ Pas d'analyse de tendances, pas de vues équipe, pas de suivi des compétences.", "comp.1.li5": "✓ Auto-remplissage CRM : ils poussent à peine des notes. Nous remplissons les champs.", "comp.1.pitch": "Argument : « Vous avez dépassé votre preneur de notes. »",
+      "comp.2.name": "vs Claap / Read.ai", "comp.2.badge": "✓ VICTOIRE CONCURRENTIELLE", "comp.2.desc": "Produits plus solides — mais toujours pas de couche téléphonie. Claap a été racheté par Lemlist en oct. 2025 — l'incertitude sur la feuille de route est réelle.",
+      "comp.2.li1": "✓ Pas de téléphonie native — ils ont besoin de Zoom/Teams pour fonctionner.", "comp.2.li2": "✓ Claap = ventes uniquement. Nous couvrons ventes, support, recrutement.", "comp.2.li3": "✓ Parité auto-remplissage CRM aujourd'hui, nous égalons et dépasserons.", "comp.2.li4": "✓ L'acquisition de Claap crée instabilité et risque de feuille de route.", "comp.2.li5": "✓ Empower soutenu par l'infrastructure téléphonie complète de Ringover.", "comp.2.pitch": "Argument : « Construit sur vos appels, pas boulonné sur vos réunions. »",
+      "comp.3.name": "vs Modjo", "comp.3.badge": "⚡ COMBAT SERRÉ", "comp.3.desc": "Modjo est notre concurrent européen le plus direct. Soyez honnête — mais cadrez la trajectoire clairement et avec confiance.",
+      "comp.3.li1": "✓ Auto-remplissage CRM sur les appels aujourd'hui ; couverture vidéo complète en avril.", "comp.3.li2": "✓ Modjo = ventes uniquement. Nous couvrons support + recrutement aussi.", "comp.3.li3": "✓ Modjo n'a pas de téléphonie — paie Ringover à part.", "comp.3.li4": "✓ ~99 €+/user/mois + 15 sièges min. Nous sommes plus accessibles.", "comp.3.li5": "△ Modjo : sync CRM bidirectionnelle. Nous construisons (Phase 4).", "comp.3.pitch": "Argument : « Tout ce que fait Modjo — dans votre système téléphonique. »",
+      "comp.moatHeading": "🛡️ Le fossé structurel d'Empower — Menez avec ça dans chaque pitch",
+      "comp.moat1.title": "Téléphonie native", "comp.moat1.desc": "Chaque concurrent s'intègre à un outil téléphonique. Empower EST l'outil téléphonique — 100 % de capture, zéro config.",
+      "comp.moat2.title": "Données européennes", "comp.moat2.desc": "Conformité RGPD, résidence des données UE, transcription et analyse multilingues par conception.",
+      "comp.moat3.title": "Multi-vertical", "comp.moat3.desc": "Ventes + Support + Recrutement. Une plateforme, trois équipes, un abonnement.",
+      "comp.moat4.title": "Prix accessible", "comp.moat4.desc": "Pas de frais plateforme à 50 k$. Pas de minimum 15 sièges. Valeur réelle dès le premier jour, quelle que soit la taille de l'équipe.",
+      "pitch.30secTitle": "Le pitch 30 secondes", "pitch.30secText": "« Ask Empower V2 est le moteur d'intelligence conversationnelle de votre entreprise. Au lieu de chercher dans les enregistrements, vous <strong>demandez</strong> simplement — sur un client, un rep, un deal, une tendance, une objection. Il répond à partir de l'historique complet des appels et réunions de votre équipe. Vos commerciaux closent plus vite, vos managers coachent mieux, et toute l'équipe arrête de perdre le contexte entre les conversations. »",
+      "pitch.hardTitle": "Répondre aux questions difficiles",
+      "pitch.qa1q": "❓ « Est-ce que ça met à jour mon CRM automatiquement ? »", "pitch.qa1a": "Oui. Les résumés d'appels et les actions synchronisent avec votre CRM aujourd'hui pour les appels et les visioconférences. <strong>L'auto-remplissage CRM (enrichissement) pour appels et visio sort en avril 2026.</strong> La sync bidirectionnelle complète est sur notre feuille de route.",
+      "pitch.qa2q": "❓ « On utilise déjà Fireflies / Fathom. »", "pitch.qa2a": "Ce sont des enregistreurs de réunion. <strong>Empower est de l'intelligence conversationnelle.</strong> Demandez-lui les top objections de votre équipe sur 3 mois, ou quels reps ont besoin de coaching MEDDIC. Votre outil actuel ne peut pas faire ça.",
+      "pitch.qa3q": "❓ « En quoi c'est différent de Modjo ? »", "pitch.qa3a": "Modjo est un bon outil — mais il s'intègre à votre système téléphonique. <strong>Empower EST votre système téléphonique.</strong> 100 % de capture d'appels, en natif. Coût moindre, pas de minimum de sièges, ventes, support et recrutement.",
+      "pitch.qa4q": "❓ « On n'utilise pas Ringover. »", "pitch.qa4a": "<strong>Empower fonctionne en standalone.</strong> Intégrations natives avec Aircall et RingCentral. Tout autre système d'appels peut pousser via notre API d'upload publique. Pas besoin de changer de fournisseur.",
+      "pitch.discTitle": "Questions de discovery par rôle",
+      "pitch.disc1label": "POUR LES SALES MANAGERS", "pitch.disc1text": "« Quand un rep termine un appel, combien de temps lui faut-il pour mettre à jour le CRM et rédiger une relance ? »",
+      "pitch.disc2label": "POUR LES DIRECTEURS COMMERCIAUX", "pitch.disc2text": "« Si je vous demandais tout de suite quelles ont été les 5 principales objections de votre équipe le mois dernier — pourriez-vous répondre en 30 secondes ? »",
+      "pitch.disc3label": "POUR LES COACHES / ENABLEMENT", "pitch.disc3text": "« Comment identifiez-vous aujourd'hui quels reps ont besoin de coaching — et qu'est-ce qui déclenche cette conversation ? »",
+      "pitch.disc4label": "POUR LE SUPPORT / CSM", "pitch.disc4text": "« Comment détectez-vous aujourd'hui quand un client est en risque de churn — avant qu'il ne vous le dise ? »",
+      "pitch.disc5label": "POUR LES CABINETS DE RECRUTEMENT", "pitch.disc5text": "« Après un appel candidat, combien de temps faut-il à votre équipe pour rédiger les notes et mettre à jour l'ATS ? »",
+      "pitch.warnTitle": "⚠️ Ce qu'il ne faut PAS promettre", "pitch.warnText": "Ne positionnez pas encore Empower comme <strong>outil de revenue intelligence ou de forecasting.</strong> Ne promettez pas qu'Ask Empower peut prédire avec précision <strong>la probabilité de deal, la santé du pipeline ou la précision des prévisions</strong> — cela nécessite des données CRM pas encore connectées.<br><br><strong>Le bon cadrage :</strong> « Empower est le socle d'intelligence conversationnelle sur lequel la revenue intelligence est construite. Nous le construisons phase par phase — et la Phase 4 (sync CRM complète) arrive en avril 2026. »",
+      "uc.label": "Par persona", "uc.title": "Qui utilise Ask Empower V2, et comment", "uc.sub": "Des questions réelles d'utilisateurs réels — montrez aux prospects à quoi ressemble une journée avec Ask Empower V2",
+      "uc.tab.rep": "💼 Commercial", "uc.tab.mgr": "📈 Responsable ventes", "uc.tab.support": "🎧 Support", "uc.tab.recruiter": "👥 Recruteur", "uc.tab.coach": "🏆 Coach / Enablement",
+      "ind.label": "Par secteur", "ind.title": "Propositions de valeur par industrie", "ind.sub": "Adaptez l'argumentaire au monde de votre prospect",
+      "comp.label": "Positionnement concurrentiel", "comp.title": "Comment gagner face au marché", "comp.sub": "Trois catégories, trois argumentaires — connaissez votre combat avant chaque discovery",
+      "pitch.label": "Argumentaire", "pitch.title": "Quoi dire — et comment le dire", "pitch.sub": "Gérez chaque scénario prospect avec confiance",
+      "footer.text": "<strong>Ask Empower V2</strong> — Enablement commercial interne · Empower by Ringover · Mars 2026 · Confidentiel"
+    },
+    es: {
+      "nav.evolution": "Evolución", "nav.capabilities": "Capacidades V2", "nav.usecases": "Casos de uso", "nav.industries": "Sectores", "nav.compete": "vs Competencia", "nav.pitch": "Argumentario", "nav.badge": "V2 LANZAMIENTO",
+      "hero.eyebrow": "⚡ ASK EMPOWER V2 — BRIEF INTERNO DE LANZAMIENTO",
+      "hero.title": "Las conversaciones de tu empresa,<br><span class=\"hl\">por fin inteligentes.</span>",
+      "hero.sub": "Ask Empower V2 convierte Empower de un chatbot de llamada única en un motor de inteligencia conversacional a nivel empresa — la base de la plataforma Revenue Intelligence de Ringover.",
+      "hero.stat1": "Salto de plataforma mayor", "hero.stat2": "Límite V1 (contexto)", "hero.stat3": "V2 toda la empresa", "hero.stat4": "Fases hacia Revenue OS",
+      "evo.label": "El recorrido", "evo.title": "Cómo ha evolucionado Ask Empower",
+      "evo.sub": "De chatbot mono-llamada → inteligencia conversacional empresa → sistema operativo de revenue completo",
+      "evo.v1.badge": "V1 — ESTRENO 2024", "evo.v1.title": "Asistente mono-llamada",
+      "evo.v1.li1": "Limitado a 1 ID de llamada a la vez", "evo.v1.li2": "Solo últimas 10 conversaciones", "evo.v1.li3": "Sin contexto entre agentes o equipos", "evo.v1.li4": "Preguntas y respuestas básicas sobre una llamada", "evo.v1.li5": "Valor micro, sin impacto estratégico",
+      "evo.v2.badge": "✦ V2 — EN VIVO", "evo.v2.title": "Inteligencia a nivel empresa",
+      "evo.v2.li1": "Contexto entre llamadas, agentes y equipos", "evo.v2.li2": "Consulta cualquier conversación, en cualquier momento", "evo.v2.li3": "Análisis de tendencias, objeciones, rendimiento a escala", "evo.v2.li4": "Insights de coaching + detección de gaps de habilidades", "evo.v2.li5": "Multilingüe: EN, FR, ES, DE, IT y más", "evo.v2.li6": "Casos de uso Ventas, Soporte y Reclutamiento",
+      "evo.future.badge": "FUTURO — HOJA DE RUTA", "evo.future.title": "OS Revenue Intelligence",
+      "evo.future.li1": "Sincronización CRM bidireccional completa", "evo.future.li2": "Salud de deals + inteligencia de pipeline", "evo.future.li3": "Puntuación de confianza en previsiones", "evo.future.li4": "Alertas proactivas en tiempo real", "evo.future.li5": "Deal Rooms por oportunidad", "evo.future.li6": "Competencia con Gong a escala completa",
+      "evo.rmHeading": "Progreso de la hoja de ruta", "evo.rm1.title": "Ask Empower Global", "evo.rm1.sub": "Fase 1 — En vivo", "evo.rm2.title": "Coaching y habilidades", "evo.rm2.sub": "Fase 2 — En curso", "evo.rm3.title": "Alertas en tiempo real", "evo.rm3.sub": "Fase 3 — Próximamente", "evo.rm4.title": "Integración CRM", "evo.rm4.sub": "Fase 4 — Abril 2026", "evo.rm5.title": "Deal Room y Revenue Intel", "evo.rm5.sub": "Fase 5 — Hoja de ruta",
+      "cap.label": "Novedades", "cap.title": "Ask Empower V2 — Capacidades principales", "cap.sub": "Todo lo que V1 hacía, más una nueva capa de inteligencia cross-empresa",
+      "cap.1.title": "Búsqueda conversacional a nivel empresa", "cap.1.desc": "Haz preguntas sobre toda tu biblioteca de llamadas y reuniones. Busca por agente, equipo, etiqueta, tema, rango de fechas o nombre de cliente.",
+      "cap.2.title": "Análisis de rendimiento entre agentes", "cap.2.desc": "Compara el rendimiento de los reps, identifica a los mejores, detecta gaps de coaching y sigue la progresión de habilidades.",
+      "cap.3.title": "Detección de tendencias y patrones", "cap.3.desc": "Detecta tendencias de objeciones mes a mes, rastrea menciones de competencia, identifica puntos de dolor recurrentes a escala.",
+      "cap.4.title": "Inteligencia de cuenta y contacto", "cap.4.desc": "Obtén el contexto completo de cualquier cuenta o contacto — historial de llamadas, puntos de dolor, objeciones y próximos pasos antes de llamar.",
+      "cap.5.title": "Inteligencia por etiquetas", "cap.5.desc": "Analiza llamadas por etiquetas personalizadas (Prospecto, Demo, Objeción, Competidor). Entiende qué pasa en cada segmento de llamada.",
+      "cap.6.title": "Cobertura multicanal", "cap.6.desc": "Llamadas Ringover, Zoom, Google Meet, MS Teams, reuniones presenciales, Aircall, RingCentral o cualquier llamada vía API de subida pública.",
+      "cap.7.title": "Sincronización automática CRM", "cap.7.desc": "Resúmenes de llamadas y acciones se sincronizan con tu CRM hoy para llamadas y videollamadas. Auto-relleno CRM (enriquecimiento) en abril 2026.",
+      "cap.8.title": "Contenido de coaching generado por IA", "cap.8.desc": "Genera planes de coaching, identifica gaps MEDDIC/SPIN/BANT por rep, construye guiones de demo desde los mejores datos de llamadas.",
+      "cap.9.title": "Seguimiento y generación de emails", "cap.9.desc": "Genera emails de seguimiento contextuales, resúmenes de cliente, briefs de preparación y planes de próximos pasos desde conversaciones reales.",
+      "cap.tagLive": "✓ En vivo", "cap.tagApril": "🔜 Abril 2026 (completo)",
+      "uc.valLabel": "💡 EL VALOR EN UNA LÍNEA",
+      "uc.rep.name": "Representante de ventas", "uc.rep.role": "Antes, durante y después de cada llamada", "uc.rep.val": "\"Cada rep entra en cada llamada sabiendo más, hace seguimiento más rápido y no pierde el contexto del deal.\"",
+      "uc.rep.q1t": "Prepara mi próxima reunión con ABSYS CYBORG — ¿cuál es el historial completo?", "uc.rep.q1v": "→ Preparación de reunión al instante desde el historial de llamadas",
+      "uc.rep.q2t": "¿Cuáles son los puntos de dolor de Atmadeep DAS en todas nuestras llamadas?", "uc.rep.q2v": "→ Inteligencia de cuenta completa antes de llamar",
+      "uc.rep.q3t": "¿Qué bloquea el siguiente paso con SPVIE ASSURANCES?", "uc.rep.q3v": "→ Surfacea bloqueos de deal y objeciones abiertas",
+      "uc.rep.q4t": "Redacta un email de seguimiento después de mi llamada con Kaino — incluye las 3 preguntas sin responder", "uc.rep.q4v": "→ Seguimiento contextual redactado por IA",
+      "uc.rep.q5t": "¿Hay alguna mención de competidor en la llamada con Atmadeep DAS?", "uc.rep.q5v": "→ Inteligencia competitiva desde tus propias llamadas",
+      "uc.rep.q6t": "¿Cuándo se espera que firme Laurent Sevenier?", "uc.rep.q6v": "→ Señales de compromiso extraídas de las llamadas",
+      "uc.rep.q7t": "Dame la agenda de mi día", "uc.rep.q7v": "→ Calendario y preparación de llamadas combinados",
+      "uc.rep.q8t": "Muéstrame llamadas donde hablamos de integración HubSpot", "uc.rep.q8v": "→ Búsqueda semántica entre llamadas",
+      "uc.rep.q9t": "¿Cuál es el estado del deal con PLAYTOMIC SL?", "uc.rep.q9v": "→ Resumen de deal desde el historial de conversaciones",
+      "uc.rep.q10t": "Resume mis últimas 3 llamadas con ABSYS CYBORG", "uc.rep.q10v": "→ Resumen de cuenta en segundos",
+      "uc.rep.q11t": "¿Cuáles son las principales objeciones de los clientes sobre el precio?", "uc.rep.q11v": "→ Inteligencia de patrones en todas las llamadas",
+      "uc.mgr.name": "Director comercial / Sales Manager", "uc.mgr.role": "Supervisión de equipo, visibilidad de pipeline, desarrollo de reps", "uc.mgr.val": "\"Un sales manager revisa 3× más llamadas en el mismo tiempo, con la IA sacando a la luz lo que importa — no el instinto.\"",
+      "uc.mgr.q1t": "Top 10 usuarios por llamadas y videollamadas el mes pasado — dame una tabla", "uc.mgr.q1v": "→ Ranking de actividad instantáneo",
+      "uc.mgr.q2t": "¿Quiénes son los mejores en el grupo (ES) AE MID — llamadas vs videollamadas?", "uc.mgr.q2v": "→ Segmentación de equipo + vista de rendimiento",
+      "uc.mgr.q3t": "Muéstrame las últimas llamadas de Daniel Hernandez con puntuaciones — ¿cuáles debo coachar?", "uc.mgr.q3v": "→ Cola de coaching disparada por puntuación",
+      "uc.mgr.q4t": "Profundiza en objeciones por tipo en 3 meses — ¿cuáles son más comunes y menos resueltas?", "uc.mgr.q4v": "→ Insight estratégico para enablement y producto",
+      "uc.mgr.q5t": "¿Hay correlación entre llamadas de más de 45 min y tasa de cierre?", "uc.mgr.q5v": "→ Insight de proceso de ventas basado en datos",
+      "uc.mgr.q6t": "Top 10 objeciones en discovery en febrero con respuestas sugeridas", "uc.mgr.q6v": "→ Inteligencia de objeciones mensual",
+      "uc.mgr.q7t": "Compara el guion demo del top performer con el equipo — muestra 3 diferencias clave", "uc.mgr.q7v": "→ Identificación de mejores prácticas a escala",
+      "uc.mgr.q8t": "Genera un plan de coaching personalizado para marzo — 2 objetivos por semana con KPIs", "uc.mgr.q8v": "→ Planes de coaching estructurados generados por IA",
+      "uc.mgr.q9t": "¿Qué deals tienen presupuesto identificado pero sin próximos pasos en los últimos 7 días?", "uc.mgr.q9v": "→ Detección de riesgo de pipeline desde datos de llamadas",
+      "uc.mgr.q10t": "Compara el rendimiento de Othmane y Josua mes a mes durante 3 meses", "uc.mgr.q10v": "→ Análisis de tendencia rep vs rep",
+      "uc.support.name": "Soporte al cliente / Equipo CSM", "uc.support.role": "Detección de incidencias, CSAT, análisis de calidad", "uc.support.val": "\"Los managers de soporte dejan de apagar fuegos y empiezan a hacer pattern-matching — arreglando causas raíz, no tickets sueltos.\"",
+      "uc.support.q1t": "Analiza las últimas 50 llamadas de onboarding CSM — ¿cuáles son los irritantes recurrentes?", "uc.support.q1v": "→ Detección de problemas sistémicos a escala",
+      "uc.support.q2t": "Muéstrame llamadas con etiqueta Pain/Challenge donde el cliente mostró frustración — top 3", "uc.support.q2v": "→ Identificación de riesgo de churn",
+      "uc.support.q3t": "¿Hay riesgo de churn para ABSYS CYBORG?", "uc.support.q3v": "→ Salud de cuenta desde señales de conversación",
+      "uc.support.q4t": "¿Quiénes son los clientes satisfechos según la etiqueta « Satisfait »?", "uc.support.q4v": "→ Proxy CSAT desde etiquetas de conversación",
+      "uc.support.q5t": "¿Cuáles son las principales funcionalidades solicitadas por clientes esta semana?", "uc.support.q5v": "→ Voz del cliente para equipos de producto",
+      "uc.support.q6t": "Analiza las llamadas ADMIN — ¿cuáles son los principales puntos de fricción?", "uc.support.q6v": "→ Fricción de proceso mapeada desde datos de llamadas",
+      "uc.support.q7t": "Analiza las 50 últimas llamadas de onboarding CSM y extrae puntos de dolor del cliente", "uc.support.q7v": "→ Análisis cualitativo de calidad de soporte",
+      "uc.support.q8t": "Genera un resumen de reunión para enviar al cliente tras el onboarding", "uc.support.q8v": "→ Comunicación post-llamada al cliente automatizada",
+      "uc.support.q9t": "¿Cuáles son los temas más usados en las llamadas de soporte de los últimos 3 meses?", "uc.support.q9v": "→ Inteligencia de tendencias de soporte",
+      "uc.recruiter.name": "Reclutador / Adquisición de talento", "uc.recruiter.role": "Inteligencia de candidatos, análisis de entrevistas, sync ATS", "uc.recruiter.val": "\"Los reclutadores dejan de depender de la memoria y toman decisiones desde la inteligencia conversacional estructurada.\"",
+      "uc.recruiter.q1t": "Resume todas mis llamadas con este candidato — fortalezas y señales de alerta?", "uc.recruiter.q1v": "→ Perfil de candidato desde conversaciones reales",
+      "uc.recruiter.q2t": "¿Qué preguntas hicimos en las últimas 20 entrevistas para este rol — somos consistentes?", "uc.recruiter.q2v": "→ Control de calidad del proceso de entrevistas",
+      "uc.recruiter.q3t": "¿Qué reclutadores tienen las llamadas con candidatos más comprometidas este mes?", "uc.recruiter.q3v": "→ Benchmarking de rendimiento de reclutadores",
+      "uc.recruiter.q4t": "¿Cuáles son las objeciones de candidatos más comunes a las ofertas de nuestros clientes?", "uc.recruiter.q4v": "→ Inteligencia de ofertas para estrategia de talento",
+      "uc.recruiter.q5t": "Prepárame para mi próxima llamada — ¿de qué hablamos la última vez con este candidato?", "uc.recruiter.q5v": "→ Brief de historial de candidato al instante",
+      "uc.recruiter.q6t": "¿Qué candidatos mencionaron expectativas salariales por encima de nuestro rango?", "uc.recruiter.q6v": "→ Extracción de señales de compensación",
+      "uc.recruiter.q7t": "Genera un resumen de candidato en el idioma del cliente para subir al ATS", "uc.recruiter.q7v": "→ Notas de candidato estructuradas auto-generadas",
+      "uc.recruiter.q8t": "¿Cuáles son los temas más usados en llamadas etiquetadas « Positivo » este trimestre?", "uc.recruiter.q8v": "→ Identificación de patrones de éxito",
+      "uc.coach.name": "Coach de ventas / Responsable de Enablement", "uc.coach.role": "Desarrollo estructurado de habilidades a escala de equipo", "uc.coach.val": "\"Los coaches dejan de revisar llamadas al azar y lanzan programas de desarrollo data-driven y personalizados.\"",
+      "uc.coach.q1t": "Muéstrame dónde le faltan a Juan elementos MEDDIC — con frases alternativas", "uc.coach.q1v": "→ Detección de gaps de metodología + copia de coaching",
+      "uc.coach.q2t": "Construye un guion demo Empower completo en francés según mis fortalezas y debilidades", "uc.coach.q2v": "→ Guion personalizado desde tus propias llamadas",
+      "uc.coach.q3t": "Muéstrame las llamadas de Othmane con puntuación Monopolisation por debajo de 50", "uc.coach.q3v": "→ Cola de coaching basada en puntuación",
+      "uc.coach.q4t": "Analiza los 5 últimos deals perdidos — objeciones comunes + 2 técnicas de negociación", "uc.coach.q4v": "→ Análisis win/loss con conclusiones accionables",
+      "uc.coach.q5t": "Extrae los 5 mejores « momentos aha » de las demos Empower del mes pasado", "uc.coach.q5v": "→ Biblioteca de mejores prácticas construida automáticamente",
+      "uc.coach.q6t": "¿Cómo puede Joshua Vischel mejorar en llamadas de más de 10 min — últimos 3 meses?", "uc.coach.q6v": "→ Coaching de rendimiento filtrado por duración",
+      "uc.coach.q7t": "Compara el guion demo del top performer con el resto del equipo", "uc.coach.q7v": "→ Transferencia de conocimiento de arriba a abajo",
+      "uc.coach.q8t": "Identifica los 3 momentos en esta llamada donde el rep perdió la atención del prospecto", "uc.coach.q8v": "→ Micro-coaching a nivel de llamada",
+      "uc.coach.q9t": "¿Cómo manejar: « No tengo tiempo, envíame un email »?", "uc.coach.q9v": "→ Manejo de objeciones desde llamadas ganadoras",
+      "ind.1.title": "Seguros y servicios financieros", "ind.1.subtitle": "CUMPLIMIENTO + INTELIGENCIA CLIENTE", "ind.1.pitch": "Entornos de alto volumen y sensibles al cumplimiento donde cada llamada debe documentarse, ser buscable y auditable. Empower convierte los archivos de llamadas en inteligencia de cliente estructurada.",
+      "ind.1.q1": "Dame todas las llamadas con SPVIE ASSURANCES y sus próximos pasos", "ind.1.q2": "¿Qué objeciones surgieron en las llamadas de renovación en enero?", "ind.1.q3": "¿Cómo ha cambiado el feedback de precios en el último trimestre?", "ind.1.q4": "Muéstrame llamadas donde se mencionó « contrato » con sentimiento negativo",
+      "ind.2.title": "B2B SaaS / Ventas tecnológicas", "ind.2.subtitle": "INTELIGENCIA DE DEAL + CONCIENCIA COMPETITIVA", "ind.2.pitch": "Ciclos de venta rápidos donde los reps necesitan contexto al instante, los managers visibilidad de pipeline y el enablement escalar mejores prácticas más rápido que la plantilla.",
+      "ind.2.q1": "¿Hay alguna mención de Aircall o Modjo en las llamadas esta semana?", "ind.2.q2": "¿Cuáles son las principales funcionalidades solicitadas por clientes enterprise?", "ind.2.q3": "Presupuesto identificado pero sin próximos pasos en los últimos 7 días — muéstrame", "ind.2.q4": "Compara el rendimiento de demo de Josua y Othmane mes a mes",
+      "ind.3.title": "Reclutamiento y staffing", "ind.3.subtitle": "INTELIGENCIA CANDIDATO + SYNC ATS", "ind.3.pitch": "Los reclutadores hacen decenas de llamadas por semana. Empower convierte esas conversaciones en perfiles de candidato estructurados, sincronizados con el ATS — sin notas manuales.",
+      "ind.3.q1": "Resume todas las llamadas con este candidato y destaca señales de fit", "ind.3.q2": "¿Qué candidatos mencionaron salario por encima de nuestro rango?", "ind.3.q3": "Genera una ficha de candidato para el cliente desde mi entrevista", "ind.3.q4": "¿Cuáles son las tendencias de rendimiento de reclutadores este mes?",
+      "comp.1.name": "vs Fathom / Granola / Fireflies", "comp.1.badge": "✓ VICTORIA CLARA", "comp.1.desc": "Son tomadores de notas de reunión. Muy bien para resúmenes. Cero inteligencia de equipo. Empower es una categoría totalmente distinta.",
+      "comp.1.li1": "✓ Ellos analizan 1 llamada. Nosotros analizamos toda tu empresa.", "comp.1.li2": "✓ Sin capa de coaching. Nosotros puntuamos y mejoramos reps.", "comp.1.li3": "✓ No tocan las llamadas. Nosotros somos nativos de telefonía.", "comp.1.li4": "✓ Sin análisis de tendencias, sin vistas de equipo, sin seguimiento de habilidades.", "comp.1.li5": "✓ Auto-relleno CRM: ellos apenas envían notas. Nosotros rellenamos campos.", "comp.1.pitch": "Frase: \"Has superado tu tomador de notas.\"",
+      "comp.2.name": "vs Claap / Read.ai", "comp.2.badge": "✓ VICTORIA COMPETITIVA", "comp.2.desc": "Productos más fuertes — pero siguen sin capa de telefonía. Claap fue adquirida por Lemlist en oct. 2025 — la incertidumbre de hoja de ruta es real.",
+      "comp.2.li1": "✓ Sin telefonía nativa — necesitan Zoom/Teams para funcionar.", "comp.2.li2": "✓ Claap es solo ventas. Nosotros cubrimos ventas, soporte y reclutamiento.", "comp.2.li3": "✓ Paridad de auto-relleno CRM hoy; igualamos y superaremos.", "comp.2.li4": "✓ La adquisición de Claap crea inestabilidad y riesgo de hoja de ruta.", "comp.2.li5": "✓ Empower respaldado por la infraestructura de telefonía de Ringover.", "comp.2.pitch": "Frase: \"Construido sobre tus llamadas, no atornillado a tus reuniones.\"",
+      "comp.3.name": "vs Modjo", "comp.3.badge": "⚡ COMBATE CERRADO", "comp.3.desc": "Modjo es nuestro competidor europeo más directo. Sé honesto — pero enmarca la trayectoria con claridad y confianza.",
+      "comp.3.li1": "✓ Auto-relleno CRM en llamadas hoy; cobertura de video completa en abril.", "comp.3.li2": "✓ Modjo = solo ventas. Nosotros cubrimos soporte y reclutamiento también.", "comp.3.li3": "✓ Modjo no tiene telefonía — paga Ringover por separado.", "comp.3.li4": "✓ ~99 €+/usuario/mes + 15 asientos mín. Somos más accesibles.", "comp.3.li5": "△ Modjo: sincronización CRM bidireccional. Nosotros la estamos construyendo (Fase 4).", "comp.3.pitch": "Frase: \"Todo lo que hace Modjo — dentro de tu sistema telefónico.\"",
+      "comp.moatHeading": "🛡️ El foso estructural de Empower — Lidera con esto en cada pitch",
+      "comp.moat1.title": "Telefonía nativa", "comp.moat1.desc": "Cada competidor se integra con una herramienta de teléfono. Empower ES la herramienta de teléfono — 100 % de captura, cero configuración.",
+      "comp.moat2.title": "Datos europeos", "comp.moat2.desc": "Cumplimiento GDPR, residencia de datos en la UE, transcripción y análisis multilingües por diseño.",
+      "comp.moat3.title": "Multi-vertical", "comp.moat3.desc": "Ventas + Soporte + Reclutamiento. Una plataforma, tres equipos, una suscripción.",
+      "comp.moat4.title": "Precio accesible", "comp.moat4.desc": "Sin tasas de plataforma de 50 k$. Sin mínimo de 15 asientos. Valor real desde el día uno, con cualquier tamaño de equipo.",
+      "pitch.30secTitle": "El pitch de 30 segundos", "pitch.30secText": "« Ask Empower V2 es el motor de inteligencia conversacional de tu empresa. En lugar de buscar en grabaciones, simplemente <strong>preguntas</strong> — sobre un cliente, un rep, un deal, una tendencia, una objeción. Responde desde el historial completo de llamadas y reuniones de tu equipo. Tus reps cierran más rápido, tus managers coachan mejor y todo el equipo deja de perder contexto entre conversaciones. »",
+      "pitch.hardTitle": "Responder a las preguntas difíciles",
+      "pitch.qa1q": "❓ « ¿Puede actualizar mi CRM automáticamente? »", "pitch.qa1a": "Sí. Los resúmenes de llamadas y las acciones se sincronizan con tu CRM hoy para llamadas y videollamadas. <strong>El auto-relleno CRM (enriquecimiento) para llamadas y videollamadas sale en abril 2026.</strong> La sincronización bidireccional completa está en nuestra hoja de ruta.",
+      "pitch.qa2q": "❓ « Ya usamos Fireflies / Fathom. »", "pitch.qa2a": "Esos son grabadores de reuniones. <strong>Empower es inteligencia conversacional.</strong> Pregúntale por las principales objeciones de tu equipo en 3 meses, o qué reps necesitan coaching MEDDIC. Tu herramienta actual no puede hacer eso.",
+      "pitch.qa3q": "❓ « ¿En qué se diferencia de Modjo? »", "pitch.qa3a": "Modjo es una buena herramienta — pero se integra con tu sistema telefónico. <strong>Empower ES tu sistema telefónico.</strong> 100 % de captura de llamadas, en nativo. Menor coste, sin mínimos de asientos, cubriendo ventas, soporte y reclutamiento.",
+      "pitch.qa4q": "❓ « No usamos Ringover. »", "pitch.qa4a": "<strong>Empower funciona en standalone.</strong> Integraciones nativas con Aircall y RingCentral. Cualquier otro sistema de llamadas puede enviar vía nuestra API de subida pública. No hace falta cambiar de proveedor.",
+      "pitch.discTitle": "Preguntas de discovery por rol",
+      "pitch.disc1label": "PARA SALES MANAGERS", "pitch.disc1text": "« Cuando un rep termina una llamada, ¿cuánto tardan en actualizar el CRM y escribir el seguimiento? »",
+      "pitch.disc2label": "PARA DIRECTORES COMERCIALES", "pitch.disc2text": "« Si te preguntara ahora mismo cuáles fueron las 5 principales objeciones de tu equipo el mes pasado — ¿podrías responder en 30 segundos? »",
+      "pitch.disc3label": "PARA COACHES / ENABLEMENT", "pitch.disc3text": "« ¿Cómo identificas actualmente qué reps necesitan coaching — y qué desencadena esa conversación? »",
+      "pitch.disc4label": "PARA SOPORTE / CSM", "pitch.disc4text": "« ¿Cómo detectas actualmente cuándo un cliente está en riesgo de churn — antes de que te lo diga? »",
+      "pitch.disc5label": "PARA AGENCIAS DE RECLUTAMIENTO", "pitch.disc5text": "« Después de una llamada con un candidato, ¿cuánto tarda tu equipo en redactar notas y actualizar el ATS? »",
+      "pitch.warnTitle": "⚠️ Qué NO prometer", "pitch.warnText": "No posiciones Empower aún como <strong>herramienta de revenue intelligence o forecasting.</strong> No prometas que Ask Empower puede predecir con precisión <strong>probabilidad de deal, salud del pipeline o precisión del forecast</strong> — eso requiere datos CRM aún no conectados.<br><br><strong>El encuadre correcto:</strong> « Empower es la base de inteligencia conversacional sobre la que se construye la revenue intelligence. La estamos construyendo fase a fase — y la Fase 4 (sync CRM completa) llega en abril 2026. »",
+      "uc.label": "Por persona", "uc.title": "Quién usa Ask Empower V2 y cómo", "uc.sub": "Preguntas reales de usuarios reales — muestra a los prospects cómo es un día con Ask Empower V2",
+      "uc.tab.rep": "💼 Representante", "uc.tab.mgr": "📈 Director comercial", "uc.tab.support": "🎧 Soporte", "uc.tab.recruiter": "👥 Reclutador", "uc.tab.coach": "🏆 Coach / Enablement",
+      "ind.label": "Por sector", "ind.title": "Propuestas de valor por industria", "ind.sub": "Adapta el argumentario al mundo de tu prospect",
+      "comp.label": "Posicionamiento competitivo", "comp.title": "Cómo ganar en el mercado", "comp.sub": "Tres categorías, tres argumentarios — conoce tu batalla antes de cada discovery",
+      "pitch.label": "Argumentario", "pitch.title": "Qué decir — y cómo decirlo", "pitch.sub": "Gestiona cada escenario con prospectos con confianza",
+      "footer.text": "<strong>Ask Empower V2</strong> — Enablement comercial interno · Empower by Ringover · Marzo 2026 · Confidencial"
+    }
+  };
+  function applyLanguage(lang) {
+    if (!I18N[lang]) return;
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(function(el) {
+      var k = el.getAttribute("data-i18n");
+      if (I18N[lang][k] !== undefined) el.innerHTML = I18N[lang][k];
+    });
+  }
   function switchTab(id, el) {
     document.querySelectorAll('.uc-pane').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.uc-tab').forEach(t => t.classList.remove('active'));
@@ -841,6 +1209,20 @@
         toggle.setAttribute('aria-label', 'Open menu');
         toggle.querySelector('.nav-toggle-icon').textContent = '☰';
       }
+    });
+  })();
+  (function() {
+    var langSelect = document.getElementById('langSelect');
+    if (!langSelect) return;
+    var saved = (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || 'en';
+    if (I18N[saved]) {
+      langSelect.value = saved;
+      applyLanguage(saved);
+    }
+    langSelect.addEventListener('change', function() {
+      var lang = this.value;
+      if (typeof localStorage !== 'undefined') localStorage.setItem('lang', lang);
+      applyLanguage(lang);
     });
   })();
 </script>
