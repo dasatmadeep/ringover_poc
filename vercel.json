@@ -1,6 +1,9 @@
 {
+  "buildCommand": null,
+  "installCommand": null,
+  "framework": null,
   "rewrites": [
-    { "source": "/", "destination": "/one_page.html" },
-    { "source": "/index.html", "destination": "/one_page.html" }
+    { "source": "/", "destination": "/AskEmpower.html" },
+    { "source": "/index.html", "destination": "/AskEmpower.html" }
   ]
 }

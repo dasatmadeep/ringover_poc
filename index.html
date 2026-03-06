@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#16181B">
+<title>Ask Empower V2</title>
+<style>
+  :root {
+    --accent: #4E6EC1;
+    --accent-hover: #3050A3;
+    --accent-active: #26467B;
+    --accent-light: rgba(78,110,193,0.08);
+    --accent-light-hover: rgba(78,110,193,0.20);
+    --brand: #7FA3FE;
+    --brand-light: #CCDAFF;
+    --brand-accent: #99B5FE;
+    --text-primary: #162029;
+    --text-intermediate: #3D4753;
+    --text-secondary: #646E7D;
+    --bg-light: #F9FBFF;
+    --bg-regular: #F0F3FA;
+    --bg-accentued: #DFE5F3;
+    --bg-deep: #C5CFE7;
+    --bg-inverted: #16181B;
+    --border-light: #F0F3FA;
+    --border-regular: #DFE5F3;
+    --border-accentued: #C5CFE7;
+    --white: #FFFFFF;
+    --success: #18A326;
+    --success-light: rgba(24,163,38,0.08);
+    --danger: #E52517;
+    --danger-light: rgba(229,37,23,0.08);
+    --warning: #FF8726;
+    --warning-light: rgba(255,135,38,0.08);
+    --illu-dark: #4E6EC1;
+    --illu-regular: #7FA3FE;
+    --illu-light: #CCDAFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg-light); color: var(--text-primary); -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  nav { background: var(--bg-inverted); padding: 13px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; flex-wrap: wrap; gap: 12px; }
+  .nav-logo { color: var(--white); font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 8px; }
+  .nav-logo-dot { width: 8px; height: 8px; background: var(--brand); border-radius: 50%; }
+  .nav-badge { background: var(--accent); color: var(--white); font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 1.2px; }
+  .nav-tabs { display: flex; gap: 4px; align-items: center; }
+  .nav-tab { color: rgba(255,255,255,0.5); font-size: 12px; cursor: pointer; padding: 5px 12px; border-radius: 6px; border: none; background: transparent; transition: all .2s; font-weight: 500; }
+  .nav-tab:hover, .nav-tab.active { background: rgba(255,255,255,0.08); color: var(--white); }
+  .nav-toggle { display: none; background: none; border: none; color: var(--white); padding: 10px; cursor: pointer; border-radius: 8px; font-size: 20px; line-height: 1; -webkit-tap-highlight-color: transparent; }
+  .nav-toggle:hover { background: rgba(255,255,255,0.08); }
+  .nav-toggle:focus { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+  /* HERO */
+  .hero { background: var(--bg-inverted); padding: 60px 40px 52px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% -10%, rgba(127,163,254,0.18) 0%, transparent 65%); pointer-events: none; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(78,110,193,0.15); border: 1px solid rgba(78,110,193,0.35); color: var(--brand-accent); font-size: 11px; font-weight: 700; letter-spacing: 1.8px; padding: 5px 14px; border-radius: 20px; margin-bottom: 22px; }
+  .hero h1 { color: var(--white); font-size: 44px; font-weight: 800; line-height: 1.12; margin-bottom: 16px; position: relative; }
+  .hero h1 .hl { color: var(--brand); }
+  .hero-sub { color: rgba(255,255,255,0.55); font-size: 16px; max-width: 580px; margin: 0 auto 40px; line-height: 1.7; position: relative; }
+  .hero-stats { display: flex; gap: 0; justify-content: center; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; overflow: hidden; max-width: 560px; margin: 0 auto; position: relative; }
+  .stat { flex: 1; padding: 18px 20px; border-right: 1px solid rgba(255,255,255,0.08); text-align: center; }
+  .stat:last-child { border-right: none; }
+  .stat-num { color: var(--brand); font-size: 26px; font-weight: 800; line-height: 1; }
+  .stat-label { color: rgba(255,255,255,0.4); font-size: 11px; margin-top: 4px; font-weight: 500; }
+
+  /* LAYOUT */
+  .section-wrap { padding: 52px 40px; max-width: 1120px; margin: 0 auto; }
+  .section-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; margin-bottom: 6px; }
+  .section-title { font-size: 26px; font-weight: 800; color: var(--text-primary); margin-bottom: 6px; }
+  .section-sub { color: var(--text-secondary); font-size: 14px; margin-bottom: 32px; line-height: 1.6; }
+  .divider { height: 1px; background: var(--border-light); margin: 0 40px; }
+
+  /* EVOLUTION */
+  .evo-wrap { background: var(--white); border-radius: 18px; padding: 40px; box-shadow: 0 2px 20px rgba(22,32,41,0.06); border: 1px solid var(--border-light); }
+  .evo-grid { display: grid; grid-template-columns: 1fr 36px 1fr 36px 1fr; align-items: start; gap: 0; }
+  .evo-card { border-radius: 14px; padding: 24px; }
+  .evo-card.v1 { background: var(--bg-light); border: 1.5px solid var(--border-regular); }
+  .evo-card.v2 { background: linear-gradient(145deg, rgba(78,110,193,0.06), rgba(127,163,254,0.08)); border: 1.5px solid var(--accent); box-shadow: 0 0 0 4px rgba(78,110,193,0.08); }
+  .evo-card.future { background: var(--bg-light); border: 1.5px dashed var(--border-accentued); }
+  .evo-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1.2px; padding: 2px 9px; border-radius: 20px; margin-bottom: 10px; }
+  .evo-card.v1 .evo-badge { background: var(--bg-regular); color: var(--text-secondary); }
+  .evo-card.v2 .evo-badge { background: var(--accent); color: var(--white); }
+  .evo-card.future .evo-badge { background: var(--accent-light); color: var(--accent); border: 1px solid rgba(78,110,193,0.2); }
+  .evo-title { font-size: 16px; font-weight: 800; margin-bottom: 12px; }
+  .evo-card.v1 .evo-title { color: var(--text-secondary); }
+  .evo-card.v2 .evo-title { color: var(--accent-hover); }
+  .evo-card.future .evo-title { color: var(--accent); }
+  .evo-list { list-style: none; }
+  .evo-list li { font-size: 12.5px; color: var(--text-intermediate); padding: 3.5px 0; display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
+  .evo-list li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
+  .evo-card.v1 .evo-list li::before { background: var(--bg-deep); }
+  .evo-card.v2 .evo-list li::before { background: var(--accent); }
+  .evo-card.future .evo-list li::before { background: var(--brand); }
+  .evo-arrow { display: flex; align-items: center; justify-content: center; padding-top: 60px; color: var(--accent); font-size: 20px; opacity: 0.6; }
+
+  /* ROADMAP */
+  .rm-strip { background: var(--bg-regular); border-radius: 12px; padding: 18px 24px; display: flex; align-items: center; gap: 0; overflow-x: auto; margin-top: 28px; }
+  .rm-item { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+  .rm-dot { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; flex-shrink: 0; }
+  .rm-dot.done { background: rgba(24,163,38,0.12); color: var(--success); }
+  .rm-dot.now { background: var(--accent); color: var(--white); box-shadow: 0 0 0 4px rgba(78,110,193,0.2); }
+  .rm-dot.soon { background: rgba(255,135,38,0.1); color: var(--warning); }
+  .rm-dot.next { background: var(--bg-accentued); color: var(--text-secondary); }
+  .rm-label-title { font-size: 12px; font-weight: 700; color: var(--text-primary); }
+  .rm-label-sub { font-size: 10px; color: var(--text-secondary); margin-top: 1px; }
+  .rm-line { width: 28px; height: 2px; margin: 0 6px; flex-shrink: 0; border-radius: 2px; }
+  .rm-line.done { background: rgba(24,163,38,0.3); }
+  .rm-line.active { background: linear-gradient(90deg, rgba(24,163,38,0.3), var(--accent)); }
+  .rm-line.upcoming { background: var(--border-regular); }
+
+  /* CAPABILITIES */
+  .caps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .cap-card { background: var(--white); border-radius: 12px; padding: 20px; border: 1px solid var(--border-light); transition: all .2s; cursor: default; }
+  .cap-card:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(78,110,193,0.1); transform: translateY(-2px); }
+  .cap-icon { width: 36px; height: 36px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 16px; margin-bottom: 12px; background: var(--accent-light); }
+  .cap-title { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 5px; }
+  .cap-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.55; }
+  .cap-tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 8px; margin-top: 8px; }
+  .cap-tag.live { background: rgba(24,163,38,0.1); color: var(--success); }
+  .cap-tag.april { background: rgba(255,135,38,0.1); color: var(--warning); }
+
+  /* USE CASES */
+  .uc-box { background: var(--white); border-radius: 18px; overflow: hidden; border: 1px solid var(--border-light); box-shadow: 0 2px 20px rgba(22,32,41,0.05); }
+  .uc-tabs { display: flex; background: var(--bg-light); border-bottom: 1px solid var(--border-light); overflow-x: auto; }
+  .uc-tab { padding: 13px 22px; font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap; color: var(--text-secondary); border-bottom: 2px solid transparent; transition: all .2s; background: none; border-top: none; border-left: none; border-right: none; }
+  .uc-tab.active { color: var(--accent); border-bottom-color: var(--accent); background: var(--white); }
+  .uc-tab:hover:not(.active) { color: var(--text-intermediate); background: var(--bg-regular); }
+  .uc-pane { display: none; padding: 28px; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .uc-pane.active { display: grid; }
+  .persona-header { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+  .persona-avatar { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; background: var(--accent-light); }
+  .persona-name { font-size: 15px; font-weight: 700; color: var(--text-primary); }
+  .persona-role { font-size: 11px; color: var(--text-secondary); margin-top: 2px; }
+  .q-list { display: flex; flex-direction: column; gap: 7px; }
+  .q-item { background: var(--bg-light); border-radius: 9px; padding: 11px 13px; border-left: 2.5px solid var(--border-accentued); }
+  .q-item.hi { background: var(--accent-light); border-left-color: var(--accent); }
+  .q-text { font-size: 12px; font-style: italic; color: var(--text-intermediate); margin-bottom: 3px; }
+  .q-text::before { content: '"'; }
+  .q-text::after { content: '"'; }
+  .q-val { font-size: 11px; color: var(--accent); font-weight: 600; }
+  .value-box { background: var(--accent-light); border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; border: 1px solid rgba(78,110,193,0.15); }
+  .value-box-label { font-size: 10px; font-weight: 700; color: var(--accent); letter-spacing: 1.2px; margin-bottom: 6px; }
+  .value-box-text { font-size: 13px; color: var(--text-primary); line-height: 1.6; font-weight: 500; }
+
+  /* INDUSTRIES */
+  .ind-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .ind-card { background: var(--white); border-radius: 14px; padding: 26px; border: 1px solid var(--border-light); }
+  .ind-icon { font-size: 28px; margin-bottom: 12px; }
+  .ind-title { font-size: 15px; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
+  .ind-subtitle { font-size: 11px; color: var(--accent); font-weight: 700; margin-bottom: 12px; letter-spacing: 0.5px; }
+  .ind-pitch { font-size: 12.5px; color: var(--text-intermediate); line-height: 1.6; margin-bottom: 14px; }
+  .ind-qs { display: flex; flex-direction: column; gap: 5px; }
+  .ind-q { font-size: 11px; background: var(--bg-light); padding: 7px 10px; border-radius: 7px; color: var(--text-intermediate); font-style: italic; border-left: 2px solid var(--accent); }
+  .ind-q::before { content: '💬 '; }
+
+  /* COMPETITIVE */
+  .comp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .comp-card { border-radius: 14px; padding: 22px; border: 1px solid; }
+  .comp-card.win { background: rgba(24,163,38,0.05); border-color: rgba(24,163,38,0.2); }
+  .comp-card.mid { background: var(--accent-light); border-color: rgba(78,110,193,0.2); }
+  .comp-card.fight { background: rgba(255,135,38,0.05); border-color: rgba(255,135,38,0.2); }
+  .comp-name { font-size: 15px; font-weight: 800; margin-bottom: 4px; }
+  .comp-card.win .comp-name { color: #12781C; }
+  .comp-card.mid .comp-name { color: var(--accent-hover); }
+  .comp-card.fight .comp-name { color: #9A4C22; }
+  .comp-tag-badge { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; display: inline-block; margin-bottom: 10px; }
+  .comp-card.win .comp-tag-badge { background: rgba(24,163,38,0.12); color: #12781C; }
+  .comp-card.mid .comp-tag-badge { background: rgba(78,110,193,0.12); color: var(--accent); }
+  .comp-card.fight .comp-tag-badge { background: rgba(255,135,38,0.12); color: #9A4C22; }
+  .comp-desc { font-size: 12px; line-height: 1.6; margin-bottom: 10px; }
+  .comp-card.win .comp-desc { color: #12781C; }
+  .comp-card.mid .comp-desc { color: var(--accent-hover); }
+  .comp-card.fight .comp-desc { color: #9A4C22; }
+  .comp-pts { list-style: none; }
+  .comp-pts li { font-size: 11.5px; padding: 3px 0; display: flex; gap: 6px; line-height: 1.4; }
+  .comp-card.win .comp-pts li { color: #0F5C14; }
+  .comp-card.mid .comp-pts li { color: var(--accent-active); }
+  .comp-card.fight .comp-pts li { color: #9A4C22; }
+  .comp-pitch-line { margin-top: 12px; font-size: 11.5px; font-weight: 700; padding: 8px 10px; border-radius: 7px; }
+  .comp-card.win .comp-pitch-line { background: rgba(24,163,38,0.1); color: #12781C; }
+  .comp-card.mid .comp-pitch-line { background: rgba(78,110,193,0.1); color: var(--accent); }
+  .comp-card.fight .comp-pitch-line { background: rgba(255,135,38,0.1); color: #9A4C22; }
+  .moat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-top: 18px; }
+  .moat-item { text-align: center; padding: 16px; background: var(--white); border-radius: 10px; border: 1px solid var(--border-light); }
+  .moat-icon { font-size: 22px; margin-bottom: 7px; }
+  .moat-title { font-size: 12px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+  .moat-desc { font-size: 11px; color: var(--text-secondary); line-height: 1.4; }
+
+  /* PITCH */
+  .pitch-wrap { background: var(--bg-inverted); border-radius: 18px; padding: 44px; }
+  .pitch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+  .pitch-title { font-size: 18px; font-weight: 800; color: var(--white); margin-bottom: 16px; }
+  .pitch-hero-box { background: rgba(127,163,254,0.1); border: 1px solid rgba(127,163,254,0.2); border-radius: 12px; padding: 18px 20px; margin-bottom: 18px; }
+  .pitch-hero-text { color: rgba(255,255,255,0.8); font-size: 13px; line-height: 1.8; }
+  .pitch-hero-text strong { color: var(--brand); }
+  .pitch-qa { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 14px 16px; margin-bottom: 8px; }
+  .pitch-qa-q { font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 5px; font-weight: 600; }
+  .pitch-qa-a { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.55; }
+  .pitch-qa-a strong { color: var(--brand-accent); }
+  .disc-q { background: rgba(255,255,255,0.04); border-radius: 10px; padding: 13px 15px; margin-bottom: 8px; border-left: 3px solid var(--accent); }
+  .disc-q-label { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.3); letter-spacing: 1.2px; margin-bottom: 4px; }
+  .disc-q-text { font-size: 12.5px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+  .warn-box { background: rgba(255,135,38,0.08); border: 1px solid rgba(255,135,38,0.25); border-radius: 10px; padding: 14px 16px; margin-top: 16px; }
+  .warn-title { font-size: 12px; font-weight: 700; color: var(--warning); margin-bottom: 6px; }
+  .warn-text { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.65; }
+  .warn-text strong { color: rgba(255,255,255,0.9); }
+
+  /* FOOTER */
+  footer { background: var(--bg-inverted); padding: 20px 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); }
+  footer p { color: rgba(255,255,255,0.25); font-size: 11px; }
+  footer strong { color: var(--brand); }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 1024px) {
+    .section-wrap { padding: 40px 24px; }
+    .divider { margin: 0 24px; }
+    .evo-grid { grid-template-columns: 1fr 28px 1fr 28px 1fr; gap: 0; }
+    .evo-arrow { padding-top: 40px; font-size: 18px; }
+    .pitch-grid { gap: 32px; }
+    .moat-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 12px 20px; padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
+    .nav-tabs { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-inverted); flex-direction: column; padding: 12px; border-top: 1px solid rgba(255,255,255,0.08); gap: 4px; }
+    .nav-tabs.is-open { display: flex; }
+    .nav-tab { width: 100%; text-align: left; padding: 12px 16px; font-size: 14px; min-height: 44px; display: flex; align-items: center; }
+    .nav-toggle { display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
+    .hero { padding: 40px 20px 36px; }
+    .hero h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .hero-sub { font-size: 14px; margin-bottom: 28px; padding: 0 8px; }
+    .hero-stats { flex-wrap: wrap; max-width: 100%; border-radius: 12px; }
+    .stat { flex: 1 1 calc(50% - 1px); min-width: 120px; padding: 14px 12px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08); }
+    .stat:nth-last-child(-n+2) { border-bottom: none; }
+    .stat-num { font-size: 20px; }
+    .stat-label { font-size: 10px; }
+    .section-wrap { padding: 36px 20px; }
+    .section-title { font-size: 22px; }
+    .section-sub { font-size: 13px; margin-bottom: 24px; }
+    .divider { margin: 0 20px; }
+    .evo-wrap { padding: 24px 20px; border-radius: 14px; }
+    .evo-grid { grid-template-columns: 1fr; grid-template-rows: auto auto auto auto auto; gap: 0; }
+    .evo-arrow { padding: 8px 0; transform: rotate(90deg); }
+    .evo-card { max-width: 100%; }
+    .rm-strip { padding: 14px 16px; margin-top: 20px; -webkit-overflow-scrolling: touch; }
+    .rm-item { min-width: 160px; }
+    .caps-grid { grid-template-columns: 1fr; gap: 12px; }
+    .uc-tabs { -webkit-overflow-scrolling: touch; padding: 0 4px; }
+    .uc-tab { padding: 12px 16px; font-size: 12px; min-height: 44px; display: flex; align-items: center; }
+    .uc-pane { padding: 20px; grid-template-columns: 1fr; gap: 20px; }
+    .uc-pane.active { display: flex; flex-direction: column; }
+    .ind-grid { grid-template-columns: 1fr; gap: 14px; }
+    .comp-grid { grid-template-columns: 1fr; gap: 12px; }
+    .moat-grid { grid-template-columns: 1fr; gap: 12px; }
+    .pitch-wrap { padding: 28px 20px; border-radius: 14px; }
+    .pitch-grid { grid-template-columns: 1fr; gap: 28px; }
+    footer { padding: 16px 20px; }
+    footer p { font-size: 10px; line-height: 1.5; }
+  }
+
+  @media (max-width: 480px) {
+    nav { padding: 10px 16px; }
+    .nav-logo { font-size: 13px; }
+    .nav-badge { font-size: 9px; padding: 2px 8px; }
+    .hero { padding: 32px 16px 28px; }
+    .hero-eyebrow { font-size: 10px; padding: 4px 10px; letter-spacing: 1.2px; margin-bottom: 16px; }
+    .hero h1 { font-size: 24px; }
+    .hero-sub { font-size: 13px; margin-bottom: 24px; }
+    .hero-stats { border-radius: 10px; }
+    .stat { flex: 1 1 50%; min-width: 0; padding: 12px 8px; }
+    .stat-num { font-size: 18px; }
+    .section-wrap { padding: 28px 16px; }
+    .section-label { font-size: 10px; letter-spacing: 1.5px; }
+    .section-title { font-size: 20px; }
+    .section-sub { font-size: 12px; margin-bottom: 20px; }
+    .evo-wrap { padding: 20px 16px; }
+    .evo-card { padding: 18px; }
+    .evo-title { font-size: 15px; }
+    .evo-list li { font-size: 12px; }
+    .cap-card { padding: 16px; }
+    .cap-title { font-size: 12px; }
+    .ind-card { padding: 20px; }
+    .ind-title { font-size: 14px; }
+    .comp-card { padding: 18px; }
+    .pitch-wrap { padding: 22px 16px; }
+    .pitch-title { font-size: 16px; }
+    .pitch-hero-text { font-size: 12px; }
+    .pitch-qa-a { font-size: 12px; }
+    .disc-q-text { font-size: 12px; }
+  }
+
+  /* Touch targets & focus */
+  @media (hover: none) {
+    .nav-tab:active, .uc-tab:active { background: rgba(255,255,255,0.12); }
+    .cap-card:active { transform: none; }
+  }
+  .nav-tab:focus-visible, .uc-tab:focus-visible, .nav-toggle:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><div class="nav-logo-dot"></div>Empower by Ringover</div>
+  <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <span class="nav-toggle-icon" aria-hidden="true">☰</span>
+  </button>
+  <div class="nav-tabs" id="navTabs" role="navigation">
+    <button type="button" class="nav-tab active" onclick="scrollSec('evolution')">Evolution</button>
+    <button type="button" class="nav-tab" onclick="scrollSec('capabilities')">V2 Capabilities</button>
+    <button type="button" class="nav-tab" onclick="scrollSec('usecases')">Use Cases</button>
+    <button type="button" class="nav-tab" onclick="scrollSec('industries')">Industries</button>
+    <button type="button" class="nav-tab" onclick="scrollSec('compete')">vs Competitors</button>
+    <button type="button" class="nav-tab" onclick="scrollSec('pitch')">Sales Pitch</button>
+  </div>
+  <div class="nav-badge">V2 LAUNCH</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">⚡ ASK EMPOWER V2 — INTERNAL LAUNCH BRIEF</div>
+  <h1>Your company's conversations,<br><span class="hl">finally intelligent.</span></h1>
+  <p class="hero-sub">Ask Empower V2 transforms Empower from a single-call chatbot into a company-wide conversational intelligence engine — the foundation of Ringover's Revenue Intelligence platform.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">V1→V2</div><div class="stat-label">Major Platform Leap</div></div>
+    <div class="stat"><div class="stat-num">1 call</div><div class="stat-label">V1 context limit</div></div>
+    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">V2 company-wide</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">Phases to Revenue OS</div></div>
+  </div>
+</div>
+
+<!-- EVOLUTION -->
+<div id="evolution" class="section-wrap">
+  <div class="section-label">The Journey</div>
+  <div class="section-title">How Ask Empower evolved</div>
+  <div class="section-sub">From single-call chatbot → company conversational intelligence → full revenue operating system</div>
+  <div class="evo-wrap">
+    <div class="evo-grid">
+      <div class="evo-card v1">
+        <div class="evo-badge">V1 — LAUNCHED 2024</div>
+        <div class="evo-title">Single-Call Assistant</div>
+        <ul class="evo-list">
+          <li>Limited to 1 call ID at a time</li>
+          <li>Last 10 conversations only</li>
+          <li>No cross-agent or cross-team context</li>
+          <li>Basic Q&A on individual call content</li>
+          <li>Micro-value, not strategic impact</li>
+        </ul>
+      </div>
+      <div class="evo-arrow">→</div>
+      <div class="evo-card v2">
+        <div class="evo-badge">✦ V2 — LIVE NOW</div>
+        <div class="evo-title">Company-Wide Intelligence</div>
+        <ul class="evo-list">
+          <li>Cross-call, cross-agent, cross-team context</li>
+          <li>Ask about any conversation, any time</li>
+          <li>Trend analysis, objections, performance at scale</li>
+          <li>Coaching insights + skill gap detection</li>
+          <li>Multilingual: EN, FR, ES, DE, IT + more</li>
+          <li>Sales, Support & Recruitment use cases</li>
+        </ul>
+      </div>
+      <div class="evo-arrow">→</div>
+      <div class="evo-card future">
+        <div class="evo-badge">FUTURE — ROADMAP</div>
+        <div class="evo-title">Revenue Intelligence OS</div>
+        <ul class="evo-list">
+          <li>Full bi-directional CRM sync</li>
+          <li>Deal health + pipeline intelligence</li>
+          <li>Forecast confidence scoring</li>
+          <li>Real-time proactive alerts</li>
+          <li>Deal Rooms per opportunity</li>
+          <li>Competes with Gong at full scale</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Roadmap strip -->
+    <div style="margin-top:28px;">
+      <div style="font-size:11px;font-weight:700;color:var(--text-secondary);letter-spacing:1.5px;margin-bottom:12px;text-transform:uppercase;">Roadmap Progress</div>
+      <div class="rm-strip">
+        <div class="rm-item">
+          <div class="rm-dot done">✓</div>
+          <div><div class="rm-label-title">Ask Empower Global</div><div class="rm-label-sub">Phase 1 — Live now</div></div>
+        </div>
+        <div class="rm-line active"></div>
+        <div class="rm-item">
+          <div class="rm-dot now">2</div>
+          <div><div class="rm-label-title">Coaching & Skills</div><div class="rm-label-sub">Phase 2 — In progress</div></div>
+        </div>
+        <div class="rm-line upcoming"></div>
+        <div class="rm-item">
+          <div class="rm-dot soon">3</div>
+          <div><div class="rm-label-title">Real-Time Alerts</div><div class="rm-label-sub">Phase 3 — Coming soon</div></div>
+        </div>
+        <div class="rm-line upcoming"></div>
+        <div class="rm-item">
+          <div class="rm-dot soon">4</div>
+          <div><div class="rm-label-title">CRM Integration</div><div class="rm-label-sub">Phase 4 — April 2026</div></div>
+        </div>
+        <div class="rm-line upcoming"></div>
+        <div class="rm-item">
+          <div class="rm-dot next">5</div>
+          <div><div class="rm-label-title">Deal Room & Revenue Intel</div><div class="rm-label-sub">Phase 5 — Roadmap</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- V2 CAPABILITIES -->
+<div id="capabilities" class="section-wrap">
+  <div class="section-label">What's New</div>
+  <div class="section-title">Ask Empower V2 — Core Capabilities</div>
+  <div class="section-sub">Everything V1 could do, plus an entirely new layer of cross-company intelligence</div>
+  <div class="caps-grid">
+    <div class="cap-card">
+      <div class="cap-icon">🌐</div>
+      <div class="cap-title">Company-Wide Conversation Search</div>
+      <div class="cap-desc">Ask questions across your entire call and meeting library. Search by agent, team, tag, topic, date range, or client name.</div>
+      <span class="cap-tag live">✓ Live</span>
+    </div>
+    <div class="cap-card">
+      <div class="cap-icon">📊</div>
+      <div class="cap-title">Cross-Agent Performance Analysis</div>
+      <div class="cap-desc">Compare rep performance, identify top performers, surface coaching gaps, and track skill progression across your team.</div>
+      <span class="cap-tag live">✓ Live</span>
+    </div>
+    <div class="cap-card">
+      <div class="cap-icon">🎯</div>
+      <div class="cap-title">Trend & Pattern Detection</div>
+      <div class="cap-desc">Spot objection trends month over month, track competitor mentions, identify recurring customer pain points at scale.</div>
+      <span class="cap-tag live">✓ Live</span>
+    </div>
+    <div class="cap-card">
+      <div class="cap-icon">💬</div>
+      <div class="cap-title">Account & Contact Intelligence</div>
+      <div class="cap-desc">Get full context on any account or contact — full call history, pain points, objections, and next steps before you call.</div>
+      <span class="cap-tag live">✓ Live</span>
+    </div>
+    <div class="cap-card">
+      <div class="cap-icon">🏷️</div>
+      <div class="cap-title">Tag-Based Intelligence</div>
+      <div class="cap-desc">Analyse calls by custom tags (Prospect, Demo, Objection, Competitor). Understand what's happening inside any call segment.</div>
+      <span class="cap-tag live">✓ Live</span>
+    </div>
+    <div class="cap-card">
+      <div class="cap-icon">🔗</div>
+      <div class="cap-title">Multi-Channel Coverage</div>
+      <div class="cap-desc">Ringover calls, Zoom, Google Meet, MS Teams, physical meetings, Aircall, RingCentral, or any call via public upload API.</div>
+      <span class="cap-tag live">✓ Live</span>
+    </div>
+    <div class="cap-card">
+      <div class="cap-icon">⚡</div>
+      <div class="cap-title">CRM Auto-Sync</div>
+      <div class="cap-desc">Call summaries and action items sync to CRM today. CRM auto-fill (field enrichment) for calls AND video meetings ships April 2026.</div>
+      <span class="cap-tag april">🔜 April 2026 (full)</span>
+    </div>
+    <div class="cap-card">
+      <div class="cap-icon">🧠</div>
+      <div class="cap-title">AI-Generated Coaching Content</div>
+      <div class="cap-desc">Generate coaching plans, identify MEDDIC/SPIN/BANT gaps per rep, build demo scripts from top performer call data.</div>
+      <span class="cap-tag live">✓ Live</span>
+    </div>
+    <div class="cap-card">
+      <div class="cap-icon">✍️</div>
+      <div class="cap-title">Follow-Up & Email Generation</div>
+      <div class="cap-desc">Generate contextual follow-up emails, client summaries, meeting prep briefs, and next-step plans from real conversation data.</div>
+      <span class="cap-tag live">✓ Live</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- USE CASES -->
+<div id="usecases" class="section-wrap">
+  <div class="section-label">By Persona</div>
+  <div class="section-title">Who uses Ask Empower V2, and how</div>
+  <div class="section-sub">Real questions from real users — show prospects exactly what a day with Ask Empower V2 looks like</div>
+  <div class="uc-box">
+    <div class="uc-tabs">
+      <button class="uc-tab active" onclick="switchTab('rep',this)">💼 Sales Rep</button>
+      <button class="uc-tab" onclick="switchTab('mgr',this)">📈 Sales Manager</button>
+      <button class="uc-tab" onclick="switchTab('support',this)">🎧 Support Team</button>
+      <button class="uc-tab" onclick="switchTab('recruiter',this)">👥 Recruiter</button>
+      <button class="uc-tab" onclick="switchTab('coach',this)">🏆 Coach / Enablement</button>
+    </div>
+
+    <!-- REP -->
+    <div id="pane-rep" class="uc-pane active">
+      <div>
+        <div class="persona-header">
+          <div class="persona-avatar">💼</div>
+          <div><div class="persona-name">Sales Representative</div><div class="persona-role">Before, during & after every call</div></div>
+        </div>
+        <div class="q-list">
+          <div class="q-item hi"><div class="q-text">Prepare my next meeting with ABSYS CYBORG — what's the full history?</div><div class="q-val">→ Instant meeting prep from full call history</div></div>
+          <div class="q-item hi"><div class="q-text">What are the pain points of Atmadeep DAS across all our calls?</div><div class="q-val">→ Full account intelligence before you dial</div></div>
+          <div class="q-item"><div class="q-text">What's blocking the next step with SPVIE ASSURANCES?</div><div class="q-val">→ Surfaces deal blockers and open objections</div></div>
+          <div class="q-item hi"><div class="q-text">Write a follow-up email after my call with Kaino — include the 3 unanswered questions</div><div class="q-val">→ Contextual AI-drafted follow-up</div></div>
+          <div class="q-item"><div class="q-text">Is there any competitor mention in the call with Atmadeep DAS?</div><div class="q-val">→ Competitive intelligence from your own calls</div></div>
+          <div class="q-item"><div class="q-text">When is Laurent Sevenier expected to sign?</div><div class="q-val">→ Commitment signals extracted from calls</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="value-box"><div class="value-box-label">💡 THE VALUE IN ONE LINE</div><div class="value-box-text">"Every rep enters every call knowing more, follows up faster, and never loses deal context again."</div></div>
+        <div class="q-list">
+          <div class="q-item"><div class="q-text">Give me the agenda of my day</div><div class="q-val">→ Calendar + call prep combined</div></div>
+          <div class="q-item"><div class="q-text">Show me calls where we discussed HubSpot integration</div><div class="q-val">→ Semantic cross-call search</div></div>
+          <div class="q-item hi"><div class="q-text">What is the status of the deal with PLAYTOMIC SL?</div><div class="q-val">→ Deal summary from conversation history</div></div>
+          <div class="q-item"><div class="q-text">Summarize my last 3 calls with ABSYS CYBORG</div><div class="q-val">→ Account summary in seconds</div></div>
+          <div class="q-item"><div class="q-text">What are the main objections clients raise about pricing?</div><div class="q-val">→ Pattern intelligence across all calls</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MANAGER -->
+    <div id="pane-mgr" class="uc-pane">
+      <div>
+        <div class="persona-header">
+          <div class="persona-avatar">📈</div>
+          <div><div class="persona-name">Head of Sales / Sales Manager</div><div class="persona-role">Team oversight, pipeline visibility, rep development</div></div>
+        </div>
+        <div class="q-list">
+          <div class="q-item hi"><div class="q-text">Top 10 users by calls and video calls last month — give me a table</div><div class="q-val">→ Instant activity leaderboard</div></div>
+          <div class="q-item hi"><div class="q-text">Who are the best performers in the (ES) AE MID group — calls vs video calls?</div><div class="q-val">→ Team segmentation + performance view</div></div>
+          <div class="q-item"><div class="q-text">Show Daniel Hernandez's last calls with scores — which should I coach?</div><div class="q-val">→ Score-triggered coaching queue</div></div>
+          <div class="q-item hi"><div class="q-text">Drill into objections by type over 3 months — which are most common and least resolved?</div><div class="q-val">→ Strategic insight for enablement & product</div></div>
+          <div class="q-item"><div class="q-text">Is there a correlation between calls over 45 min and close rate?</div><div class="q-val">→ Data-driven sales process insight</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="value-box"><div class="value-box-label">💡 THE VALUE IN ONE LINE</div><div class="value-box-text">"A sales manager reviews 3× more calls in the same time, with AI surfacing what matters — not gut feel."</div></div>
+        <div class="q-list">
+          <div class="q-item"><div class="q-text">Top 10 objections in discovery calls in February with suggested responses</div><div class="q-val">→ Monthly objection intelligence</div></div>
+          <div class="q-item hi"><div class="q-text">Compare top performer's demo script with the team — show 3 key differences</div><div class="q-val">→ Best practice identification at scale</div></div>
+          <div class="q-item"><div class="q-text">Generate a personalised coaching plan for March — 2 objectives per week with KPIs</div><div class="q-val">→ AI-generated structured coaching plans</div></div>
+          <div class="q-item hi"><div class="q-text">What deals have budget identified but no next steps in the last 7 days?</div><div class="q-val">→ Pipeline risk detection from call data</div></div>
+          <div class="q-item"><div class="q-text">Compare Othmane and Josua's performance month over month for 3 months</div><div class="q-val">→ Rep vs rep trend analysis</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUPPORT -->
+    <div id="pane-support" class="uc-pane">
+      <div>
+        <div class="persona-header">
+          <div class="persona-avatar">🎧</div>
+          <div><div class="persona-name">Customer Support / CSM Team</div><div class="persona-role">Issue detection, CSAT, quality analysis</div></div>
+        </div>
+        <div class="q-list">
+          <div class="q-item hi"><div class="q-text">Analyse the last 50 CSM Onboarding calls — what are the recurring client irritants?</div><div class="q-val">→ Systemic issue detection at scale</div></div>
+          <div class="q-item hi"><div class="q-text">Show calls with Pain/Challenge tag where the customer expressed frustration — top 3</div><div class="q-val">→ Churn risk identification</div></div>
+          <div class="q-item"><div class="q-text">Is there any churn risk for ABSYS CYBORG?</div><div class="q-val">→ Account health from conversation signals</div></div>
+          <div class="q-item hi"><div class="q-text">Who are the satisfied clients based on the "Satisfait" tag?</div><div class="q-val">→ CSAT proxy from conversation tags</div></div>
+          <div class="q-item"><div class="q-text">What are the main features requested by clients this week?</div><div class="q-val">→ Voice of Customer for product teams</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="value-box"><div class="value-box-label">💡 THE VALUE IN ONE LINE</div><div class="value-box-text">"Support managers stop firefighting and start pattern-matching — fixing root causes, not individual tickets."</div></div>
+        <div class="q-list">
+          <div class="q-item"><div class="q-text">Analyse ADMIN calls — what are the principal friction points?</div><div class="q-val">→ Process friction mapped from call data</div></div>
+          <div class="q-item hi"><div class="q-text">Analyse the 50 last CSM Onboarding calls and extract client pain points</div><div class="q-val">→ Qualitative support quality analysis</div></div>
+          <div class="q-item"><div class="q-text">Generate a meeting summary to send to a client after onboarding</div><div class="q-val">→ Automated post-call client communication</div></div>
+          <div class="q-item"><div class="q-text">What are the most used topics in the last 3 months of support calls?</div><div class="q-val">→ Support trend intelligence</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RECRUITER -->
+    <div id="pane-recruiter" class="uc-pane">
+      <div>
+        <div class="persona-header">
+          <div class="persona-avatar">👥</div>
+          <div><div class="persona-name">Recruiter / Talent Acquisition</div><div class="persona-role">Candidate intelligence, interview analysis, ATS sync</div></div>
+        </div>
+        <div class="q-list">
+          <div class="q-item hi"><div class="q-text">Summarize all my calls with this candidate — key strengths and red flags?</div><div class="q-val">→ Candidate profile from real conversations</div></div>
+          <div class="q-item hi"><div class="q-text">What questions did we ask in the last 20 interviews for this role — are we consistent?</div><div class="q-val">→ Interview process quality control</div></div>
+          <div class="q-item"><div class="q-text">Which recruiters are having the most engaged candidate calls this month?</div><div class="q-val">→ Recruiter performance benchmarking</div></div>
+          <div class="q-item"><div class="q-text">What are the most common candidate objections to our clients' offers?</div><div class="q-val">→ Offer intelligence for talent strategy</div></div>
+          <div class="q-item hi"><div class="q-text">Prepare me for my next call — what did we discuss last time with this candidate?</div><div class="q-val">→ Instant candidate history brief</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="value-box"><div class="value-box-label">💡 THE VALUE IN ONE LINE</div><div class="value-box-text">"Recruiters stop relying on memory and start making decisions from structured conversation intelligence."</div></div>
+        <div class="q-list">
+          <div class="q-item"><div class="q-text">Which candidates mentioned salary expectations above our range?</div><div class="q-val">→ Compensation signal extraction</div></div>
+          <div class="q-item hi"><div class="q-text">Generate a candidate summary in the client's language for ATS upload</div><div class="q-val">→ Auto-generated structured candidate notes</div></div>
+          <div class="q-item"><div class="q-text">What are the most used topics in calls tagged as "Positive" this quarter?</div><div class="q-val">→ Success pattern identification</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COACH -->
+    <div id="pane-coach" class="uc-pane">
+      <div>
+        <div class="persona-header">
+          <div class="persona-avatar">🏆</div>
+          <div><div class="persona-name">Sales Coach / Enablement Manager</div><div class="persona-role">Structured skill development at team scale</div></div>
+        </div>
+        <div class="q-list">
+          <div class="q-item hi"><div class="q-text">Show me where Juan is missing MEDDIC elements — with alternative phrasings</div><div class="q-val">→ Methodology gap detection + coaching copy</div></div>
+          <div class="q-item hi"><div class="q-text">Build me a complete Empower demo script in French based on my strengths and weaknesses</div><div class="q-val">→ Personalised script from your own call data</div></div>
+          <div class="q-item"><div class="q-text">Show Othmane's calls with a Monopolisation score below 50</div><div class="q-val">→ Score-based coaching queue</div></div>
+          <div class="q-item hi"><div class="q-text">Analyse the 5 last lost deals — common objections + 2 negotiation techniques</div><div class="q-val">→ Win/loss analysis with actionable takeaways</div></div>
+          <div class="q-item"><div class="q-text">Extract the 5 best "aha moments" from Empower demos last month</div><div class="q-val">→ Best practice library built automatically</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="value-box"><div class="value-box-label">💡 THE VALUE IN ONE LINE</div><div class="value-box-text">"Coaches stop reviewing random calls and start running data-driven, personalised development programmes."</div></div>
+        <div class="q-list">
+          <div class="q-item"><div class="q-text">How can Joshua Vischel improve in calls longer than 10 min — last 3 months?</div><div class="q-val">→ Duration-filtered performance coaching</div></div>
+          <div class="q-item hi"><div class="q-text">Compare the top performer's demo script vs the rest of the team</div><div class="q-val">→ Knowledge transfer from top to bottom</div></div>
+          <div class="q-item"><div class="q-text">Identify the 3 moments in this call where the rep lost the prospect's attention</div><div class="q-val">→ Micro-coaching at call level</div></div>
+          <div class="q-item"><div class="q-text">How should I handle: "I don't have time, just send me an email"?</div><div class="q-val">→ Objection handling from winning calls</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- INDUSTRIES -->
+<div id="industries" class="section-wrap">
+  <div class="section-label">By Industry</div>
+  <div class="section-title">Industry-specific value propositions</div>
+  <div class="section-sub">Tailor the pitch to your prospect's world</div>
+  <div class="ind-grid">
+    <div class="ind-card">
+      <div class="ind-icon">🏦</div>
+      <div class="ind-title">Insurance & Financial Services</div>
+      <div class="ind-subtitle">COMPLIANCE + CLIENT INTELLIGENCE</div>
+      <div class="ind-pitch">High-volume, compliance-sensitive environments where every call needs to be documented, searchable, and auditable. Empower transforms call archives into structured client intelligence.</div>
+      <div class="ind-qs">
+        <div class="ind-q">Give me all calls with SPVIE ASSURANCES and their next steps</div>
+        <div class="ind-q">What objections came up in renewal calls in January?</div>
+        <div class="ind-q">How has pricing feedback changed over the last quarter?</div>
+        <div class="ind-q">Show calls where "contract" was mentioned with negative sentiment</div>
+      </div>
+    </div>
+    <div class="ind-card">
+      <div class="ind-icon">🚀</div>
+      <div class="ind-title">B2B SaaS / Technology Sales</div>
+      <div class="ind-subtitle">DEAL INTELLIGENCE + COMPETITIVE AWARENESS</div>
+      <div class="ind-pitch">Fast-moving sales cycles where reps need instant context, managers need pipeline visibility, and enablement needs to scale best practices faster than headcount grows.</div>
+      <div class="ind-qs">
+        <div class="ind-q">Is there any mention of Aircall or Modjo in calls this week?</div>
+        <div class="ind-q">What are the main features requested by enterprise clients?</div>
+        <div class="ind-q">Budget identified but no next steps in the last 7 days — show me</div>
+        <div class="ind-q">Compare Josua and Othmane's demo performance month over month</div>
+      </div>
+    </div>
+    <div class="ind-card">
+      <div class="ind-icon">🧑‍💼</div>
+      <div class="ind-title">Recruitment & Staffing</div>
+      <div class="ind-subtitle">CANDIDATE INTELLIGENCE + ATS SYNC</div>
+      <div class="ind-pitch">Recruiters conduct dozens of calls per week. Empower turns those conversations into structured candidate profiles, synced to ATS — no manual note-taking required.</div>
+      <div class="ind-qs">
+        <div class="ind-q">Summarize all calls with this candidate and highlight fit signals</div>
+        <div class="ind-q">Which candidates mentioned salary above our range?</div>
+        <div class="ind-q">Generate a candidate brief for the client from my interview</div>
+        <div class="ind-q">What are recruiter performance trends this month?</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- COMPETITIVE -->
+<div id="compete" class="section-wrap">
+  <div class="section-label">Competitive Positioning</div>
+  <div class="section-title">How to win against the market</div>
+  <div class="section-sub">Three categories, three different pitches — know your fight before every discovery call</div>
+  <div class="comp-grid">
+    <div class="comp-card win">
+      <div class="comp-name">vs Fathom / Granola / Fireflies</div>
+      <div class="comp-tag-badge">✓ STRONG WIN</div>
+      <div class="comp-desc">These are meeting notetakers. Great for summaries. Zero team intelligence. Empower is a different category entirely.</div>
+      <ul class="comp-pts">
+        <li>✓ They analyse 1 call. We analyse your entire company.</li>
+        <li>✓ No coaching layer. We score and improve reps.</li>
+        <li>✓ They don't touch phone calls. We're telephony-native.</li>
+        <li>✓ No trend analysis, no team views, no skill tracking.</li>
+        <li>✓ CRM auto-fill: they barely push notes. We auto-fill fields.</li>
+      </ul>
+      <div class="comp-pitch-line">Pitch line: "You've outgrown your notetaker."</div>
+    </div>
+    <div class="comp-card mid">
+      <div class="comp-name">vs Claap / Read.ai</div>
+      <div class="comp-tag-badge">✓ COMPETITIVE WIN</div>
+      <div class="comp-desc">Stronger products — but still no telephony layer. Claap was acquired by Lemlist in Oct 2025 — roadmap uncertainty is real.</div>
+      <ul class="comp-pts">
+        <li>✓ No native telephony — they need Zoom/Teams to function.</li>
+        <li>✓ Claap is sales-only. We cover sales, support, recruitment.</li>
+        <li>✓ CRM auto-fill parity today, we match and will surpass.</li>
+        <li>✓ Claap's acquisition creates instability and roadmap risk.</li>
+        <li>✓ Empower backed by Ringover's full telephony infrastructure.</li>
+      </ul>
+      <div class="comp-pitch-line">Pitch line: "Built on your calls, not bolted onto your meetings."</div>
+    </div>
+    <div class="comp-card fight">
+      <div class="comp-name">vs Modjo</div>
+      <div class="comp-tag-badge">⚡ CLOSE FIGHT</div>
+      <div class="comp-desc">Modjo is our most direct European competitor. Be honest — but frame the trajectory clearly and confidently.</div>
+      <ul class="comp-pts">
+        <li>✓ CRM auto-fill on calls today; full video coverage in April.</li>
+        <li>✓ Modjo = sales only. We cover support + recruitment too.</li>
+        <li>✓ Modjo has no telephony — pays for Ringover separately.</li>
+        <li>✓ ~€99+/user/month + 15 seat min. We're more accessible.</li>
+        <li>△ Modjo: bi-directional CRM sync. We're building (Phase 4).</li>
+      </ul>
+      <div class="comp-pitch-line">Pitch line: "Everything Modjo does — inside your phone system."</div>
+    </div>
+  </div>
+
+  <div style="margin-top:16px; background:var(--white); border-radius:14px; padding:22px; border:1px solid var(--border-light);">
+    <div style="font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:14px;">🛡️ Empower's Structural Moat — Lead with this in every pitch</div>
+    <div class="moat-grid">
+      <div class="moat-item"><div class="moat-icon">📞</div><div class="moat-title">Native Telephony</div><div class="moat-desc">Every competitor integrates with a phone tool. Empower IS the phone tool — 100% capture, zero setup.</div></div>
+      <div class="moat-item"><div class="moat-icon">🌍</div><div class="moat-title">European Data</div><div class="moat-desc">GDPR-compliant, EU data residency, multilingual transcription and analysis by design.</div></div>
+      <div class="moat-item"><div class="moat-icon">🔀</div><div class="moat-title">Multi-Vertical</div><div class="moat-desc">Sales + Support + Recruitment. One platform, three teams, one subscription.</div></div>
+      <div class="moat-item"><div class="moat-icon">💰</div><div class="moat-title">Price Accessible</div><div class="moat-desc">No $50K platform fees. No 15-seat minimums. Real value from day one, at any team size.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SALES PITCH -->
+<div id="pitch" class="section-wrap">
+  <div class="section-label">Sales Pitch</div>
+  <div class="section-title">What to say — and how to say it</div>
+  <div class="section-sub">Handle every prospect scenario with confidence</div>
+  <div class="pitch-wrap">
+    <div class="pitch-grid">
+      <div>
+        <div class="pitch-title">The 30-Second Pitch</div>
+        <div class="pitch-hero-box">
+          <div class="pitch-hero-text">"Ask Empower V2 is your company's conversational intelligence engine. Instead of searching through recordings, you simply <strong>ask</strong> — about a client, a rep, a deal, a trend, an objection. It answers from the full history of your team's calls and meetings. Your sales reps close faster, your managers coach smarter, and your entire team stops losing context between conversations."</div>
+        </div>
+        <div class="pitch-title" style="font-size:15px; margin-bottom:12px;">Handle the Hard Questions</div>
+        <div class="pitch-qa">
+          <div class="pitch-qa-q">❓ "Can it update my CRM automatically?"</div>
+          <div class="pitch-qa-a">Yes. Call summaries and action items sync to your CRM today for both calls and video meetings. <strong>CRM auto-fill (field enrichment) for both calls and video meetings ships in April 2026.</strong> Full bi-directional sync is on our roadmap.</div>
+        </div>
+        <div class="pitch-qa">
+          <div class="pitch-qa-q">❓ "We already use Fireflies / Fathom."</div>
+          <div class="pitch-qa-a">Those are meeting recorders. <strong>Empower is conversational intelligence.</strong> Ask it about your team's top objections across 3 months, or which reps need MEDDIC coaching. Your current tool can't do that.</div>
+        </div>
+        <div class="pitch-qa">
+          <div class="pitch-qa-q">❓ "How is this different from Modjo?"</div>
+          <div class="pitch-qa-a">Modjo is a good tool — but it integrates with your phone system. <strong>Empower is your phone system.</strong> 100% call capture, natively. Lower cost, no seat minimums, covering sales, support, and recruitment.</div>
+        </div>
+        <div class="pitch-qa">
+          <div class="pitch-qa-q">❓ "We don't use Ringover."</div>
+          <div class="pitch-qa-a"><strong>Empower works standalone.</strong> Native integrations with Aircall and RingCentral. Any other call system can push via our public upload API. No need to switch phone providers.</div>
+        </div>
+      </div>
+      <div>
+        <div class="pitch-title">Discovery Questions by Role</div>
+        <div class="disc-q" style="border-left-color: var(--brand);">
+          <div class="disc-q-label">FOR SALES MANAGERS</div>
+          <div class="disc-q-text">"When a rep finishes a call, how long does it take them to update the CRM and write a follow-up?"</div>
+        </div>
+        <div class="disc-q" style="border-left-color: var(--accent-hover);">
+          <div class="disc-q-label">FOR HEADS OF SALES</div>
+          <div class="disc-q-text">"If I asked you right now what the top 5 objections your team heard last month were — could you answer in 30 seconds?"</div>
+        </div>
+        <div class="disc-q" style="border-left-color: var(--brand-accent);">
+          <div class="disc-q-label">FOR COACHES / ENABLEMENT</div>
+          <div class="disc-q-text">"How do you currently identify which reps need coaching — and what triggers that conversation?"</div>
+        </div>
+        <div class="disc-q" style="border-left-color: var(--bg-deep);">
+          <div class="disc-q-label">FOR SUPPORT / CSM</div>
+          <div class="disc-q-text">"How do you currently detect when a customer is at churn risk — before they tell you?"</div>
+        </div>
+        <div class="disc-q" style="border-left-color: #7986CB;">
+          <div class="disc-q-label">FOR RECRUITMENT AGENCIES</div>
+          <div class="disc-q-text">"After a candidate call, how long does it take your team to write up notes and update the ATS?"</div>
+        </div>
+        <div class="warn-box">
+          <div class="warn-title">⚠️ What NOT to Promise</div>
+          <div class="warn-text">Do not position Empower as a <strong>revenue intelligence or forecasting tool yet.</strong> Do not promise that Ask Empower can accurately predict <strong>deal probability, pipeline health, or forecast accuracy</strong> — this requires CRM data not yet connected.<br><br><strong>The right framing:</strong> "Empower is the conversational intelligence foundation that revenue intelligence is built on. We're building it phase by phase — and Phase 4 (full CRM sync) lands in April 2026."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p><strong>Ask Empower V2</strong> — Internal Sales Enablement · Empower by Ringover · March 2026 · Confidential</p>
+</footer>
+
+<script>
+  function switchTab(id, el) {
+    document.querySelectorAll('.uc-pane').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.uc-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('pane-' + id).classList.add('active');
+    el.classList.add('active');
+  }
+  function scrollSec(id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      var tabs = document.getElementById('navTabs');
+      var toggle = document.getElementById('navToggle');
+      if (tabs && tabs.classList.contains('is-open')) {
+        tabs.classList.remove('is-open');
+        if (toggle) { toggle.setAttribute('aria-expanded', 'false'); toggle.querySelector('.nav-toggle-icon').textContent = '☰'; }
+      }
+    }
+  }
+  (function() {
+    var nav = document.querySelector('nav');
+    var toggle = document.getElementById('navToggle');
+    var tabs = document.getElementById('navTabs');
+    if (!toggle || !tabs || !nav) return;
+    toggle.addEventListener('click', function() {
+      var open = tabs.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      toggle.querySelector('.nav-toggle-icon').textContent = open ? '✕' : '☰';
+    });
+    document.addEventListener('click', function(e) {
+      if (tabs.classList.contains('is-open') && !nav.contains(e.target)) {
+        tabs.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+        toggle.querySelector('.nav-toggle-icon').textContent = '☰';
+      }
+    });
+  })();
+</script>
+</body>
+</html>

@@ -8,8 +8,8 @@ Static, mobile-responsive frontend for the Ask Empower V2 internal launch brief.
 
 1. Push this folder to GitHub (or GitLab/Bitbucket).
 2. Go to [vercel.com](https://vercel.com) → **Add New** → **Project**.
-3. Import the repository. Vercel will detect it as a static site.
-4. Deploy. The root URL will serve `one_page.html` (via `vercel.json` rewrites).
+3. Import the repository. The project deploys as a **static site** (`.vercelignore` excludes Node files so Vercel doesn’t look for an entrypoint).
+4. Deploy. The root URL serves `index.html` / `AskEmpower.html`.
 
 **Option 2 – Vercel CLI**
 
@@ -23,13 +23,14 @@ Follow the prompts. Your site will be live at the given URL.
 
 **Option 3 – Drag & drop**
 
-1. Zip the folder (include `one_page.html` and `vercel.json`).
+1. Zip the folder (include `index.html`, `AskEmpower.html`, and `vercel.json`).
 2. Go to [vercel.com/new](https://vercel.com/new) and deploy by uploading the zip or connecting the repo.
 
 ## Project structure
 
-- `one_page.html` – Single-page app (nav, hero, evolution, capabilities, use cases, industries, competitive, sales pitch, footer).
-- `vercel.json` – Rewrites so `/` and `/index.html` serve `one_page.html`.
+- `index.html` / `AskEmpower.html` – Single-page app (nav, hero, evolution, capabilities, use cases, industries, competitive, sales pitch, footer).
+- `vercel.json` – Static config; rewrites so `/` can serve `AskEmpower.html`.
+- `.vercelignore` – Excludes `package.json`, `node_modules`, etc., so Vercel treats the project as static (avoids “No entrypoint found”).
 - `Design_Guidelines.md` – Empower design token system and UI rules.
 
 ## Features
@@ -41,7 +42,7 @@ Follow the prompts. Your site will be live at the given URL.
 
 ## Local preview
 
-Open `one_page.html` in a browser, or use a simple static server:
+Open `index.html` or `AskEmpower.html` in a browser, or use a simple static server:
 
 ```bash
 npx serve .
