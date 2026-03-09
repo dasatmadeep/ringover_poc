@@ -1,0 +1,462 @@
+{
+  "common": {
+    "brand": "Empower by Ringover",
+    "downloadPdf": "Download PDF"
+  },
+  "nav": {
+    "evolution": "Evolution",
+    "capabilities": "V2 Capabilities",
+    "usecases": "Use Cases",
+    "industries": "Industries",
+    "compete": "vs Competitors",
+    "pitch": "Sales Pitch",
+    "badge": "V2 LAUNCH"
+  },
+  "hero": {
+    "eyebrow": "⚡ ASK EMPOWER V2 — INTERNAL LAUNCH BRIEF",
+    "title": "Your company's conversations,<br><span class=\"hl\">finally intelligent.</span>",
+    "sub": "Ask Empower V2 transforms Empower from a single-call chatbot into a company-wide conversational intelligence engine — the foundation of Ringover's Revenue Intelligence platform.",
+    "stat1": "Major Platform Leap",
+    "stat2": "V1 context limit",
+    "stat3": "V2 company-wide",
+    "stat4": "Phases to Revenue OS"
+  },
+  "evo": {
+    "label": "The Journey",
+    "title": "How Ask Empower evolved",
+    "sub": "From single-call chatbot → company conversational intelligence → full revenue operating system",
+    "v1": {
+      "badge": "V1 — LAUNCHED 2024",
+      "title": "Single-Call Assistant",
+      "li1": "Limited to 1 call ID at a time",
+      "li2": "Last 10 conversations only",
+      "li3": "No cross-agent or cross-team context",
+      "li4": "Basic Q&A on individual call content",
+      "li5": "Micro-value, not strategic impact"
+    },
+    "v2": {
+      "badge": "✦ V2 — LIVE NOW",
+      "title": "Company-Wide Intelligence",
+      "li1": "Cross-call, cross-agent, cross-team context",
+      "li2": "Ask about any conversation, any time",
+      "li3": "Trend analysis, objections, performance at scale",
+      "li4": "Coaching insights + skill gap detection",
+      "li5": "Multilingual: EN, FR, ES, DE, IT + more",
+      "li6": "Sales, Support & Recruitment use cases"
+    },
+    "future": {
+      "badge": "FUTURE — ROADMAP",
+      "title": "Revenue Intelligence OS",
+      "li1": "Full bi-directional CRM sync",
+      "li2": "Deal health + pipeline intelligence",
+      "li3": "Forecast confidence scoring",
+      "li4": "Real-time proactive alerts",
+      "li5": "Deal Rooms per opportunity",
+      "li6": "Competes with Gong at full scale"
+    },
+    "rmHeading": "Roadmap Progress",
+    "rm1": {
+      "title": "Ask Empower Global",
+      "sub": "Phase 1 — Live now"
+    },
+    "rm2": {
+      "title": "Coaching & Skills",
+      "sub": "Phase 2 — In progress"
+    },
+    "rm3": {
+      "title": "Real-Time Alerts",
+      "sub": "Phase 3 — Coming soon"
+    },
+    "rm4": {
+      "title": "CRM Integration",
+      "sub": "Phase 4 — April 2026"
+    },
+    "rm5": {
+      "title": "Deal Room & Revenue Intel",
+      "sub": "Phase 5 — Roadmap"
+    }
+  },
+  "cap": {
+    "1": {
+      "title": "Company-Wide Conversation Search",
+      "desc": "Ask questions across your entire call and meeting library. Search by agent, team, tag, topic, date range, or client name."
+    },
+    "2": {
+      "title": "Cross-Agent Performance Analysis",
+      "desc": "Compare rep performance, identify top performers, surface coaching gaps, and track skill progression across your team."
+    },
+    "3": {
+      "title": "Trend & Pattern Detection",
+      "desc": "Spot objection trends month over month, track competitor mentions, identify recurring customer pain points at scale."
+    },
+    "4": {
+      "title": "Account & Contact Intelligence",
+      "desc": "Get full context on any account or contact — full call history, pain points, objections, and next steps before you call."
+    },
+    "5": {
+      "title": "Tag-Based Intelligence",
+      "desc": "Analyse calls by custom tags (Prospect, Demo, Objection, Competitor). Understand what's happening inside any call segment."
+    },
+    "6": {
+      "title": "Multi-Channel Coverage",
+      "desc": "Ringover calls, Zoom, Google Meet, MS Teams, physical meetings, Aircall, RingCentral, or any call via public upload API."
+    },
+    "7": {
+      "title": "CRM Auto-Sync",
+      "desc": "Call summaries and action items sync to CRM today. CRM auto-fill (field enrichment) for calls AND video meetings ships April 2026."
+    },
+    "8": {
+      "title": "AI-Generated Coaching Content",
+      "desc": "Generate coaching plans, identify MEDDIC/SPIN/BANT gaps per rep, build demo scripts from top performer call data."
+    },
+    "9": {
+      "title": "Follow-Up & Email Generation",
+      "desc": "Generate contextual follow-up emails, client summaries, meeting prep briefs, and next-step plans from real conversation data."
+    },
+    "label": "What's New",
+    "title": "Ask Empower V2 — Core Capabilities",
+    "sub": "Everything V1 could do, plus an entirely new layer of cross-company intelligence",
+    "tagLive": "✓ Live",
+    "tagApril": "🔜 April 2026 (full)"
+  },
+  "uc": {
+    "label": "By Persona",
+    "title": "Who uses Ask Empower V2, and how",
+    "sub": "Real questions from real users — show prospects exactly what a day with Ask Empower V2 looks like",
+    "tab": {
+      "rep": "💼 Sales Rep",
+      "mgr": "📈 Sales Manager",
+      "support": "🎧 Support Team",
+      "recruiter": "👥 Recruiter",
+      "coach": "🏆 Coach / Enablement"
+    },
+    "valLabel": "💡 THE VALUE IN ONE LINE",
+    "rep": {
+      "name": "Sales Representative",
+      "role": "Before, during & after every call",
+      "val": "\"Every rep enters every call knowing more, follows up faster, and never loses deal context again.\"",
+      "q1t": "Prepare my next meeting with ABSYS CYBORG — what's the full history?",
+      "q1v": "→ Instant meeting prep from full call history",
+      "q2t": "What are the pain points of Atmadeep DAS across all our calls?",
+      "q2v": "→ Full account intelligence before you dial",
+      "q3t": "What's blocking the next step with SPVIE ASSURANCES?",
+      "q3v": "→ Surfaces deal blockers and open objections",
+      "q4t": "Write a follow-up email after my call with Kaino — include the 3 unanswered questions",
+      "q4v": "→ Contextual AI-drafted follow-up",
+      "q5t": "Is there any competitor mention in the call with Atmadeep DAS?",
+      "q5v": "→ Competitive intelligence from your own calls",
+      "q6t": "When is Laurent Sevenier expected to sign?",
+      "q6v": "→ Commitment signals extracted from calls",
+      "q7t": "Give me the agenda of my day",
+      "q7v": "→ Calendar + call prep combined",
+      "q8t": "Show me calls where we discussed HubSpot integration",
+      "q8v": "→ Semantic cross-call search",
+      "q9t": "What is the status of the deal with PLAYTOMIC SL?",
+      "q9v": "→ Deal summary from conversation history",
+      "q10t": "Summarize my last 3 calls with ABSYS CYBORG",
+      "q10v": "→ Account summary in seconds",
+      "q11t": "What are the main objections clients raise about pricing?",
+      "q11v": "→ Pattern intelligence across all calls"
+    },
+    "mgr": {
+      "name": "Head of Sales / Sales Manager",
+      "role": "Team oversight, pipeline visibility, rep development",
+      "val": "\"A sales manager reviews 3× more calls in the same time, with AI surfacing what matters — not gut feel.\"",
+      "q1t": "Top 10 users by calls and video calls last month — give me a table",
+      "q1v": "→ Instant activity leaderboard",
+      "q2t": "Who are the best performers in the (ES) AE MID group — calls vs video calls?",
+      "q2v": "→ Team segmentation + performance view",
+      "q3t": "Show Daniel Hernandez's last calls with scores — which should I coach?",
+      "q3v": "→ Score-triggered coaching queue",
+      "q4t": "Drill into objections by type over 3 months — which are most common and least resolved?",
+      "q4v": "→ Strategic insight for enablement & product",
+      "q5t": "Is there a correlation between calls over 45 min and close rate?",
+      "q5v": "→ Data-driven sales process insight",
+      "q6t": "Top 10 objections in discovery calls in February with suggested responses",
+      "q6v": "→ Monthly objection intelligence",
+      "q7t": "Compare top performer's demo script with the team — show 3 key differences",
+      "q7v": "→ Best practice identification at scale",
+      "q8t": "Generate a personalised coaching plan for March — 2 objectives per week with KPIs",
+      "q8v": "→ AI-generated structured coaching plans",
+      "q9t": "What deals have budget identified but no next steps in the last 7 days?",
+      "q9v": "→ Pipeline risk detection from call data",
+      "q10t": "Compare Othmane and Josua's performance month over month for 3 months",
+      "q10v": "→ Rep vs rep trend analysis"
+    },
+    "support": {
+      "name": "Customer Support / CSM Team",
+      "role": "Issue detection, CSAT, quality analysis",
+      "val": "\"Support managers stop firefighting and start pattern-matching — fixing root causes, not individual tickets.\"",
+      "q1t": "Analyse the last 50 CSM Onboarding calls — what are the recurring client irritants?",
+      "q1v": "→ Systemic issue detection at scale",
+      "q2t": "Show calls with Pain/Challenge tag where the customer expressed frustration — top 3",
+      "q2v": "→ Churn risk identification",
+      "q3t": "Is there any churn risk for ABSYS CYBORG?",
+      "q3v": "→ Account health from conversation signals",
+      "q4t": "Who are the satisfied clients based on the \"Satisfait\" tag?",
+      "q4v": "→ CSAT proxy from conversation tags",
+      "q5t": "What are the main features requested by clients this week?",
+      "q5v": "→ Voice of Customer for product teams",
+      "q6t": "Analyse ADMIN calls — what are the principal friction points?",
+      "q6v": "→ Process friction mapped from call data",
+      "q7t": "Analyse the 50 last CSM Onboarding calls and extract client pain points",
+      "q7v": "→ Qualitative support quality analysis",
+      "q8t": "Generate a meeting summary to send to a client after onboarding",
+      "q8v": "→ Automated post-call client communication",
+      "q9t": "What are the most used topics in the last 3 months of support calls?",
+      "q9v": "→ Support trend intelligence"
+    },
+    "recruiter": {
+      "name": "Recruiter / Talent Acquisition",
+      "role": "Candidate intelligence, interview analysis, ATS sync",
+      "val": "\"Recruiters stop relying on memory and start making decisions from structured conversation intelligence.\"",
+      "q1t": "Summarize all my calls with this candidate — key strengths and red flags?",
+      "q1v": "→ Candidate profile from real conversations",
+      "q2t": "What questions did we ask in the last 20 interviews for this role — are we consistent?",
+      "q2v": "→ Interview process quality control",
+      "q3t": "Which recruiters are having the most engaged candidate calls this month?",
+      "q3v": "→ Recruiter performance benchmarking",
+      "q4t": "What are the most common candidate objections to our clients' offers?",
+      "q4v": "→ Offer intelligence for talent strategy",
+      "q5t": "Prepare me for my next call — what did we discuss last time with this candidate?",
+      "q5v": "→ Instant candidate history brief",
+      "q6t": "Which candidates mentioned salary expectations above our range?",
+      "q6v": "→ Compensation signal extraction",
+      "q7t": "Generate a candidate summary in the client's language for ATS upload",
+      "q7v": "→ Auto-generated structured candidate notes",
+      "q8t": "What are the most used topics in calls tagged as \"Positive\" this quarter?",
+      "q8v": "→ Success pattern identification"
+    },
+    "coach": {
+      "name": "Sales Coach / Enablement Manager",
+      "role": "Structured skill development at team scale",
+      "val": "\"Coaches stop reviewing random calls and start running data-driven, personalised development programmes.\"",
+      "q1t": "Show me where Juan is missing MEDDIC elements — with alternative phrasings",
+      "q1v": "→ Methodology gap detection + coaching copy",
+      "q2t": "Build me a complete Empower demo script in French based on my strengths and weaknesses",
+      "q2v": "→ Personalised script from your own call data",
+      "q3t": "Show Othmane's calls with a Monopolisation score below 50",
+      "q3v": "→ Score-based coaching queue",
+      "q4t": "Analyse the 5 last lost deals — common objections + 2 negotiation techniques",
+      "q4v": "→ Win/loss analysis with actionable takeaways",
+      "q5t": "Extract the 5 best \"aha moments\" from Empower demos last month",
+      "q5v": "→ Best practice library built automatically",
+      "q6t": "How can Joshua Vischel improve in calls longer than 10 min — last 3 months?",
+      "q6v": "→ Duration-filtered performance coaching",
+      "q7t": "Compare the top performer's demo script vs the rest of the team",
+      "q7v": "→ Knowledge transfer from top to bottom",
+      "q8t": "Identify the 3 moments in this call where the rep lost the prospect's attention",
+      "q8v": "→ Micro-coaching at call level",
+      "q9t": "How should I handle: \"I don't have time, just send me an email\"?",
+      "q9v": "→ Objection handling from winning calls"
+    }
+  },
+  "ind": {
+    "1": {
+      "title": "Insurance & Financial Services",
+      "subtitle": "COMPLIANCE + CLIENT INTELLIGENCE",
+      "pitch": "High-volume, compliance-sensitive environments where every call needs to be documented, searchable, and auditable. Empower transforms call archives into structured client intelligence.",
+      "q1": "Give me all calls with SPVIE ASSURANCES and their next steps",
+      "q2": "What objections came up in renewal calls in January?",
+      "q3": "How has pricing feedback changed over the last quarter?",
+      "q4": "Show calls where \"contract\" was mentioned with negative sentiment"
+    },
+    "2": {
+      "title": "B2B SaaS / Technology Sales",
+      "subtitle": "DEAL INTELLIGENCE + COMPETITIVE AWARENESS",
+      "pitch": "Fast-moving sales cycles where reps need instant context, managers need pipeline visibility, and enablement needs to scale best practices faster than headcount grows.",
+      "q1": "Is there any mention of Aircall or Modjo in calls this week?",
+      "q2": "What are the main features requested by enterprise clients?",
+      "q3": "Budget identified but no next steps in the last 7 days — show me",
+      "q4": "Compare Josua and Othmane's demo performance month over month"
+    },
+    "3": {
+      "title": "Recruitment & Staffing",
+      "subtitle": "CANDIDATE INTELLIGENCE + ATS SYNC",
+      "pitch": "Recruiters conduct dozens of calls per week. Empower turns those conversations into structured candidate profiles, synced to ATS — no manual note-taking required.",
+      "q1": "Summarize all calls with this candidate and highlight fit signals",
+      "q2": "Which candidates mentioned salary above our range?",
+      "q3": "Generate a candidate brief for the client from my interview",
+      "q4": "What are recruiter performance trends this month?"
+    },
+    "label": "By Industry",
+    "title": "Industry-specific value propositions",
+    "sub": "Tailor the pitch to your prospect's world"
+  },
+  "comp": {
+    "1": {
+      "name": "vs Modjo",
+      "badge": "⚡ CLOSE FIGHT",
+      "desc": "Modjo is Empower's closest European competitor in conversation intelligence.",
+      "where1": "Strong CRM auto-fill and sales methodology alignment",
+      "where2": "Built specifically for sales organizations",
+      "where3": "Deep pipeline and deal analytics",
+      "where4": "Strong European brand in RevOps teams",
+      "li1": "✔ We are the phone system. Modjo integrates with telephony — Empower is the telephony.",
+      "li2": "✔ 100% call capture. Empower captures every phone call + meeting.",
+      "li3": "✔ Multi-vertical. Modjo = sales only. Empower = sales + support + recruitment.",
+      "li4": "✔ Analyse conversations without recording. Empower can analyze calls and meetings even when recording is disabled.",
+      "li5": "✔ CRM automation catching up. Auto-fill for calls — video coverage coming April.",
+      "li6": "✔ Lower barrier. Modjo requires ~15 seats minimum.",
+      "pitch": "Pitch: \"Everything Modjo does — inside your phone system.\""
+    },
+    "2": {
+      "name": "vs Fathom",
+      "badge": "✓ STRONG WIN",
+      "desc": "Fathom is an AI meeting assistant, not a conversation intelligence platform. Records meetings only, mainly Zoom.",
+      "where1": "Extremely simple UX",
+      "where2": "Very popular with individual sales reps",
+      "where3": "Free tier adoption",
+      "where4": "Good AI summaries and highlights",
+      "li1": "✔ Meetings vs conversations. Fathom analyzes meetings. Empower analyzes all conversations across phone + video.",
+      "li2": "✔ Organization intelligence. Fathom = meeting-by-meeting. Empower = cross-team intelligence.",
+      "li3": "✔ Telephony native. Fathom has no phone system.",
+      "li4": "✔ No-recording analysis. Empower can analyze conversations without recording calls.",
+      "li5": "✔ Operational intelligence. Empower answers: top performers, objection trends, coaching gaps, deal signals. Fathom cannot.",
+      "pitch": "Pitch: \"Fathom records meetings. Empower understands your entire conversation business.\""
+    },
+    "3": {
+      "name": "vs Claap",
+      "badge": "⚡ COMPETITIVE WIN",
+      "desc": "Claap is a meeting-based sales intelligence platform, now part of Lemlist.",
+      "where1": "Built for sales teams",
+      "where2": "Sales methodologies (MEDDIC, SPIN)",
+      "where3": "AI query across meetings",
+      "where4": "Strong Lemlist outbound ecosystem",
+      "li1": "✔ Phone calls missing. Claap depends on Zoom / Meet / Teams. Empower captures 100% of conversations.",
+      "li2": "✔ Telephony-native architecture.",
+      "li3": "✔ Multi-vertical. Claap = sales only.",
+      "li4": "✔ Conversation intelligence beyond meetings.",
+      "li5": "✔ Analyse calls without recording them.",
+      "li6": "✔ Embedded in communications stack.",
+      "pitch": "Pitch: \"Claap analyzes meetings. Empower analyzes your entire conversation stack.\""
+    },
+    "4": {
+      "name": "vs Noota / Leexi / Fireflies / Read.ai",
+      "badge": "✓ STRONG WIN",
+      "desc": "These tools are primarily AI meeting assistants and note-takers.",
+      "where1": "Fast meeting summaries",
+      "where2": "Individual productivity",
+      "where3": "Easy onboarding",
+      "where4": "Good transcription accuracy",
+      "where5": "Integrations with CRM / ATS",
+      "li1": "✔ Meeting tools vs conversation intelligence. They answer \"What happened in this meeting?\" Empower answers \"What is happening across our entire organization?\"",
+      "li2": "✔ Organization-level intelligence. Ask Empower analyzes trends, coaching gaps, objections, performance across months of conversations.",
+      "li3": "✔ Telephony-native. They rely on bots, meeting capture, uploads. Empower is built into telephony.",
+      "li4": "✔ Analyse calls even without recording. Empower can extract insights without requiring call recordings.",
+      "li5": "✔ Cross-team analytics. They focus on individual meetings. Empower focuses on company-level intelligence.",
+      "pitch": "Pitch: \"Those tools write meeting notes. Empower tells you what your conversations mean.\""
+    },
+    "5": {
+      "name": "vs Smart Note-Takers",
+      "badge": "✓ STRONG WIN",
+      "desc": "e.g. tl;dv, Otter, Granola, Notta, Fireflies, Read.ai",
+      "where1": "Cheap",
+      "where2": "Quick meeting summaries",
+      "where3": "Personal productivity",
+      "where4": "Simple workflows",
+      "li1": "✔ Built for individual productivity — no team performance intelligence",
+      "li2": "✔ No coaching analytics",
+      "li3": "✔ No conversation intelligence",
+      "li4": "✔ No telephony data",
+      "li5": "✔ No multi-channel conversation stack",
+      "pitch": "Pitch: \"AI note-takers capture meetings. Empower captures your business conversations.\""
+    },
+    "6": {
+      "name": "vs Gong",
+      "badge": "⚡ ENTERPRISE BENCHMARK",
+      "desc": "Gong is the revenue intelligence category leader.",
+      "where1": "Forecasting",
+      "where2": "Pipeline analytics",
+      "where3": "Deal intelligence",
+      "where4": "Enterprise data models",
+      "where5": "Mature RevOps workflows",
+      "li1": "✔ Cost. Gong deployments often exceed $100k+ per year.",
+      "li2": "✔ Time to value. Gong implementations take months. Empower works day one.",
+      "li3": "✔ Native telephony. Gong requires integrations. Empower is built inside communications.",
+      "li4": "✔ Multi-vertical. Gong = sales. Empower = sales + support + recruitment.",
+      "li5": "✔ European compliance. Empower is EU-native.",
+      "li6": "✔ Conversation intelligence foundation. Empower focuses on conversations, coaching, patterns, operational intelligence.",
+      "pitch": "Pitch: \"Gong is a revenue intelligence platform. Empower is the conversational intelligence foundation.\""
+    },
+    "7": {
+      "name": "vs Dialpad / Aircall / CloudCall",
+      "badge": "⚡ POSITIONING WIN",
+      "desc": "These are telephony platforms, not conversation intelligence platforms.",
+      "where1": "Telephony infrastructure",
+      "where2": "Calling reliability",
+      "where3": "Call routing",
+      "where4": "Contact center features",
+      "where5": "Some include basic AI summaries",
+      "li1": "✔ AI add-on vs AI platform. Their AI = limited call summaries.",
+      "li2": "✔ No cross-conversation intelligence: coaching, trends, performance, objections.",
+      "li3": "✔ No conversational AI layer. Ask Empower enables data queries, insights, trend analysis.",
+      "li4": "✔ No multi-channel conversation stack. Empower analyzes calls, meetings, uploaded recordings.",
+      "li5": "✔ Conversation intelligence without recording. Empower can analyze conversations even when recordings are disabled.",
+      "pitch": "Pitch: \"Dialpad and Aircall give you calls. Empower tells you what those calls mean.\""
+    },
+    "label": "Competitive Positioning",
+    "title": "How to win against the market",
+    "sub": "Scroll for all competitors — Where they're strong, Silver bullets, Pitch line to win",
+    "whereHead": "Where they're strong",
+    "bulletsHead": "Silver bullets",
+    "strategicTitle": "One strategic message to repeat",
+    "strategicText": "Empower is the only platform combining <strong>telephony + conversation intelligence + AI assistant</strong> in one system. Competitors usually provide one of the three.",
+    "norecordText": "Empower can analyse both audio and video calls without recording them — very useful for sensitive industries where call recording is forbidden.",
+    "moatHeading": "🛡️ Empower's Structural Moat — Lead with this in every pitch",
+    "moat1": {
+      "title": "Native Telephony",
+      "desc": "Every competitor integrates with a phone tool. Empower IS the phone tool — 100% capture, zero setup."
+    },
+    "moat2": {
+      "title": "European Data",
+      "desc": "GDPR-compliant, EU data residency, multilingual transcription and analysis by design."
+    },
+    "moat3": {
+      "title": "Multi-Vertical",
+      "desc": "Sales + Support + Recruitment. One platform, three teams, one subscription."
+    },
+    "moat4": {
+      "title": "Price Accessible",
+      "desc": "No $50K platform fees. No 15-seat minimums. Real value from day one, at any team size."
+    }
+  },
+  "pitch": {
+    "label": "Sales Pitch",
+    "title": "What to say — and how to say it",
+    "sub": "Handle every prospect scenario with confidence",
+    "30secTitle": "The 30-Second Pitch",
+    "30secText": "\"Ask Empower V2 is your company's conversational intelligence engine. Instead of searching through recordings, you simply <strong>ask</strong> — about a client, a rep, a deal, a trend, an objection. It answers from the full history of your team's calls and meetings. Your sales reps close faster, your managers coach smarter, and your entire team stops losing context between conversations.\"",
+    "hardTitle": "Handle the Hard Questions",
+    "qa1q": "❓ \"Can it update my CRM automatically?\"",
+    "qa1a": "Yes. Call summaries and action items sync to your CRM today for both calls and video meetings. <strong>CRM auto-fill (field enrichment) for both calls and video meetings ships in April 2026.</strong> Full bi-directional sync is on our roadmap.",
+    "qa2q": "❓ \"We already use Fathom.\"",
+    "qa2a": "Fathom has Deal View, CRM sync, and coaching scorecards — don't call it \"just a notetaker.\" <strong>Win on coverage and adoption:</strong> they only record Zoom/Meet/Teams when the user is present and can't ingest external recordings. Position Ask Empower V2 as the next step when they need intelligence across the full calls + meetings world and the whole organisation — especially if telephony is central (prospecting, inbound, screening).",
+    "qa3q": "❓ \"We already use Fireflies.\"",
+    "qa3a": "Fireflies has AskFred and conversation intelligence (topics, sentiment, trends). <strong>Differentiate on scope:</strong> position Ask Empower V2 as company-wide conversational intelligence for customer-facing teams (sales/support/recruitment), not just a meeting database. If they're on Ringover, one system beats meeting bot + separate phone platform. Don't claim Fireflies has no analytics — differentiate on calls + meetings and operational questions from the full conversation stack.",
+    "qa4q": "❓ \"We use Noota.\"",
+    "qa4a": "They care about structured docs, ATS/CRM automation, and EU security. <strong>Discovery:</strong> Is workflow primarily sales, recruitment, or support? Do they need telephony capture or only meetings? <strong>Win:</strong> Recruitment-led — multi-channel capture (calls + meetings), coaching, manager visibility. Sales-led — telephony-native capture and Ask Empower V2's company-wide intelligence (patterns, blockers, objections); treat ATS-style scorecards as table stakes.",
+    "qa5q": "❓ \"We use Leexi.\"",
+    "qa5a": "They chose EU security (France-hosted, GDPR, ISO 27001) and integrations (Leexi lists Ringover, Aircall, HubSpot). <strong>Win:</strong> Consolidation — Empower reduces stack complexity, one data governance story, and moves beyond after-call notes to org-wide conversational intelligence. In Ringover accounts: if they already pay for telephony, Empower adds intelligence without another integration to maintain.",
+    "qa6q": "❓ \"How is this different from Modjo?\"",
+    "qa6a": "Modjo is a good tool — but it integrates with your phone system. <strong>Empower is your phone system.</strong> 100% call capture, natively. Lower cost, no seat minimums, covering sales, support, and recruitment.",
+    "qa7q": "❓ \"We don't use Ringover.\"",
+    "qa7a": "<strong>Empower works standalone.</strong> Native integrations with Aircall and RingCentral. Any other call system can push via our public upload API. No need to switch phone providers.",
+    "discTitle": "Discovery Questions by Role",
+    "disc1label": "FOR SALES MANAGERS",
+    "disc1text": "\"When a rep finishes a call, how long does it take them to update the CRM and write a follow-up?\"",
+    "disc2label": "FOR HEADS OF SALES",
+    "disc2text": "\"If I asked you right now what the top 5 objections your team heard last month were — could you answer in 30 seconds?\"",
+    "disc3label": "FOR COACHES / ENABLEMENT",
+    "disc3text": "\"How do you currently identify which reps need coaching — and what triggers that conversation?\"",
+    "disc4label": "FOR SUPPORT / CSM",
+    "disc4text": "\"How do you currently detect when a customer is at churn risk — before they tell you?\"",
+    "disc5label": "FOR RECRUITMENT AGENCIES",
+    "disc5text": "\"After a candidate call, how long does it take your team to write up notes and update the ATS?\"",
+    "warnTitle": "⚠️ What NOT to Promise",
+    "warnText": "Do not position Empower as a <strong>revenue intelligence or forecasting tool yet.</strong> Do not promise that Ask Empower can accurately predict <strong>deal probability, pipeline health, or forecast accuracy</strong> — this requires CRM data not yet connected.<br><br><strong>The right framing:</strong> \"Empower is the conversational intelligence foundation that revenue intelligence is built on. We're building it phase by phase — and Phase 4 (full CRM sync) lands in April 2026.\""
+  },
+  "footer": {
+    "text": "<strong>Ask Empower V2</strong> — Internal Sales Enablement · Empower by Ringover · March 2026 · Confidential"
+  }
+}

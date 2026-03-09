@@ -1,0 +1,393 @@
+{
+  "common": {
+    "brand": "Empower by Ringover",
+    "downloadPdf": "Télécharger PDF"
+  },
+  "nav": {
+    "evolution": "Évolution",
+    "capabilities": "Fonctionnalités V2",
+    "usecases": "Cas d'usage",
+    "industries": "Secteurs",
+    "compete": "vs Concurrents",
+    "pitch": "Argumentaire",
+    "badge": "V2 LANCEMENT"
+  },
+  "hero": {
+    "eyebrow": "⚡ ASK EMPOWER V2 — BRIEF INTERNE DE LANCEMENT",
+    "title": "Les conversations de votre entreprise,<br><span class=\"hl\">enfin intelligentes.</span>",
+    "sub": "Ask Empower V2 transforme Empower d'un chatbot d'appel unique en moteur d'intelligence conversationnelle à l'échelle de l'entreprise — le socle de la plateforme Revenue Intelligence de Ringover.",
+    "stat1": "Saut de plateforme majeur",
+    "stat2": "Limite V1 (contexte)",
+    "stat3": "V2 toute l'entreprise",
+    "stat4": "Phases vers Revenue OS"
+  },
+  "evo": {
+    "label": "Le parcours",
+    "title": "Comment Ask Empower a évolué",
+    "sub": "D'un chatbot mono-appel → intelligence conversationnelle entreprise → système d'exploitation revenue complet",
+    "v1": {
+      "badge": "V1 — LANCÉ 2024",
+      "title": "Assistant mono-appel",
+      "li1": "Limité à 1 ID d'appel à la fois",
+      "li2": "Dernières 10 conversations uniquement",
+      "li3": "Pas de contexte inter-agents ou inter-équipes",
+      "li4": "Q&R basiques sur le contenu d'un appel",
+      "li5": "Valeur micro, pas d'impact stratégique"
+    },
+    "v2": {
+      "badge": "✦ V2 — EN LIGNE",
+      "title": "Intelligence à l'échelle entreprise",
+      "li1": "Contexte inter-appels, inter-agents, inter-équipes",
+      "li2": "Interrogez n'importe quelle conversation, à tout moment",
+      "li3": "Analyse de tendances, objections, performance à l'échelle",
+      "li4": "Insights coaching + détection des écarts de compétences",
+      "li5": "Multilingue : EN, FR, ES, DE, IT et plus",
+      "li6": "Cas d'usage Ventes, Support & Recrutement"
+    },
+    "future": {
+      "badge": "FUTUR — FEUILLE DE ROUTE",
+      "title": "OS Revenue Intelligence",
+      "li1": "Synchronisation CRM bidirectionnelle complète",
+      "li2": "Santé des deals + intelligence pipeline",
+      "li3": "Score de confiance des prévisions",
+      "li4": "Alertes proactives en temps réel",
+      "li5": "Deal Rooms par opportunité",
+      "li6": "Concurrence avec Gong à pleine échelle"
+    },
+    "rmHeading": "Avancement de la feuille de route",
+    "rm1": {
+      "title": "Ask Empower Global",
+      "sub": "Phase 1 — En ligne"
+    },
+    "rm2": {
+      "title": "Coaching & Compétences",
+      "sub": "Phase 2 — En cours"
+    },
+    "rm3": {
+      "title": "Alertes temps réel",
+      "sub": "Phase 3 — Bientôt"
+    },
+    "rm4": {
+      "title": "Intégration CRM",
+      "sub": "Phase 4 — Avril 2026"
+    },
+    "rm5": {
+      "title": "Deal Room & Revenue Intel",
+      "sub": "Phase 5 — Feuille de route"
+    }
+  },
+  "cap": {
+    "1": {
+      "title": "Recherche conversationnelle à l'échelle entreprise",
+      "desc": "Posez des questions sur l'ensemble de votre bibliothèque d'appels et de réunions. Recherche par agent, équipe, tag, sujet, plage de dates ou nom de client."
+    },
+    "2": {
+      "title": "Analyse de performance inter-agents",
+      "desc": "Comparez les performances des commerciaux, identifiez les meilleurs, repérez les écarts de coaching et suivez la progression des compétences."
+    },
+    "3": {
+      "title": "Détection de tendances et de patterns",
+      "desc": "Repérez les tendances d'objections mois par mois, suivez les mentions de concurrents, identifiez les points de douleur récurrents à l'échelle."
+    },
+    "4": {
+      "title": "Intelligence compte et contact",
+      "desc": "Obtenez le contexte complet sur n'importe quel compte ou contact — historique d'appels, points de douleur, objections et prochaines étapes avant d'appeler."
+    },
+    "5": {
+      "title": "Intelligence par tags",
+      "desc": "Analysez les appels par tags personnalisés (Prospect, Démo, Objection, Concurrent). Comprenez ce qui se passe dans chaque segment d'appel."
+    },
+    "6": {
+      "title": "Couverture multi-canal",
+      "desc": "Appels Ringover, Zoom, Google Meet, MS Teams, réunions physiques, Aircall, RingCentral ou tout appel via l'API d'upload publique."
+    },
+    "7": {
+      "title": "Synchronisation CRM automatique",
+      "desc": "Résumés d'appels et actions synchronisent avec le CRM aujourd'hui. Auto-remplissage CRM (enrichissement) pour appels et visioconférences en avril 2026."
+    },
+    "8": {
+      "title": "Contenu de coaching généré par l'IA",
+      "desc": "Générez des plans de coaching, identifiez les écarts MEDDIC/SPIN/BANT par commercial, construisez des scripts démo à partir des meilleurs appels."
+    },
+    "9": {
+      "title": "Relance et génération d'e-mails",
+      "desc": "Générez des e-mails de relance contextuels, résumés clients, briefs de préparation et plans de prochaines étapes à partir des conversations."
+    },
+    "label": "Nouveautés",
+    "title": "Ask Empower V2 — Fonctionnalités principales",
+    "sub": "Tout ce que V1 faisait, plus une nouvelle couche d'intelligence cross-entreprise",
+    "tagLive": "✓ En ligne",
+    "tagApril": "🔜 Avril 2026 (complet)"
+  },
+  "uc": {
+    "valLabel": "💡 LA VALEUR EN UNE PHRASE",
+    "rep": {
+      "name": "Commercial",
+      "role": "Avant, pendant et après chaque appel",
+      "val": "\"Chaque commercial entre dans chaque appel mieux préparé, relaie plus vite et ne perd plus le contexte deal.\"",
+      "q1t": "Prépare ma prochaine réunion avec ABSYS CYBORG — quel est l'historique complet ?",
+      "q1v": "→ Préparation meeting instantanée à partir de l'historique d'appels",
+      "q2t": "Quels sont les points de douleur d'Atmadeep DAS sur tous nos appels ?",
+      "q2v": "→ Intelligence compte complète avant d'appeler",
+      "q3t": "Qu'est-ce qui bloque la prochaine étape avec SPVIE ASSURANCES ?",
+      "q3v": "→ Met en lumière les blocages et objections ouvertes",
+      "q4t": "Rédige un e-mail de relance après mon appel avec Kaino — inclus les 3 questions sans réponse",
+      "q4v": "→ Relance contextuelle rédigée par l'IA",
+      "q5t": "Y a-t-il une mention de concurrent dans l'appel avec Atmadeep DAS ?",
+      "q5v": "→ Intelligence concurrentielle à partir de vos appels",
+      "q6t": "Quand Laurent Sevenier est-il censé signer ?",
+      "q6v": "→ Signaux d'engagement extraits des appels",
+      "q7t": "Donne-moi l'agenda de ma journée",
+      "q7v": "→ Calendrier et préparation d'appels combinés",
+      "q8t": "Montre-moi les appels où on a parlé de l'intégration HubSpot",
+      "q8v": "→ Recherche sémantique inter-appels",
+      "q9t": "Quel est le statut du deal avec PLAYTOMIC SL ?",
+      "q9v": "→ Résumé deal à partir de l'historique de conversations",
+      "q10t": "Résume mes 3 derniers appels avec ABSYS CYBORG",
+      "q10v": "→ Résumé compte en quelques secondes",
+      "q11t": "Quelles sont les principales objections des clients sur le prix ?",
+      "q11v": "→ Intelligence des patterns sur tous les appels"
+    },
+    "mgr": {
+      "name": "Directeur commercial / Sales Manager",
+      "role": "Supervision équipe, visibilité pipeline, développement des reps",
+      "val": "\"Un sales manager revoit 3× plus d'appels dans le même temps, l'IA met en avant ce qui compte — pas l'intuition.\"",
+      "q1t": "Top 10 des utilisateurs par appels et visio le mois dernier — donne-moi un tableau",
+      "q1v": "→ Classement d'activité instantané",
+      "q2t": "Qui sont les meilleurs performeurs du groupe (ES) AE MID — appels vs visio ?",
+      "q2v": "→ Segmentation équipe + vue performance",
+      "q3t": "Montre les derniers appels de Daniel Hernandez avec scores — lesquels coacher ?",
+      "q3v": "→ File de coaching déclenchée par les scores",
+      "q4t": "Analyse les objections par type sur 3 mois — les plus fréquentes et les moins résolues ?",
+      "q4v": "→ Insight stratégique pour l'enablement et le produit",
+      "q5t": "Y a-t-il une corrélation entre appels > 45 min et taux de closing ?",
+      "q5v": "→ Insight process de vente data-driven",
+      "q6t": "Top 10 des objections en discovery en février avec réponses suggérées",
+      "q6v": "→ Intelligence objections mensuelle",
+      "q7t": "Compare le script démo du top performer à l'équipe — montre 3 différences clés",
+      "q7v": "→ Identification des bonnes pratiques à l'échelle",
+      "q8t": "Génère un plan de coaching personnalisé pour mars — 2 objectifs par semaine avec KPIs",
+      "q8v": "→ Plans de coaching structurés générés par l'IA",
+      "q9t": "Quels deals ont le budget identifié mais pas de prochaines étapes dans les 7 derniers jours ?",
+      "q9v": "→ Détection du risque pipeline à partir des appels",
+      "q10t": "Compare les perfs d'Othmane et Josua sur 3 mois, mois par mois",
+      "q10v": "→ Analyse de tendance rep vs rep"
+    },
+    "support": {
+      "name": "Support client / Équipe CSM",
+      "role": "Détection des problèmes, CSAT, analyse qualité",
+      "val": "\"Les managers support arrêtent le firefighting et font du pattern-matching — en traitant les causes racines, pas les tickets.\"",
+      "q1t": "Analyse les 50 derniers appels Onboarding CSM — quels sont les irritants récurrents ?",
+      "q1v": "→ Détection des problèmes systémiques à l'échelle",
+      "q2t": "Montre les appels avec tag Pain/Challenge où le client a exprimé de la frustration — top 3",
+      "q2v": "→ Identification du risque de churn",
+      "q3t": "Y a-t-il un risque de churn pour ABSYS CYBORG ?",
+      "q3v": "→ Santé du compte à partir des signaux de conversation",
+      "q4t": "Qui sont les clients satisfaits d'après le tag « Satisfait » ?",
+      "q4v": "→ Proxy CSAT à partir des tags de conversation",
+      "q5t": "Quelles sont les principales fonctionnalités demandées par les clients cette semaine ?",
+      "q5v": "→ Voix du client pour les équipes produit",
+      "q6t": "Analyse les appels ADMIN — quels sont les principaux points de friction ?",
+      "q6v": "→ Friction de process mappée à partir des appels",
+      "q7t": "Analyse les 50 derniers appels Onboarding CSM et extrais les points de douleur clients",
+      "q7v": "→ Analyse qualitative de la qualité support",
+      "q8t": "Génère un résumé de réunion à envoyer au client après l'onboarding",
+      "q8v": "→ Communication client post-appel automatisée",
+      "q9t": "Quels sont les sujets les plus utilisés dans les appels support des 3 derniers mois ?",
+      "q9v": "→ Intelligence des tendances support"
+    },
+    "recruiter": {
+      "name": "Recruteur / Acquisition de talents",
+      "role": "Intelligence candidat, analyse d'entretiens, sync ATS",
+      "val": "\"Les recruteurs arrêtent de se reposer sur la mémoire et prennent des décisions à partir de l'intelligence conversationnelle structurée.\"",
+      "q1t": "Résume tous mes appels avec ce candidat — forces et signaux d'alerte ?",
+      "q1v": "→ Profil candidat à partir des conversations réelles",
+      "q2t": "Quelles questions a-t-on posées dans les 20 derniers entretiens pour ce poste — sommes-nous cohérents ?",
+      "q2v": "→ Contrôle qualité du process d'entretien",
+      "q3t": "Quels recruteurs ont les appels candidats les plus engagés ce mois-ci ?",
+      "q3v": "→ Benchmarking performance recruteurs",
+      "q4t": "Quelles sont les objections candidats les plus fréquentes aux offres de nos clients ?",
+      "q4v": "→ Intelligence des offres pour la stratégie talents",
+      "q5t": "Prépare-moi pour mon prochain appel — de quoi a-t-on parlé la dernière fois avec ce candidat ?",
+      "q5v": "→ Brief historique candidat instantané",
+      "q6t": "Quels candidats ont mentionné des attentes salariales au-dessus de notre fourchette ?",
+      "q6v": "→ Extraction des signaux de rémunération",
+      "q7t": "Génère un résumé candidat dans la langue du client pour upload ATS",
+      "q7v": "→ Notes candidat structurées auto-générées",
+      "q8t": "Quels sont les sujets les plus utilisés dans les appels tagués « Positif » ce trimestre ?",
+      "q8v": "→ Identification des patterns de succès"
+    },
+    "coach": {
+      "name": "Coach commercial / Responsable Enablement",
+      "role": "Développement structuré des compétences à l'échelle équipe",
+      "val": "\"Les coaches arrêtent de revoir des appels au hasard et lancent des programmes de développement data-driven et personnalisés.\"",
+      "q1t": "Montre-moi où Juan manque des éléments MEDDIC — avec des formulations alternatives",
+      "q1v": "→ Détection des écarts de méthodologie + copie de coaching",
+      "q2t": "Construis-moi un script démo Empower complet en français selon mes forces et faiblesses",
+      "q2v": "→ Script personnalisé à partir de tes propres appels",
+      "q3t": "Montre les appels d'Othmane avec un score Monopolisation sous 50",
+      "q3v": "→ File de coaching basée sur les scores",
+      "q4t": "Analyse les 5 derniers deals perdus — objections communes + 2 techniques de négociation",
+      "q4v": "→ Analyse win/loss avec axes d'action",
+      "q5t": "Extrais les 5 meilleurs « aha moments » des démos Empower du mois dernier",
+      "q5v": "→ Bibliothèque de bonnes pratiques construite automatiquement",
+      "q6t": "Comment Joshua Vischel peut-il s'améliorer dans les appels > 10 min — 3 derniers mois ?",
+      "q6v": "→ Coaching performance filtré par durée",
+      "q7t": "Compare le script démo du top performer au reste de l'équipe",
+      "q7v": "→ Transfert de connaissance du haut vers le bas",
+      "q8t": "Identifie les 3 moments dans cet appel où le rep a perdu l'attention du prospect",
+      "q8v": "→ Micro-coaching au niveau de l'appel",
+      "q9t": "Comment gérer : « Je n'ai pas le temps, envoyez-moi un e-mail » ?",
+      "q9v": "→ Gestion des objections à partir des appels gagnants"
+    },
+    "label": "Par persona",
+    "title": "Qui utilise Ask Empower V2, et comment",
+    "sub": "Des questions réelles d'utilisateurs réels — montrez aux prospects à quoi ressemble une journée avec Ask Empower V2",
+    "tab": {
+      "rep": "💼 Commercial",
+      "mgr": "📈 Responsable ventes",
+      "support": "🎧 Support",
+      "recruiter": "👥 Recruteur",
+      "coach": "🏆 Coach / Enablement"
+    }
+  },
+  "ind": {
+    "1": {
+      "title": "Assurance et services financiers",
+      "subtitle": "CONFORMITÉ + INTELLIGENCE CLIENT",
+      "pitch": "Environnements à fort volume et sensibles à la conformité où chaque appel doit être documenté, recherchable et auditable. Empower transforme les archives d'appels en intelligence client structurée.",
+      "q1": "Donne-moi tous les appels avec SPVIE ASSURANCES et leurs prochaines étapes",
+      "q2": "Quelles objections sont apparues dans les appels de renouvellement en janvier ?",
+      "q3": "Comment le feedback sur les prix a-t-il évolué sur le dernier trimestre ?",
+      "q4": "Montre les appels où « contrat » a été mentionné avec un sentiment négatif"
+    },
+    "2": {
+      "title": "B2B SaaS / Vente technologique",
+      "subtitle": "INTELLIGENCE DEAL + AWARENESS CONCURRENTIEL",
+      "pitch": "Cycles de vente rapides où les reps ont besoin de contexte instantané, les managers de visibilité pipeline et l'enablement de scaler les bonnes pratiques plus vite que les effectifs.",
+      "q1": "Y a-t-il une mention d'Aircall ou Modjo dans les appels cette semaine ?",
+      "q2": "Quelles sont les principales fonctionnalités demandées par les clients enterprise ?",
+      "q3": "Budget identifié mais pas de prochaines étapes dans les 7 derniers jours — montre-moi",
+      "q4": "Compare les perfs démo de Josua et Othmane mois par mois"
+    },
+    "3": {
+      "title": "Recrutement et intérim",
+      "subtitle": "INTELLIGENCE CANDIDAT + SYNC ATS",
+      "pitch": "Les recruteurs passent des dizaines d'appels par semaine. Empower transforme ces conversations en profils candidats structurés, synchronisés avec l'ATS — plus de prise de notes manuelle.",
+      "q1": "Résume tous les appels avec ce candidat et mets en avant les signaux de fit",
+      "q2": "Quels candidats ont mentionné un salaire au-dessus de notre fourchette ?",
+      "q3": "Génère une fiche candidat pour le client à partir de mon entretien",
+      "q4": "Quelles sont les tendances de performance recruteurs ce mois-ci ?"
+    },
+    "label": "Par secteur",
+    "title": "Propositions de valeur par industrie",
+    "sub": "Adaptez l'argumentaire au monde de votre prospect"
+  },
+  "comp": {
+    "1": {
+      "name": "vs Modjo",
+      "badge": "⚡ COMBAT SERRÉ",
+      "desc": "Modjo est le concurrent européen le plus proche d'Empower en intelligence conversationnelle.",
+      "pitch": "Argument : « Tout ce que fait Modjo — dans votre système téléphonique. »"
+    },
+    "2": {
+      "name": "vs Fathom",
+      "badge": "✓ VICTOIRE NETTE",
+      "desc": "Fathom est un assistant de réunion IA, pas une plateforme d'intelligence conversationnelle. N'enregistre que les réunions, surtout Zoom.",
+      "pitch": "Argument : « Fathom enregistre les réunions. Empower comprend toute votre activité conversationnelle. »"
+    },
+    "3": {
+      "name": "vs Claap",
+      "badge": "⚡ VICTOIRE CONCURRENTIELLE",
+      "desc": "Claap est une plateforme d'intelligence commerciale basée sur les réunions, désormais partie de Lemlist.",
+      "pitch": "Argument : « Claap analyse les réunions. Empower analyse toute votre stack conversationnelle. »"
+    },
+    "4": {
+      "name": "vs Noota / Leexi / Fireflies / Read.ai",
+      "badge": "✓ VICTOIRE NETTE",
+      "desc": "Ces outils sont d'abord des assistants de réunion et preneurs de notes IA.",
+      "pitch": "Argument : « Ces outils rédigent des notes de réunion. Empower vous dit ce que signifient vos conversations. »"
+    },
+    "5": {
+      "name": "vs Smart Note-Takers",
+      "badge": "✓ VICTOIRE NETTE",
+      "desc": "ex. tl;dv, Otter, Granola, Notta, Fireflies, Read.ai",
+      "pitch": "Argument : « Les preneurs de notes IA capturent les réunions. Empower capture vos conversations métier. »"
+    },
+    "6": {
+      "name": "vs Gong",
+      "badge": "⚡ BENCHMARK ENTERPRISE",
+      "desc": "Gong est le leader de la catégorie revenue intelligence.",
+      "pitch": "Argument : « Gong est une plateforme revenue intelligence. Empower est le socle d'intelligence conversationnelle. »"
+    },
+    "7": {
+      "name": "vs Dialpad / Aircall / CloudCall",
+      "badge": "⚡ VICTOIRE POSITIONNEMENT",
+      "desc": "Ce sont des plateformes de téléphonie, pas d'intelligence conversationnelle.",
+      "pitch": "Argument : « Dialpad et Aircall vous donnent les appels. Empower vous dit ce qu'ils signifient. »"
+    },
+    "sub": "Faites défiler pour tous les concurrents — Où ils sont forts, Silver bullets, Argument pour gagner",
+    "whereHead": "Où ils sont forts",
+    "bulletsHead": "Silver bullets",
+    "strategicTitle": "Un message stratégique à répéter",
+    "strategicText": "Empower est la seule plateforme qui combine <strong>téléphonie + intelligence conversationnelle + assistant IA</strong> en un seul système. Les concurrents n'en offrent généralement qu'un.",
+    "norecordText": "Empower peut analyser les appels audio et vidéo sans les enregistrer — très utile pour les secteurs sensibles où l'enregistrement des appels est interdit.",
+    "moatHeading": "🛡️ Le fossé structurel d'Empower — Menez avec ça dans chaque pitch",
+    "moat1": {
+      "title": "Téléphonie native",
+      "desc": "Chaque concurrent s'intègre à un outil téléphonique. Empower EST l'outil téléphonique — 100 % de capture, zéro config."
+    },
+    "moat2": {
+      "title": "Données européennes",
+      "desc": "Conformité RGPD, résidence des données UE, transcription et analyse multilingues par conception."
+    },
+    "moat3": {
+      "title": "Multi-vertical",
+      "desc": "Ventes + Support + Recrutement. Une plateforme, trois équipes, un abonnement."
+    },
+    "moat4": {
+      "title": "Prix accessible",
+      "desc": "Pas de frais plateforme à 50 k$. Pas de minimum 15 sièges. Valeur réelle dès le premier jour, quelle que soit la taille de l'équipe."
+    },
+    "label": "Positionnement concurrentiel",
+    "title": "Comment gagner face au marché"
+  },
+  "pitch": {
+    "30secTitle": "Le pitch 30 secondes",
+    "30secText": "« Ask Empower V2 est le moteur d'intelligence conversationnelle de votre entreprise. Au lieu de chercher dans les enregistrements, vous <strong>demandez</strong> simplement — sur un client, un rep, un deal, une tendance, une objection. Il répond à partir de l'historique complet des appels et réunions de votre équipe. Vos commerciaux closent plus vite, vos managers coachent mieux, et toute l'équipe arrête de perdre le contexte entre les conversations. »",
+    "hardTitle": "Répondre aux questions difficiles",
+    "qa1q": "❓ « Est-ce que ça met à jour mon CRM automatiquement ? »",
+    "qa1a": "Oui. Les résumés d'appels et les actions synchronisent avec votre CRM aujourd'hui pour les appels et les visioconférences. <strong>L'auto-remplissage CRM (enrichissement) pour appels et visio sort en avril 2026.</strong> La sync bidirectionnelle complète est sur notre feuille de route.",
+    "discTitle": "Questions de discovery par rôle",
+    "disc1label": "POUR LES SALES MANAGERS",
+    "disc1text": "« Quand un rep termine un appel, combien de temps lui faut-il pour mettre à jour le CRM et rédiger une relance ? »",
+    "disc2label": "POUR LES DIRECTEURS COMMERCIAUX",
+    "disc2text": "« Si je vous demandais tout de suite quelles ont été les 5 principales objections de votre équipe le mois dernier — pourriez-vous répondre en 30 secondes ? »",
+    "disc3label": "POUR LES COACHES / ENABLEMENT",
+    "disc3text": "« Comment identifiez-vous aujourd'hui quels reps ont besoin de coaching — et qu'est-ce qui déclenche cette conversation ? »",
+    "disc4label": "POUR LE SUPPORT / CSM",
+    "disc4text": "« Comment détectez-vous aujourd'hui quand un client est en risque de churn — avant qu'il ne vous le dise ? »",
+    "disc5label": "POUR LES CABINETS DE RECRUTEMENT",
+    "disc5text": "« Après un appel candidat, combien de temps faut-il à votre équipe pour rédiger les notes et mettre à jour l'ATS ? »",
+    "warnTitle": "⚠️ Ce qu'il ne faut PAS promettre",
+    "warnText": "Ne positionnez pas encore Empower comme <strong>outil de revenue intelligence ou de forecasting.</strong> Ne promettez pas qu'Ask Empower peut prédire avec précision <strong>la probabilité de deal, la santé du pipeline ou la précision des prévisions</strong> — cela nécessite des données CRM pas encore connectées.<br><br><strong>Le bon cadrage :</strong> « Empower est le socle d'intelligence conversationnelle sur lequel la revenue intelligence est construite. Nous le construisons phase par phase — et la Phase 4 (sync CRM complète) arrive en avril 2026. »",
+    "label": "Argumentaire",
+    "title": "Quoi dire — et comment le dire",
+    "sub": "Gérez chaque scénario prospect avec confiance",
+    "qa2q": "❓ « On utilise déjà Fathom. »",
+    "qa2a": "Fathom a Deal View, sync CRM et scorecards de coaching — ne dites pas « juste un preneur de notes ». <strong>Gagnez sur couverture et adoption :</strong> ils n'enregistrent que Zoom/Meet/Teams quand l'utilisateur est présent et ne peuvent pas ingérer d'enregistrements externes. Positionnez Ask Empower V2 comme la prochaine étape quand ils ont besoin d'intelligence sur le monde appels + réunions et toute l'organisation — surtout si la téléphonie est centrale (prospection, inbound, screening).",
+    "qa3q": "❓ « On utilise déjà Fireflies. »",
+    "qa3a": "Fireflies a AskFred et l'intelligence conversationnelle (sujets, sentiment, tendances). <strong>Différenciez sur le périmètre :</strong> positionnez Ask Empower V2 comme intelligence conversationnelle à l'échelle entreprise pour les équipes client (ventes/support/recrutement), pas seulement une base de réunions. S'ils sont sur Ringover, un seul système bat bot de réunion + plateforme téléphonique séparée. Ne prétendez pas que Fireflies n'a pas d'analytics — différenciez sur appels + réunions et questions opérationnelles depuis toute la stack conversationnelle.",
+    "qa4q": "❓ « On utilise Noota. »",
+    "qa4a": "Ils se soucient de la doc structurée, de l'automatisation ATS/CRM et de la sécurité UE. <strong>Discovery :</strong> Le workflow est-il surtout ventes, recrutement ou support ? Ont-ils besoin de capture téléphonie ou seulement réunions ? <strong>Gagnez :</strong> Piloté recrutement — capture multi-canal (appels + réunions), coaching, visibilité manager. Piloté ventes — capture téléphonie native et intelligence Ask Empower V2 à l'échelle entreprise (patterns, blocages, objections) ; traitez les scorecards type ATS comme du table stakes.",
+    "qa5q": "❓ « On utilise Leexi. »",
+    "qa5a": "Ils ont choisi la sécurité UE (hébergement France, RGPD, ISO 27001) et les intégrations (Leexi cite Ringover, Aircall, HubSpot). <strong>Gagnez :</strong> Consolidation — Empower réduit la complexité de la stack, une seule gouvernance des données, et va au-delà des notes post-appel vers l'intelligence conversationnelle à l'échelle org. En comptes Ringover : s'ils paient déjà la téléphonie, Empower ajoute l'intelligence sans autre intégration à maintenir.",
+    "qa6q": "❓ « En quoi c'est différent de Modjo ? »",
+    "qa6a": "Modjo est un bon outil — mais il s'intègre à votre système téléphonique. <strong>Empower EST votre système téléphonique.</strong> 100 % de capture d'appels, en natif. Coût moindre, pas de minimum de sièges, ventes, support et recrutement.",
+    "qa7q": "❓ « On n'utilise pas Ringover. »",
+    "qa7a": "<strong>Empower fonctionne en standalone.</strong> Intégrations natives avec Aircall et RingCentral. Tout autre système d'appels peut pousser via notre API d'upload publique. Pas besoin de changer de fournisseur."
+  },
+  "footer": {
+    "text": "<strong>Ask Empower V2</strong> — Enablement commercial interne · Empower by Ringover · Mars 2026 · Confidentiel"
+  }
+}

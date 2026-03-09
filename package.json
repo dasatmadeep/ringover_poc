@@ -6,9 +6,11 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "i18n:extract": "node scripts/extract-i18n-to-json.js"
   },
   "dependencies": {
+    "@nuxtjs/i18n": "^10.2.3",
     "nuxt": "^3.14.0",
     "vue": "^3.5.0"
   },
