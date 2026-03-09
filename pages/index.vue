@@ -30,6 +30,11 @@
             <h2 style="font-size:20px; font-weight:600; margin-bottom:8px;">Recruiter Revenue - One Pager</h2>
             <p style="font-size:14px; color:var(--text-secondary); margin:0;">Recruiter revenue: call intelligence, AIRO Coach, Bullhorn native.</p>
           </NuxtLink>
+          <NuxtLink to="/empower-coaching" class="landing-card">
+            <div class="landing-card-icon" style="width:48px;height:48px;border-radius:12px;background:var(--accent-light);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;">🧠</div>
+            <h2 style="font-size:20px; font-weight:600; margin-bottom:8px;">Empower Coaching - One Pager</h2>
+            <p style="font-size:14px; color:var(--text-secondary); margin:0;">AI coaching intelligence: 11 auto-defined skills, Pitchroom, AIRO Coach, team SWOT analysis.</p>
+          </NuxtLink>
         </div>
       </section>
     </main>
