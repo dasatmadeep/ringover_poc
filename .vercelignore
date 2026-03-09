@@ -1,12 +1,8 @@
-# Ignore Node/npm so Vercel treats this as a static site (no entrypoint)
-package.json
-package-lock.json
+# Development and local files only
+.nuxt
+.output
 node_modules
-
-# Nuxt/Vue source (not used for static deploy)
-nuxt.config.ts
-app.config.ts
-app.vue
-layouts
-pages
-*.vue
+*.log
+.env
+.env.*
+!.env.example
