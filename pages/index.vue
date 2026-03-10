@@ -37,7 +37,6 @@
           </NuxtLink>
           <NuxtLink to="/how-to-pitch-ask-empower" class="landing-card landing-card-featured">
             <div class="landing-card-icon" style="width:48px;height:48px;border-radius:12px;background:rgba(78,110,193,0.12);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;">🎯</div>
-            <div style="display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;background:var(--accent-light);border:1px solid rgba(78,110,193,.2);font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;">Sales Playbook</div>
             <h2 style="font-size:20px; font-weight:600; margin-bottom:8px;">How to Pitch Ask Empower</h2>
             <p style="font-size:14px; color:var(--text-secondary); margin:0;">A practical playbook to position Ask Empower, run strong demos, handle objections, and win against Gong, Modjo, Fathom and Fireflies. Available in EN · FR · ES.</p>
           </NuxtLink>
