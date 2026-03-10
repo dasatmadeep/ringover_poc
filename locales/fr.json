@@ -389,5 +389,253 @@
   },
   "footer": {
     "text": "<strong>Ask Empower V2</strong> — Enablement commercial interne · Empower by Ringover · Mars 2026 · Confidentiel"
+  },
+  "htp": {
+    "pageTitle": "Comment pitcher Ask Empower — Playbook commercial",
+    "pdf": "PDF",
+    "nav": {
+      "core": "Message clé", "what": "C'est quoi", "how": "Comment ça marche",
+      "strengths": "Points forts", "usecases": "Cas d'usage", "discovery": "Découverte",
+      "competitors": "Concurrents", "limits": "Limites", "demo": "Démo",
+      "faq": "FAQ", "roadmap": "Feuille de route"
+    },
+    "hero": {
+      "eyebrow": "Enablement interne · Playbook commercial",
+      "headline": "Comment pitcher Ask Empower",
+      "sub": "Un playbook pratique pour les équipes commerciales : positionner Ask Empower correctement, réaliser des démonstrations convaincantes, gérer les objections et gagner face aux concurrents sans survendre.",
+      "obj1": "Expliquer ce qu'est Ask Empower — et ce qu'il n'est pas",
+      "obj2": "Le positionner clairement face à Gong, Modjo, Fathom, Fireflies et Read.ai",
+      "obj3": "Utiliser des prompts mieux filtrés pour des réponses plus percutantes",
+      "obj4": "Adapter la démo aux personas Sales, Support, Recrutement et Coaching",
+      "obj5": "Fixer des attentes honnêtes sur les limites, le périmètre et la qualité d'analyse",
+      "obj6": "Vendre la vision Revenue Intelligence long terme sans brouiller la valeur actuelle"
+    },
+    "core": {
+      "label": "LE MESSAGE CLÉ",
+      "title": "La phrase que chaque commercial doit retenir",
+      "quote": "\"Ask Empower transforme les conversations en intelligence business.\""
+    },
+    "what": {
+      "label": "QU'EST-CE QU'ASK EMPOWER",
+      "title": "Le moteur d'intelligence conversationnelle IA d'Empower",
+      "desc": "Au lieu de parcourir des transcriptions, des enregistrements et des notes éparpillées, les utilisateurs posent des questions sur leurs conversations et obtiennent des insights, des résumés, des tendances et des signaux de coaching.",
+      "canAnalyze": "Ce qu'il peut analyser",
+      "pill1": "📞 Appels téléphoniques", "pill2": "🎥 Réunions vidéo", "pill3": "🤝 Réunions physiques",
+      "pill4": "⬆️ Enregistrements uploadés", "pill5": "📄 Transcriptions",
+      "caveat": "Les commerciaux doivent l'expliquer clairement : Ask Empower ne parcourt pas chaque appel à chaque requête. Il sélectionne les conversations pertinentes pour répondre à la question.",
+      "v1Title": "Ask Empower V1",
+      "v1li1": "Fonctionnait sur 1 ID d'appel", "v1li2": "Contexte limité aux 10 dernières conversations",
+      "v1li3": "Pas d'intelligence à l'échelle de l'organisation", "v1li4": "Principalement un assistant de chat",
+      "v2Title": "Ask Empower V2",
+      "v2li1": "Fonctionne sur un historique de conversations plus large",
+      "v2li2": "Peut détecter des tendances et patterns sur des appels pertinents",
+      "v2li3": "Supporte l'intelligence multi-appels",
+      "v2li4": "Supporte les workflows sales, recrutement, support et coaching",
+      "v2li5": "Intégré aux insights de coaching"
+    },
+    "accurate": {
+      "label": "VENDEZ-LE AVEC PRÉCISION",
+      "title": "Comment Ask Empower fonctionne vraiment aujourd'hui",
+      "desc": "C'est la section dont les commerciaux ont le plus besoin. Un bon positionnement n'est efficace que s'il est techniquement honnête.",
+      "doNotSay": "Ne dites pas",
+      "doNotSayText": "\"Ask Empower analyse tous vos appels.\"",
+      "doNotSaySub": "C'est trop vague et peut créer de mauvaises attentes.",
+      "sayThis": "Dites plutôt",
+      "sayThisText": "\"Ask Empower analyse les conversations pertinentes et utilise le contexte pour faire remonter des tendances, résumés et insights.\"",
+      "sayThisSub": "C'est plus fort, plus sûr et plus précis.",
+      "realityTitle": "Réalité importante pour les démos",
+      "r1": "Les questions larges poussent souvent l'IA à choisir un ensemble aléatoire ou peu pertinent d'appels.",
+      "r2": "Certaines réponses peuvent paraître convaincantes tout en étant faibles ou incomplètes.",
+      "r3": "Pour améliorer la qualité des réponses, ajoutez toujours du contexte : compte, agent, équipe, moment, flag, tag ou plage de temps.",
+      "r4": "Fenêtre temporelle maximale pratique aujourd'hui : 1 an.",
+      "warnTitle": "Pourquoi c'est important",
+      "warnText": "Une question comme \"Quelles objections sont soulevées dans les appels en général ?\" n'est pas un bon prompt. Mieux : \"Dans les appels avec moment:Objections Raised, quelles objections ont été observées ?\""
+    },
+    "prompts": {
+      "label": "RÈGLES DE PROMPTING",
+      "title": "Comment les commerciaux doivent poser leurs questions pour de meilleurs résultats",
+      "desc": "Positionnez Ask Empower comme une couche d'analyse intelligente qui fonctionne mieux avec du contexte, pas comme une magie sans structure.",
+      "doTitle": "Toujours faire ça",
+      "doli1": "Utiliser du contexte dès que possible",
+      "doli2": "Filtrer les appels avant de demander une analyse",
+      "doli3": "Utiliser des moments, flags, tags, agents, comptes ou fenêtres temporelles",
+      "doli4": "Garder la fenêtre temporelle ciblée sauf si le cas d'usage nécessite vraiment une longue période",
+      "doli5": "Chaîner les prompts : d'abord trouver les bons appels, puis les analyser",
+      "avoidTitle": "Éviter ça",
+      "ali1": "\"Qu'attendent généralement les prospects d'Empower ?\"",
+      "ali2": "\"Quelles objections reviennent dans nos appels ?\"",
+      "ali3": "\"Que pensent les clients du pricing en général ?\"",
+      "ali4": "Toute question sans compte, équipe, flag, moment ou plage de temps",
+      "badTitle": "Mauvais exemple",
+      "badText": "\"Qu'attendent généralement mes prospects d'Empower ?\"",
+      "badSub": "Cela peut tirer des appels qui n'ont jamais pitché Empower.",
+      "goodTitle": "Meilleur exemple",
+      "goodText": "\"Dans les appels avec flag:Empower Demo, quelles attentes sont formulées ?\"",
+      "goodSub": "L'analyse est maintenant ancrée dans le bon ensemble de conversations.",
+      "transcriptTitle": "Règle de recherche dans les transcriptions",
+      "transcriptDesc": "Ask Empower fonctionne bien avec la recherche par mots-clés, mais pas de façon fiable avec des phrases exactes longues.",
+      "transcriptWorks": "Fonctionne : \"Analyse les appels où 'Aircall' a été mentionné.\"",
+      "transcriptFail": "Moins fiable : \"Analyse les appels où le client a dit 'Je veux utiliser Aircall'.\""
+    },
+    "strengths": {
+      "label": "POINTS FORTS PRINCIPAUX",
+      "title": "Ce qu'Ask Empower fait extrêmement bien",
+      "s1Title": "Insights à l'échelle de l'organisation",
+      "s1Desc": "Aide les équipes à comprendre les patterns sur de nombreuses conversations pertinentes, plutôt qu'une réunion à la fois.",
+      "s2Title": "Demander plutôt que chercher",
+      "s2Desc": "Les utilisateurs vont plus vite en posant des questions business plutôt qu'en fouillant manuellement dans les enregistrements.",
+      "s3Title": "Couverture multi-canal",
+      "s3Desc": "Téléphone, vidéo, réunions physiques, uploads et transcriptions alimentent tous la couche d'intelligence.",
+      "s4Title": "Sans enregistrement requis",
+      "s4Desc": "Un différenciateur fort pour l'assurance, la conformité et les environnements sensibles."
+    },
+    "usecases": {
+      "label": "CAS D'USAGE POUR LA DÉMO",
+      "title": "Prompts basés sur les rôles — plus solides, plus réalistes, plus proches de la réalité d'Ask Empower aujourd'hui",
+      "prev": "Précédent", "next": "Suivant",
+      "salesRep": {
+        "title": "Commercial", "icon": "💼", "color": "accent",
+        "li1": "Montre-moi tous les appels que nous avons eus avec compte:Thebes Group",
+        "li2": "Résume les principales objections et points de douleur soulevés par Thebes Group sur tous leurs appels",
+        "li3": "Quelles réunions ai-je aujourd'hui ?",
+        "li4": "Passe en revue mes réunions des 7 derniers jours et donne-moi une liste d'actions",
+        "tip": "Bonne pratique : commencez par un compte ou une période, puis posez une question analytique de suivi."
+      },
+      "manager": {
+        "title": "Manager Commercial", "icon": "📈", "color": "purple",
+        "li1": "Combien d'appels sortants avons-nous passé la semaine dernière ?",
+        "li2": "Quel est notre taux de réponse sur les 30 derniers jours ?",
+        "li3": "Quelle est la durée moyenne des appels entrants ce trimestre ?",
+        "li4": "Analyse les appels avec moment:Empower Demo — comment se sont-ils passés ?",
+        "li5": "Quels tags sont utilisés le plus fréquemment sur tous les appels ?",
+        "li6": "Compare Aircall, 3CX, RingCentral — quels concurrents ont été le plus mentionnés ?",
+        "li7": "Donne-moi une tendance des appels avec flag:Demo booked sur les 6 derniers mois",
+        "li8": "Donne un tableau avec les 10 utilisateurs ayant fait le plus d'appels le mois dernier",
+        "tip": "Ces questions sont excellentes car elles utilisent une structure : moment, flag, plage de temps, liste de concurrents ou type d'appel."
+      },
+      "support": {
+        "title": "Support Client", "icon": "🎧", "color": "orange",
+        "li1": "Analyse tous les appels où \"escalate\" a été mentionné",
+        "tip": "La recherche par mots-clés dans les transcriptions fonctionne bien pour le support — gardez les termes simples et directs."
+      },
+      "recruiter": {
+        "title": "Recruteur", "icon": "👥", "color": "green",
+        "li1": "Combien d'appels moment:screening avons-nous passé cette semaine ?",
+        "li2": "Quel est le volume quotidien d'appels sortants de l'équipe recrutement ?",
+        "li3": "Trouve tous les appels où flag:'salary expectation' a été discuté",
+        "tip": "Utilisez les filtres moment et flag pour ancrer les requêtes recrutement dans le bon ensemble de conversations."
+      },
+      "coach": {
+        "title": "Coach / Enablement", "icon": "🏆", "color": "warning",
+        "li1": "Comment le commercial aurait-il pu mieux gérer l'objection pricing dans cet appel ?",
+        "li2": "Quel feedback de coaching peux-tu donner sur les récents appels de agent:josua ?",
+        "li3": "Quel commercial performe bien dans ses appels ?",
+        "tip": "Pour le coaching, ancrez l'analyse à un appel, un agent ou une fenêtre temporelle récente."
+      }
+    },
+    "discovery": {
+      "label": "DÉCOUVERTE VERS DÉMO",
+      "title": "Comment guider la conversation comme un manager commercial fort",
+      "qTitle": "Questions de découverte",
+      "q1": "Comment révisez-vous vos conversations aujourd'hui ?",
+      "q2": "Comment identifiez-vous les opportunités de coaching ?",
+      "q3": "Comment comprenez-vous les objections aujourd'hui ?",
+      "q4": "Comment collectez-vous les retours produit des appels ?",
+      "q5": "Comment détectez-vous les problèmes récurrents des clients ?",
+      "q6": "Comment vos commerciaux préparent-ils leurs réunions aujourd'hui ?",
+      "q7": "Si vous pouviez poser une question à vos conversations, ce serait laquelle ?",
+      "bridgeTitle": "Passage vers la démo",
+      "bridgeUse": "Utilisez cette formule :",
+      "bridgeQuote": "\"Sur la base de ce que vous m'avez partagé, laissez-moi vous montrer comment Ask Empower aide à répondre exactement à ces questions — mais en utilisant le bon contexte d'appel pour que la réponse soit vraiment utile.\"",
+      "bridgeSub": "Cette dernière clause est importante. Elle vous positionne comme crédible et réduit le risque d'une démo ouverte faible."
+    },
+    "comp": {
+      "label": "POSITIONNEMENT CONCURRENTIEL",
+      "title": "Comment vendre Ask Empower face aux concurrents",
+      "prev": "Précédent", "next": "Suivant",
+      "notetakers": {
+        "title": "Preneurs de notes", "badge": "✓ VICTOIRE FORTE",
+        "examples": "Fathom · Fireflies · Read.ai",
+        "li1": "Excellents pour les résumés et notes de réunion",
+        "li2": "Généralement focalisés sur les réunions individuelles",
+        "li3": "Pas conçus pour l'intelligence élargie et les workflows de coaching",
+        "pitch": "Les preneurs de notes résument les réunions. Ask Empower vous aide à comprendre vos conversations."
+      },
+      "revenue": {
+        "title": "Plateformes Revenue Intelligence", "badge": "⚡ COMBAT SERRÉ",
+        "examples": "Gong · Modjo",
+        "li1": "Forts sur l'analytique revenue et les workflows CRM",
+        "li2": "Peuvent nécessiter une configuration plus lourde",
+        "li3": "Souvent perçus comme enterprise et focalisés sur les ventes uniquement",
+        "pitch": "Ask Empower rend l'intelligence conversationnelle plus accessible à toutes les équipes, tout en construisant vers une revenue intelligence plus profonde."
+      },
+      "empower": {
+        "title": "Positionnement Empower", "badge": "✦ NOTRE POSITION",
+        "li1": "Conçu pour le coaching et les insights, pas seulement la prise de notes",
+        "li2": "Valeur multi-équipes : sales, support, recrutement, enablement",
+        "li3": "Expérience en langage naturel",
+        "li4": "Fonctionne mieux avec du contexte et des filtres",
+        "li5": "Sans enregistrement requis est un différenciateur majeur"
+      }
+    },
+    "limits": {
+      "label": "LIMITES À DIRE CLAIREMENT",
+      "title": "Ce qu'Ask Empower ne peut pas encore faire",
+      "desc": "La façon la plus rapide de perdre en crédibilité est de survendre cette section.",
+      "notYetTitle": "Pas encore fiable pour",
+      "ny1": "Les prévisions de deals", "ny2": "Les prédictions de pipeline",
+      "ny3": "Les prédictions de revenus", "ny4": "L'analyse des étapes CRM", "ny5": "La prédiction du win-rate",
+      "strongTitle": "Fort aujourd'hui pour",
+      "st1": "Les résumés de conversations",
+      "st2": "L'analyse des objections et points de douleur avec un bon filtrage",
+      "st3": "Le feedback de coaching", "st4": "L'analyse des mentions de concurrents",
+      "st5": "L'extraction d'insights clients et candidats",
+      "bestLine": "Meilleure formule commerciale",
+      "bestLineText": "\"Aujourd'hui Ask Empower analyse les conversations pour comprendre ce qui se passe dans les deals. Avec l'intégration CRM, il évoluera vers une revenue intelligence complète.\""
+    },
+    "demo": {
+      "label": "TECHNIQUE DE DÉMO",
+      "title": "La formule de démo la plus sûre et la plus forte",
+      "desc": "Ne démonstrez pas Ask Empower comme un chatbot générique. Démontrez-le comme un moteur d'intelligence qui a besoin du bon périmètre.",
+      "formulaTitle": "Formule",
+      "formulaText": "Contexte → Requête → Insight → Valeur business",
+      "formulaEx": "Exemple : flag:Empower Demo → \"Quelles attentes sont formulées ?\" → \"Les acheteurs veulent de la clarté sur le setup, le CRM et la valeur coaching\" → \"Maintenant le manager sait quel message standardiser.\"",
+      "mistakeTitle": "Erreur courante",
+      "mistakeText": "\"Quelles objections les prospects soulèvent-ils généralement ?\"",
+      "mistakeSub": "Trop large. Risqué. Périmètre flou.",
+      "betterTitle": "Meilleure version",
+      "betterText": "\"Dans les appels avec moment:Objections Raised, quelles objections ont été observées ?\"",
+      "betterSub": "Plus ciblé. Plus crédible. Meilleur résultat."
+    },
+    "faq": {
+      "label": "FAQ",
+      "title": "Questions basiques que les commerciaux vont recevoir",
+      "q1": "Ask Empower est-il juste un chatbot ?",
+      "a1": "Non. C'est un moteur d'intelligence conversationnelle. Il analyse de vraies conversations et fait remonter des insights, pas seulement des réponses textuelles génériques.",
+      "q2": "Analyse-t-il tous les appels ?",
+      "a2": "Pas de façon exhaustive à chaque requête. Il analyse les conversations pertinentes ou des sous-ensembles pertinents. C'est pourquoi le filtrage est important.",
+      "q3": "Fonctionne-t-il sans Ringover ?",
+      "a3": "Oui. Il peut fonctionner avec Ringover, des outils de réunion vidéo, des plateformes d'appel tierces et des conversations uploadées.",
+      "q4": "Nécessite-t-il un enregistrement ?",
+      "a4": "Non. C'est l'un des différenciateurs les plus forts dans les environnements réglementés et conformité.",
+      "q5": "Quelle quantité de données historiques peut-il utiliser ?",
+      "a5": "Utilisez une fenêtre temporelle maximale d'un an.",
+      "q6": "Pourquoi certaines questions larges semblent-elles faibles ?",
+      "a6": "Parce que le système peut échantillonner des appels sans assez de contexte. Des prompts meilleurs utilisent des flags, moments, comptes, agents, équipes et plages de temps."
+    },
+    "roadmap": {
+      "label": "FEUILLE DE ROUTE",
+      "title": "Ce qui arrive ensuite",
+      "nextTitle": "Prochaine phase",
+      "nextText": "Intégration CRM avec des systèmes comme Salesforce et HubSpot.",
+      "nextSub": "Cela permettra à Ask Empower de combiner les signaux de conversation avec le contexte deal et pipeline.",
+      "visionTitle": "Vision long terme",
+      "visionText": "Revenue Intelligence",
+      "visionSub": "Conversations + données CRM + pipeline + forecasting. C'est là que des questions comme \"Quels deals sont à risque ?\" deviennent beaucoup plus crédibles."
+    },
+    "footer": {
+      "badge": "Usage interne uniquement",
+      "text": "Playbook commercial interne pour pitcher Ask Empower"
+    }
   }
 }
