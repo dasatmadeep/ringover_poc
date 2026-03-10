@@ -822,6 +822,10 @@
         "icon": "🎧",
         "color": "orange",
         "li1": "Analiza todas las llamadas donde se mencionó \"escalar\"",
+        "li2": "Resume las principales quejas y problemas sin resolver planteados por account:Acme Corp en todas sus llamadas",
+        "li3": "¿El agente confirmó una resolución antes de finalizar esta llamada?",
+        "li4": "¿Qué acciones de seguimiento se prometieron a este cliente?",
+        "li5": "¿Cuántas llamadas de soporte entrantes recibimos la semana pasada?",
         "tip": "La búsqueda por palabras clave en transcripciones funciona bien para soporte — mantén los términos simples y directos."
       },
       "recruiter": {

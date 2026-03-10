@@ -891,6 +891,10 @@
         "icon": "🎧",
         "color": "orange",
         "li1": "Analyze all the calls where \"escalate\" was mentioned",
+        "li2": "Summarize the main complaints and unresolved issues raised by account:Acme Corp across all their calls",
+        "li3": "Did the agent confirm a resolution before ending this call?",
+        "li4": "What follow-up actions were promised to this customer?",
+        "li5": "How many inbound support calls did we receive last week?",
         "tip": "Keyword-level transcript search works well for support — keep terms simple and direct."
       },
       "recruiter": {

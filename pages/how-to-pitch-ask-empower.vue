@@ -483,7 +483,7 @@ const strengthColors = [
 const useCaseSlides = [
   { key: 'salesRep',  icon: '💼', items: 4, fg: 'var(--accent)',            bg: 'var(--accent-light)' },
   { key: 'manager',   icon: '📈', items: 8, fg: 'var(--dynamic-purple-fg)', bg: 'var(--dynamic-purple-bg)' },
-  { key: 'support',   icon: '🎧', items: 1, fg: 'var(--dynamic-orange-fg)', bg: 'var(--dynamic-orange-bg)' },
+  { key: 'support',   icon: '🎧', items: 5, fg: 'var(--dynamic-orange-fg)', bg: 'var(--dynamic-orange-bg)' },
   { key: 'recruiter', icon: '👥', items: 3, fg: 'var(--dynamic-green-fg)',  bg: 'var(--dynamic-green-bg)' },
   { key: 'coach',     icon: '🏆', items: 3, fg: 'var(--warning)',           bg: 'var(--warning-light)' },
 ]
