@@ -1,7 +1,8 @@
 {
   "common": {
     "brand": "Empower by Ringover",
-    "downloadPdf": "Télécharger PDF"
+    "downloadPdf": "Télécharger PDF",
+    "generatingPdf": "Génération…"
   },
   "nav": {
     "evolution": "Évolution",

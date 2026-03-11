@@ -175,7 +175,23 @@ p {
   border: none;
   cursor: pointer;
 }
-.empower-nav .btn-pdf:hover { background: var(--accent-hover); }
+.empower-nav .btn-pdf:hover:not(:disabled) { background: var(--accent-hover); }
+.empower-nav .btn-pdf:disabled { opacity: 0.85; cursor: wait; }
+.empower-nav .btn-pdf--loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  cursor: wait;
+}
+.btn-pdf-spinner {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  animation: pdf-spin 0.75s linear infinite;
+}
+@keyframes pdf-spin {
+  to { transform: rotate(360deg); }
+}
 .nav-badge {
   background: var(--accent);
   color: var(--white);

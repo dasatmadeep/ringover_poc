@@ -26,7 +26,12 @@
           <option value="es">ES</option>
         </select>
         <span class="nav-badge">{{ t('nav.badge') }}</span>
-        <button type="button" class="btn-pdf" @click="print">{{ t('common.downloadPdf') }}</button>
+        <button type="button" class="btn-pdf" :class="{ 'btn-pdf--loading': isGenerating }" :disabled="isGenerating" @click="downloadPdf('ask-empower.pdf')">
+          <svg v-if="isGenerating" class="btn-pdf-spinner" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="40" stroke-dashoffset="15" />
+          </svg>
+          {{ isGenerating ? t('common.generatingPdf') : t('common.downloadPdf') }}
+        </button>
       </div>
     </header>
     <main>
@@ -40,14 +45,11 @@
 
 <script setup lang="ts">
 const { locale, setLocale, t } = useI18n()
+const { isGenerating, downloadPdf } = usePdfExport()
 
 function scrollTo (id: string) {
   const el = document.getElementById(id)
   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-}
-
-function print () {
-  if (import.meta.client) window.print()
 }
 </script>
 
