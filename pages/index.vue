@@ -40,6 +40,12 @@
             <h2 style="font-size:20px; font-weight:600; margin-bottom:8px;">How to Pitch Ask Empower</h2>
             <p style="font-size:14px; color:var(--text-secondary); margin:0;">A practical playbook to position Ask Empower, run strong demos, handle objections, and win against Gong, Modjo, Fathom and Fireflies. Available in EN · FR · ES.</p>
           </NuxtLink>
+          <NuxtLink to="/framework" class="landing-card landing-card-research">
+            <div class="landing-card-icon" style="width:48px;height:48px;border-radius:12px;background:rgba(24,163,38,0.1);color:#18A326;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;">🔬</div>
+            <h2 style="font-size:20px; font-weight:600; margin-bottom:8px;">Framework Analysis</h2>
+            <p style="font-size:14px; color:var(--text-secondary); margin:0;">Competitive market research on MEDDPICC / BANT / SPICED. How Empower Framework V1 stacks up vs Gong, Modjo, Dialpad, Aircall & Fireflies — with battlecards and demo prompts.</p>
+            <div style="margin-top:12px; display:inline-flex; align-items:center; gap:6px; background:rgba(24,163,38,0.1); color:#18A326; font-size:11px; font-weight:700; padding:3px 9px; border-radius:20px; letter-spacing:0.08em;">🔬 COMPETITIVE INTEL</div>
+          </NuxtLink>
         </div>
       </section>
     </main>
@@ -77,5 +83,13 @@ const brand = computed(() => t('common.brand'))
 }
 .landing-card-featured:hover {
   box-shadow: 0 0 0 1px var(--accent), 0 8px 28px rgba(78, 110, 193, 0.16);
+}
+.landing-card-research {
+  border-color: rgba(24, 163, 38, 0.3);
+  background: linear-gradient(135deg, #fff, rgba(24, 163, 38, 0.03));
+}
+.landing-card-research:hover {
+  border-color: #18A326;
+  box-shadow: 0 8px 24px rgba(24, 163, 38, 0.12);
 }
 </style>
