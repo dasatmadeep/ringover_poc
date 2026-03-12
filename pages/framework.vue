@@ -167,7 +167,7 @@
               <td><span class="fw-badge fw-badge-yes">✓ Yes</span></td>
               <td><span class="fw-badge fw-badge-yes">✓ Yes</span></td>
               <td><span class="fw-badge fw-badge-yes">✓ Yes</span></td>
-              <td><span class="fw-badge fw-badge-partial">~ Partial</span></td>
+              <td><span class="fw-badge fw-badge-yes">✓ Yes</span></td>
               <td><span class="fw-badge fw-badge-yes">✓ Yes</span></td>
               <td><span class="fw-badge fw-badge-yes">✓ Yes</span></td>
             </tr>
@@ -311,12 +311,13 @@
           <div class="fw-bc-cols">
             <div>
               <div class="fw-bc-section-label fw-bc-section-label--strong">Where they are strong</div>
-              <div class="fw-bc-text">Aircall offers custom scorecards with AI- and human-evaluated criteria and automated call scoring with automation rules. CloudTalk markets AI Call Scoring across skills, playbook alignment, and compliance — "any criteria you choose." Both are rapidly increasing scoring capabilities.</div>
+              <div class="fw-bc-text">Aircall explicitly offers BANT, SPICED, and MEDDIC built-in templates alongside custom scorecards with AI- and human-evaluated criteria and automated call scoring. CloudTalk markets AI Call Scoring across skills, playbook alignment, and compliance. Both are rapidly expanding their methodology coverage — do not position them as "generic QA only."</div>
               <div class="fw-bc-section-label fw-bc-section-label--win" style="margin-top:14px">Empower silver bullets</div>
-              <div class="fw-bc-text">Win when the customer needs actual sales methodology structure (MEDDPICC/BANT/SPICED) rather than generic QA scoring. Displace when video meetings matter — both are voice-only platforms. Add Ask Empower as a differentiator for manager-level querying across accounts.</div>
+              <div class="fw-bc-text">Since Aircall now covers the same built-in methodologies, shift the wedge to what they genuinely lack: <strong>multi-channel coverage</strong> (Aircall is voice-only — no video meetings), <strong>cross-call account history</strong> (methodology progression across all touchpoints for the same prospect), and <strong>Ask Empower</strong> as a conversational intelligence layer that lets managers query gaps, evidence and next steps across the full account journey.</div>
             </div>
           </div>
-          <div class="fw-bc-pitch">"QA scorecards grade calls. Frameworks qualify deals. Empower does frameworks — and brings it into Ask Empower."</div>
+          <div class="fw-bc-pitch">"Aircall scores calls. Empower tracks methodology across the entire account journey — calls, meetings, and every touchpoint — and lets you ask questions about it."</div>
+          <div class="fw-bc-landmine">⚡ Landmine: Do NOT claim Aircall or CloudTalk only do "generic QA scoring." Aircall explicitly supports BANT, SPICED and MEDDIC templates. Lead with multi-channel + multi-call history instead.</div>
         </div>
 
         <!-- vs Fireflies / Fathom / Notetakers (full-width last card) -->
@@ -356,8 +357,9 @@
           <div class="fw-demo-col">
             <div class="fw-demo-col-title">🧑‍💼 Sales Rep</div>
             <div class="fw-demo-prompt">Show the MEDDPICC summary for the last conversation with [Account] and highlight what's missing.</div>
-            <div class="fw-demo-prompt">Across the last 5 touchpoints with [Prospect], which MEDDPICC elements are still red, and what should I ask next?</div>
+            <div class="fw-demo-prompt">Across the last 5 touchpoints with [Prospect], which MEDDPICC elements are incomplete or partially fulfilled, and what should I ask next?</div>
             <div class="fw-demo-prompt">In "Decision Criteria", show the evidence in the call — timestamps and quotes — that supports the score.</div>
+            <div class="fw-demo-status-note">⚠️ <strong>Validate before demo:</strong> Ask Empower V2 queries framework <em>status labels</em> (Fulfilled / Partially Fulfilled / Not Fulfilled) — not visual colours. Confirm with the product team that status filtering works as expected before using colour terminology ("red / green") in front of a prospect.</div>
           </div>
           <div class="fw-demo-col">
             <div class="fw-demo-col-title">👩‍💼 Sales Manager</div>

@@ -2339,6 +2339,19 @@ p {
   color: #ff7070;
   font-weight: 700;
 }
+.fw-demo-status-note {
+  background: rgba(255,135,38,0.12);
+  border: 1px solid rgba(255,135,38,0.3);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: var(--font-stack);
+  font-size: var(--body-xs);
+  line-height: 1.6;
+  color: rgba(255,255,255,0.75);
+  margin-top: 10px;
+}
+.fw-demo-status-note strong { color: var(--warning); }
+.fw-demo-status-note em { font-style: normal; font-weight: 600; color: rgba(255,255,255,0.9); }
 
 /* ---------- Responsive (fw-*) ---------- */
 @media (max-width: 1024px) {
