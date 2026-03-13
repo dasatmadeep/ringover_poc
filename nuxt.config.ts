@@ -29,7 +29,9 @@ export default defineNuxtConfig({
       allowHtml: true,
     },
   },
-  nitro: {
-    preset: 'vercel',
+  $production: {
+    nitro: {
+      preset: 'vercel',
+    },
   },
 })

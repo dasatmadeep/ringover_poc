@@ -40,6 +40,12 @@
             <h2 style="font-size:20px; font-weight:600; margin-bottom:8px;">How to Pitch Ask Empower</h2>
             <p style="font-size:14px; color:var(--text-secondary); margin:0;">A practical playbook to position Ask Empower, run strong demos, handle objections, and win against Gong, Modjo, Fathom and Fireflies. Available in EN · FR · ES.</p>
           </NuxtLink>
+          <NuxtLink to="/call-score-v2" class="landing-card landing-card-callscore">
+            <div class="landing-card-icon" style="width:48px;height:48px;border-radius:12px;background:rgba(78,110,193,0.1);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;">🛡️</div>
+            <h2 style="font-size:20px; font-weight:600; margin-bottom:8px;">Call Score V2 — Quality & Compliance Scorecards</h2>
+            <p style="font-size:14px; color:var(--text-secondary); margin:0;">Zero-math Pass/Fail scorecards, AI-evaluated with evidence. Built for Insurance, Recruitment and Support teams enforcing standards at scale.</p>
+            <div style="margin-top:12px; display:inline-flex; align-items:center; gap:6px; background:rgba(78,110,193,0.1); color:var(--accent); font-size:11px; font-weight:700; padding:3px 9px; border-radius:20px; letter-spacing:0.08em;">🛡️ PRODUCT BRIEF</div>
+          </NuxtLink>
           <NuxtLink to="/framework" class="landing-card landing-card-research">
             <div class="landing-card-icon" style="width:48px;height:48px;border-radius:12px;background:rgba(24,163,38,0.1);color:#18A326;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;">🔬</div>
             <h2 style="font-size:20px; font-weight:600; margin-bottom:8px;">Framework Analysis</h2>
@@ -91,5 +97,13 @@ const brand = computed(() => t('common.brand'))
 .landing-card-research:hover {
   border-color: #18A326;
   box-shadow: 0 8px 24px rgba(24, 163, 38, 0.12);
+}
+.landing-card-callscore {
+  border-color: rgba(78, 110, 193, 0.3);
+  background: linear-gradient(135deg, #fff, rgba(78, 110, 193, 0.04));
+}
+.landing-card-callscore:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(78, 110, 193, 0.14);
 }
 </style>
