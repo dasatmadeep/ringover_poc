@@ -11,7 +11,7 @@
       <div class="hero-stats">
         <div class="stat"><div class="stat-num">Pass/Fail</div><div class="stat-label">Simple check logic</div></div>
         <div class="stat"><div class="stat-num">4</div><div class="stat-label">Call outcome levels</div></div>
-        <div class="stat"><div class="stat-num">10</div><div class="stat-label">Max checks per card</div></div>
+        <div class="stat"><div class="stat-num">10</div><div class="stat-label">Max checks per scorecard</div></div>
         <div class="stat"><div class="stat-num">0</div><div class="stat-label">Maths required</div></div>
       </div>
     </section>
@@ -30,11 +30,11 @@
             <div class="evo-badge">Call Score V1</div>
             <div class="evo-title">Complex & Always-On</div>
             <ul class="evo-list">
-              <li>Difficult configuration with weights and importance levels</li>
-              <li>Enabled by default for all customers</li>
-              <li>Coaching and scoring blurred together</li>
+              <li>Complex configuration with weights and importance levels</li>
+              <li>Enabled by default for all customers — even those who didn't need it</li>
+              <li>Coaching and compliance scoring blurred together</li>
               <li>Percentage maths led to debates over averages</li>
-              <li>Hard to understand what "a good score" means</li>
+              <li>Hard to understand what "a good score" actually means</li>
             </ul>
           </div>
           <div class="evo-arrow">→</div>
@@ -43,11 +43,11 @@
             <div class="evo-title">Simple Enforcement, Disabled by Default</div>
             <ul class="evo-list">
               <li>Disabled by default — admin activates only when needed</li>
-              <li>No weights, no percentages — just mandatory yes/no checks</li>
-              <li>Coaching & Scorecards fully separated (skills vs standards)</li>
+              <li>No weights, no percentages — mandatory yes/no checks only</li>
+              <li>Coaching & Scorecards fully separated: skills vs standards</li>
               <li>AI evaluates every check with timestamps + evidence</li>
               <li>4 clear outcome labels: Strong · Acceptable · Needs Attention · Non-Compliant</li>
-              <li>Predefined templates for fast setup (no blank-page problem)</li>
+              <li>Predefined templates for fast setup — no blank-page problem</li>
             </ul>
           </div>
           <div class="evo-arrow">→</div>
@@ -167,7 +167,7 @@
           <div class="cs-check-card cs-check-pass">
             <div class="cs-check-status">✓ Pass</div>
             <div class="cs-check-title">Compliance disclosure mentioned</div>
-            <div class="cs-check-evidence">"…and as required I must inform you that this call may be recorded for quality purposes." · 0:32</div>
+            <div class="cs-check-evidence">"…as required I must inform you that this call may be recorded for quality purposes." · 0:32</div>
           </div>
           <div class="cs-check-card cs-check-fail">
             <div class="cs-check-status">✗ Fail</div>
@@ -206,9 +206,70 @@
     <div class="divider" />
 
     <!-- ═══════════════════════════════════════════════════
+         OPERATIONAL AUTOMATION — NEW
+    ════════════════════════════════════════════════════ -->
+    <section id="automation" class="section-wrap">
+      <div class="section-label">OPERATIONAL AUTOMATION · NEW</div>
+      <h2 class="section-title">From insight to action — automatically</h2>
+      <p class="section-sub">Once a call is evaluated by a Scorecard, Empower can trigger automatic workflows. This turns Scorecards from analysis into operational enforcement — critical in industries where compliance cannot rely on manual monitoring.</p>
+
+      <div class="cs-workflows-grid">
+
+        <div class="cs-workflow-card cs-workflow-card--noncompliant">
+          <div class="cs-workflow-header">
+            <div class="cs-workflow-outcome-dot cs-workflow-dot--noncompliant" />
+            <div class="cs-workflow-outcome-label">Non-Compliant calls</div>
+          </div>
+          <div class="cs-workflow-title">Escalate immediately</div>
+          <ul class="cs-workflow-list">
+            <li>Alert supervisor immediately</li>
+            <li>Flag for compliance review</li>
+            <li>Create QA investigation ticket</li>
+            <li>Assign mandatory coaching session</li>
+          </ul>
+        </div>
+
+        <div class="cs-workflow-card cs-workflow-card--attention">
+          <div class="cs-workflow-header">
+            <div class="cs-workflow-outcome-dot cs-workflow-dot--attention" />
+            <div class="cs-workflow-outcome-label">Needs Attention calls</div>
+          </div>
+          <div class="cs-workflow-title">Queue for review</div>
+          <ul class="cs-workflow-list">
+            <li>Add call to QA review queue</li>
+            <li>Notify team manager</li>
+            <li>Assign coaching task</li>
+            <li>Include in training review library</li>
+          </ul>
+        </div>
+
+        <div class="cs-workflow-card cs-workflow-card--strong">
+          <div class="cs-workflow-header">
+            <div class="cs-workflow-outcome-dot cs-workflow-dot--strong" />
+            <div class="cs-workflow-outcome-label">Strong calls</div>
+          </div>
+          <div class="cs-workflow-title">Amplify best practice</div>
+          <ul class="cs-workflow-list">
+            <li>Add to Best Practice Library</li>
+            <li>Highlight in team training</li>
+            <li>Use as onboarding examples</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="cs-automation-note">
+        <span class="cs-automation-note-icon">⚡</span>
+        <span><strong>Scorecards don't just identify problems — they allow teams to automatically act on them.</strong> No manual triaging, no missed escalations, no spreadsheets.</span>
+      </div>
+    </section>
+
+    <div class="divider" />
+
+    <!-- ═══════════════════════════════════════════════════
          BENEFITS BY INDUSTRY
     ════════════════════════════════════════════════════ -->
-    <section id="benefits" class="section-wrap">
+    <section id="benefits" class="section-wrap" style="background: var(--bg-grey-light);">
       <div class="section-label">BENEFITS BY INDUSTRY</div>
       <h2 class="section-title">Built for teams that can't afford inconsistency</h2>
       <p class="section-sub">Quality & Compliance Scorecards are especially compelling in regulated and high-volume environments where every call matters.</p>
@@ -221,8 +282,8 @@
           <div class="cs-industry-pitch">"Automate disclosure checks, prevent prohibited claims, and surface Non-Compliant calls with evidence — without building a scoring spreadsheet."</div>
           <ul class="cs-industry-list">
             <li>Enforce mandatory disclosures and prohibited claims with evidence-based outcomes</li>
-            <li>Reduce QA sampling bias: move from "listen to a few calls" to "check every call consistently"</li>
-            <li>Faster escalations: Non-Compliant calls surface immediately for supervisor review</li>
+            <li>Move from random QA sampling to consistent evaluation across every call</li>
+            <li>Non-Compliant calls surface immediately for supervisor review</li>
           </ul>
           <div class="cs-industry-checks">
             <span class="cs-industry-check-pill">Compliance disclosure ✓</span>
@@ -237,9 +298,9 @@
           <div class="cs-industry-sub">Screening quality + legal guardrails</div>
           <div class="cs-industry-pitch">"Standardise screening: confirm salary / location / right-to-work every time; stop risky promises; track team quality week-on-week."</div>
           <ul class="cs-industry-list">
-            <li>Ensure consistent intake: salary, location, right-to-work, role preference captured every call</li>
-            <li>Prevent risky language ("guaranteed placement", misleading claims)</li>
-            <li>Make team onboarding measurable: track "required questions asked" trend week-on-week</li>
+            <li>Ensure consistent intake: salary, location, right-to-work, role preference — every call</li>
+            <li>Prevent risky language: "guaranteed placement" and misleading claims</li>
+            <li>Track "required questions asked" trend week-on-week to measure onboarding quality</li>
           </ul>
           <div class="cs-industry-checks">
             <span class="cs-industry-check-pill">Salary captured ✓</span>
@@ -266,7 +327,7 @@
         </div>
       </div>
 
-      <!-- Key differentiator: Coaching vs Scorecards -->
+      <!-- Coaching vs Scorecards separation -->
       <div class="cs-separation-box">
         <div class="cs-separation-col cs-separation-col--coaching">
           <div class="cs-separation-icon">🧠</div>
@@ -289,7 +350,7 @@
     <!-- ═══════════════════════════════════════════════════
          COMPARISON TABLE
     ════════════════════════════════════════════════════ -->
-    <section id="comparison" class="section-wrap" style="background: var(--bg-grey-light);">
+    <section id="comparison" class="section-wrap">
       <div class="section-label">COMPETITIVE SNAPSHOT</div>
       <h2 class="section-title">How Empower Scorecards compare</h2>
       <p class="section-sub">✅ yes &nbsp;·&nbsp; ◑ partial &nbsp;·&nbsp; — no &nbsp;·&nbsp; ? unspecified</p>
@@ -399,6 +460,16 @@
               <td><span class="fw-badge fw-badge-no">— No</span></td>
               <td><span class="fw-badge fw-badge-no">— No</span></td>
             </tr>
+            <tr>
+              <td>Generic Note-Takers</td>
+              <td><span class="fw-badge fw-badge-yes">✅ Yes</span></td>
+              <td><span class="fw-badge fw-badge-no">— No</span></td>
+              <td><span class="fw-badge fw-badge-partial">◑ Partial</span></td>
+              <td><span class="fw-badge fw-badge-partial">◑ Partial</span></td>
+              <td><span class="fw-badge fw-badge-partial">◑ Partial</span></td>
+              <td><span class="fw-badge fw-badge-no">— No</span></td>
+              <td><span class="fw-badge fw-badge-partial">◑ Partial</span></td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -411,7 +482,7 @@
     <!-- ═══════════════════════════════════════════════════
          BATTLECARDS
     ════════════════════════════════════════════════════ -->
-    <section id="battlecards" class="section-wrap">
+    <section id="battlecards" class="section-wrap" style="background: var(--bg-grey-light);">
       <div class="section-label">BATTLECARDS · 6 FAST REBUTTALS</div>
       <h2 class="section-title">How to win by competitor</h2>
       <p class="section-sub">One-line rebuttals backed by the key differentiator for each competitor group.</p>
@@ -428,7 +499,7 @@
         <div class="cs-bc-card">
           <div class="cs-bc-vs">vs</div>
           <div class="cs-bc-name">Modjo</div>
-          <div class="cs-bc-pitch">"Modjo is great for sales methodology scoring; Empower V2 is for mandatory quality/compliance checks — clear pass/fail with evidence."</div>
+          <div class="cs-bc-pitch">"Modjo is built for sales methodology scoring; Empower V2 is for mandatory quality/compliance checks — clear pass/fail with evidence."</div>
           <div class="cs-bc-detail">Modjo's scoring is oriented around sales performance against methodology templates. Empower Scorecards are designed for mandatory compliance enforcement — not "how well did they sell?" but "did they do what was required?" Win in regulated environments where evidence and escalation matter.</div>
         </div>
 
@@ -436,28 +507,28 @@
           <div class="cs-bc-vs">vs</div>
           <div class="cs-bc-name">Aircall · Dialpad · CloudTalk</div>
           <div class="cs-bc-pitch">"They add QA overlays to telephony; Empower delivers a dedicated Quality & Compliance checklist model and keeps Coaching separate."</div>
-          <div class="cs-bc-detail">Telephony vendors bolt QA features onto calling infrastructure. Empower's Scorecards are a dedicated enforcement module — fully decoupled from Coaching so reps and managers understand what's being measured and why. Key wedge: skills improve (Coaching), standards enforce (Scorecards) — two distinct and non-competing systems.</div>
+          <div class="cs-bc-detail">Telephony vendors bolt QA features onto calling infrastructure. Empower's Scorecards are a dedicated enforcement module — fully decoupled from Coaching so reps and managers understand what's being measured and why.</div>
         </div>
 
         <div class="cs-bc-card">
           <div class="cs-bc-vs">vs</div>
           <div class="cs-bc-name">Read.ai</div>
-          <div class="cs-bc-pitch">"Read coaches communication style; Empower scorecards enforce business-critical standards — disclosures, forbidden language, required fields."</div>
-          <div class="cs-bc-detail">Read.ai's coaching is centered on engagement, sentiment, and communication quality. It is not designed for compliance enforcement. Win when the prospect needs "did we follow our legal / regulatory requirements?" rather than "was the call engaging?"</div>
+          <div class="cs-bc-pitch">"Read coaches communication style; Empower Scorecards enforce business-critical standards — disclosures, forbidden language, required fields."</div>
+          <div class="cs-bc-detail">Read.ai's coaching is centred on engagement, sentiment, and communication quality. It is not designed for compliance enforcement. Win when the prospect needs "did we follow our legal / regulatory requirements?" rather than "was the call engaging?"</div>
         </div>
 
         <div class="cs-bc-card">
           <div class="cs-bc-vs">vs</div>
           <div class="cs-bc-name">Fireflies · Fathom · Noota</div>
-          <div class="cs-bc-pitch">"Meeting assistants summarise and extract; Empower scorecards create auditable standards and team-level quality distribution."</div>
-          <div class="cs-bc-detail">Notetakers create summaries and extract data — but they don't tell managers whether a rep was compliant or not. Empower Scorecards produce a clear verdict (Strong → Non-Compliant) with evidence for every call, and surface the most failed checks across the team. That's a fundamentally different product for a different use case.</div>
+          <div class="cs-bc-pitch">"Meeting assistants summarise and extract; Empower Scorecards create auditable standards and team-level quality distribution."</div>
+          <div class="cs-bc-detail">Notetakers create summaries and extract data — but they don't tell managers whether a rep was compliant or not. Empower Scorecards produce a clear verdict (Strong → Non-Compliant) with evidence for every call, and surface the most failed checks across the team.</div>
         </div>
 
         <div class="cs-bc-card cs-bc-card--accent">
           <div class="cs-bc-vs">vs</div>
           <div class="cs-bc-name">Generic Notetakers</div>
-          <div class="cs-bc-pitch">"Notes don't enforce compliance. Scorecards do — at scale."</div>
-          <div class="cs-bc-detail">If a prospect is using basic AI notes to check compliance, they're doing it manually — reading transcripts, making judgment calls, logging issues in spreadsheets. Empower Scorecards automate this entirely: every call, every check, every outcome, with evidence. The ROI is in the QA hours recovered and the risk reduced.</div>
+          <div class="cs-bc-pitch">"Notes don't enforce compliance. Scorecards do — at scale, automatically, with evidence for every call."</div>
+          <div class="cs-bc-detail">If a prospect is using basic AI notes to check compliance, they're doing it manually. Empower Scorecards automate this entirely: every call, every check, every outcome, with evidence. The ROI is in the QA hours recovered and the risk reduced.</div>
         </div>
 
       </div>
@@ -466,7 +537,7 @@
     <div class="divider" />
 
     <!-- ═══════════════════════════════════════════════════
-         DEMO PROMPTS + CTA
+         DEMO PROMPTS
     ════════════════════════════════════════════════════ -->
     <section id="demo" class="fw-demo-section">
       <div class="section-wrap" style="padding-bottom: 0;">
@@ -495,34 +566,124 @@
         </div>
       </div>
 
-      <!-- Limitations -->
+      <!-- What NOT to say -->
       <div class="section-wrap" style="padding-top: 24px; padding-bottom: 0;">
         <div class="fw-demo-avoid">
           <div class="fw-demo-avoid-title">🚫 Correct sales language — what NOT to say</div>
           <div class="fw-demo-avoid-items">
-            <div class="fw-demo-avoid-item"><strong>Not Coaching:</strong> "Coaching improves skills; Scorecards enforce standards." Keep them clearly separate.</div>
-            <div class="fw-demo-avoid-item"><strong>Not forecasting / not revenue intelligence:</strong> "Scorecards classify call quality — they do not forecast deal outcomes."</div>
-            <div class="fw-demo-avoid-item"><strong>Not CRM-grounded yet:</strong> "Multi-call trends exist in Empower, but scorecards are not linked to CRM opportunities until future CRM connection."</div>
-            <div class="fw-demo-avoid-item"><strong>Optional module:</strong> "Disabled by default — enable only if you need QA/compliance enforcement." Don't oversell it as always-on intelligence.</div>
+            <div class="fw-demo-avoid-item"><strong>Not Coaching:</strong> "Coaching improves skills; Scorecards enforce standards." Keep them clearly separate in every conversation.</div>
+            <div class="fw-demo-avoid-item"><strong>Not forecasting:</strong> "Scorecards classify call quality — they do not forecast deal outcomes or revenue."</div>
+            <div class="fw-demo-avoid-item"><strong>Not CRM-grounded yet:</strong> "Multi-call trends exist in Empower, but Scorecards are not yet linked to CRM opportunities."</div>
+            <div class="fw-demo-avoid-item"><strong>Optional module:</strong> "Disabled by default — enable only if the team needs QA / compliance enforcement." Don't oversell it as always-on intelligence.</div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" />
+
+    <!-- ═══════════════════════════════════════════════════
+         OFFER + ENABLEMENT
+    ════════════════════════════════════════════════════ -->
+    <section id="offer" class="section-wrap">
+      <div class="section-label">OFFER & ENABLEMENT</div>
+      <h2 class="section-title">2-Week Quality Pilot</h2>
+      <p class="section-sub">Deploy Empower Scorecards with a real Insurance or Recruitment team. Structured, time-boxed, and outcome-focused — no long implementation required.</p>
+
+      <div class="cs-pilot-grid">
+        <div class="cs-pilot-col cs-pilot-col--week">
+          <div class="cs-pilot-week-label">Week 1</div>
+          <div class="cs-pilot-col-title">Deploy & Configure</div>
+          <ul class="cs-pilot-list">
+            <li>Deploy one scorecard</li>
+            <li>Configure 8–10 checks from predefined templates</li>
+            <li>Assign to Insurance or Recruitment team</li>
+            <li>AI begins evaluating all calls automatically</li>
+          </ul>
+        </div>
+        <div class="cs-pilot-connector">→</div>
+        <div class="cs-pilot-col cs-pilot-col--week">
+          <div class="cs-pilot-week-label">Week 2</div>
+          <div class="cs-pilot-col-title">Analyse & Surface</div>
+          <ul class="cs-pilot-list">
+            <li>Review AI-evaluated call distribution</li>
+            <li>Identify most frequently failed checks</li>
+            <li>Detect compliance risks and escalation patterns</li>
+            <li>Compare team and individual performance</li>
+          </ul>
+        </div>
+        <div class="cs-pilot-connector">→</div>
+        <div class="cs-pilot-col cs-pilot-col--deliverables">
+          <div class="cs-pilot-week-label">Final Deliverables</div>
+          <div class="cs-pilot-col-title">Proof of Value</div>
+          <ul class="cs-pilot-list">
+            <li>Quality distribution report</li>
+            <li>Most failed checks analysis</li>
+            <li>Compliance risk summary</li>
+            <li>Example calls with AI evidence</li>
+          </ul>
         </div>
       </div>
 
-      <!-- CTA -->
-      <div class="section-wrap" style="padding-top: 28px;">
-        <div class="cs-cta-box">
-          <div class="cs-cta-left">
-            <div class="cs-cta-eyebrow">🚀 OFFER</div>
-            <div class="cs-cta-title">2-Week Quality Pilot</div>
-            <div class="cs-cta-desc">Insurance or Recruitment team. Deploy 1 scorecard, 8–12 checks, weekly review, and a final quality report — in two weeks.</div>
-          </div>
-          <div class="cs-cta-right">
-            <div class="cs-cta-eyebrow">📦 ENABLEMENT</div>
-            <div class="cs-cta-title">3 Ready-Made Scorecards</div>
-            <div class="cs-cta-desc">Insurance Disclosure · Recruitment Screening · Support QA — plus demo scripts and objection handling included.</div>
-          </div>
+      <div class="cs-pilot-outcome">
+        <div class="cs-pilot-outcome-icon">🎯</div>
+        <div>
+          <div class="cs-pilot-outcome-title">What the pilot proves</div>
+          <div class="cs-pilot-outcome-desc">Companies immediately understand where compliance risks exist, where screening quality breaks down, and which teams need coaching or closer supervision — all from real calls, with evidence.</div>
         </div>
       </div>
+
+      <!-- Enablement: Ready-Made Scorecards -->
+      <div style="margin-top: 40px;">
+        <div class="section-label" style="margin-bottom: 20px;">📦 READY-MADE SCORECARDS — USE IMMEDIATELY OR CUSTOMISE</div>
+        <div class="cs-enablement-grid">
+
+          <div class="cs-enablement-card">
+            <div class="cs-enablement-icon">🏦</div>
+            <div class="cs-enablement-name">Insurance Disclosure</div>
+            <div class="cs-enablement-sub">Enforce regulatory requirements on every call</div>
+            <ul class="cs-enablement-checks">
+              <li>Disclosure mentioned</li>
+              <li>No prohibited claims</li>
+              <li>Policy explanation clear</li>
+            </ul>
+          </div>
+
+          <div class="cs-enablement-card">
+            <div class="cs-enablement-icon">👔</div>
+            <div class="cs-enablement-name">Recruitment Screening</div>
+            <div class="cs-enablement-sub">Standardise every candidate intake call</div>
+            <ul class="cs-enablement-checks">
+              <li>Salary confirmed</li>
+              <li>Location confirmed</li>
+              <li>Right-to-work verified</li>
+            </ul>
+          </div>
+
+          <div class="cs-enablement-card">
+            <div class="cs-enablement-icon">🎧</div>
+            <div class="cs-enablement-name">Support QA</div>
+            <div class="cs-enablement-sub">Reduce escalations from missed required steps</div>
+            <ul class="cs-enablement-checks">
+              <li>Troubleshooting followed</li>
+              <li>Resolution explained</li>
+              <li>Next step confirmed</li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="cs-enablement-footer">Each scorecard includes predefined checks, AI prompts, demo scenarios, and sales demo scripts. Teams can use them immediately or customise for their use case.</div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         FINAL POSITIONING
+    ════════════════════════════════════════════════════ -->
+    <section class="cs-final-positioning">
+      <div class="cs-final-line">Skills develop people.</div>
+      <div class="cs-final-line cs-final-line--accent">Scorecards enforce standards.</div>
+      <div class="cs-final-line">Workflows trigger action.</div>
+      <div class="cs-final-sub">Together they create a complete operational quality system for conversations.</div>
     </section>
 
   </div>

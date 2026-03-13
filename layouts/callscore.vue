@@ -9,10 +9,12 @@
       <div class="nav-tabs">
         <a href="#evolution"   class="nav-tab" @click.prevent="scrollTo('evolution')">Evolution</a>
         <a href="#how-it-works" class="nav-tab" @click.prevent="scrollTo('how-it-works')">How it Works</a>
+        <a href="#automation"  class="nav-tab" @click.prevent="scrollTo('automation')">Automation</a>
         <a href="#benefits"    class="nav-tab" @click.prevent="scrollTo('benefits')">Benefits</a>
         <a href="#comparison"  class="nav-tab" @click.prevent="scrollTo('comparison')">Comparison</a>
         <a href="#battlecards" class="nav-tab" @click.prevent="scrollTo('battlecards')">Battlecards</a>
-        <a href="#demo"        class="nav-tab" @click.prevent="scrollTo('demo')">Demo & CTA</a>
+        <a href="#demo"        class="nav-tab" @click.prevent="scrollTo('demo')">Demo</a>
+        <a href="#offer"       class="nav-tab" @click.prevent="scrollTo('offer')">Offer</a>
       </div>
       <div class="nav-right">
         <select
