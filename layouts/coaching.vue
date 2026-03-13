@@ -7,12 +7,14 @@
         <span>{{ t('common.brand') }}</span>
       </div>
       <div class="nav-tabs">
-        <a href="#problem"    class="nav-tab" @click.prevent="scrollTo('problem')">{{ t('coaching.navProblem') }}</a>
-        <a href="#skills"     class="nav-tab" @click.prevent="scrollTo('skills')">{{ t('coaching.navSkills') }}</a>
-        <a href="#loop"       class="nav-tab" @click.prevent="scrollTo('loop')">{{ t('coaching.navLoop') }}</a>
-        <a href="#industries" class="nav-tab" @click.prevent="scrollTo('industries')">{{ t('coaching.navIndustries') }}</a>
-        <a href="#compete"    class="nav-tab" @click.prevent="scrollTo('compete')">{{ t('coaching.navCompete') }}</a>
-        <a href="#pitch"      class="nav-tab" @click.prevent="scrollTo('pitch')">{{ t('coaching.navPitch') }}</a>
+        <a href="#overview"        class="nav-tab" @click.prevent="scrollTo('overview')">What's New</a>
+        <a href="#value"           class="nav-tab" @click.prevent="scrollTo('value')">Time to Value</a>
+        <a href="#market"          class="nav-tab" @click.prevent="scrollTo('market')">Market</a>
+        <a href="#differentiators" class="nav-tab" @click.prevent="scrollTo('differentiators')">How We Win</a>
+        <a href="#industries"      class="nav-tab" @click.prevent="scrollTo('industries')">Verticals</a>
+        <a href="#battlecards"     class="nav-tab" @click.prevent="scrollTo('battlecards')">Battlecards</a>
+        <a href="#demo"            class="nav-tab" @click.prevent="scrollTo('demo')">Demo</a>
+        <a href="#cta"             class="nav-tab" @click.prevent="scrollTo('cta')">Quickstart</a>
       </div>
       <div class="nav-right">
         <select
@@ -37,7 +39,7 @@
       <slot />
     </main>
     <footer class="site-footer">
-      <p v-html="t('coaching.footer')" />
+      <p><strong>Coaching & Skills</strong> &nbsp;·&nbsp; Skills-first coaching engine &nbsp;·&nbsp; <strong>Empower by Ringover</strong> &nbsp;·&nbsp; Internal use only</p>
     </footer>
   </div>
 </template>
